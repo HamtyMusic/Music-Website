@@ -8,7 +8,7 @@ var Songs = {
       soundcloud: "https://soundcloud.com/hamty/lockyn-aqua-remix",
       youtube: "https://youtu.be/mEvwdNUg9jo"
     },
-    date: new Date(2016, 06, 03)
+    date: new Date(2016, 6, 03)
   },
   sunshine: {
     name: "Hamty - Sunshine",
@@ -30,7 +30,7 @@ var Songs = {
       youtube: "https://www.youtube.com/watch?v=UiGhXFMFY94",
       bandcamp: "https://hamty.bandcamp.com/track/sea-lights"
     },
-    date: new Date(2015, 05, 22, 19)
+    date: new Date(2015, 5, 22, 19)
   },
   home: {
     name: "Hamty - Home",
@@ -41,7 +41,7 @@ var Songs = {
       youtube: "https://www.youtube.com/watch?v=Idmo2W8zcAg",
       bandcamp: "https://hamty.bandcamp.com/track/home"
     },
-    date: new Date(2015, 02, 25)
+    date: new Date(2015, 2, 25)
   },
   inspiration: {
     name: "Hamty - Inspiration",
@@ -52,7 +52,7 @@ var Songs = {
       youtube: "https://www.youtube.com/watch?v=Uo8Ozq5fZro",
       bandcamp: "http://hamty.bandcamp.com/track/inspiration"
     },
-    date: new Date(2015, 00, 20)
+    date: new Date(2015, 0, 20)
   },
   riverJourney: {
     name: "Hamty - River Journey",
@@ -63,7 +63,7 @@ var Songs = {
       youtube: "https://www.youtube.com/watch?v=edFv3BTwk5g",
       bandcamp: "https://hamty.bandcamp.com/track/river-journey"
     },
-    date: new Date(2014, 08, 16)
+    date: new Date(2014, 8, 16)
   },
   return: {
     name: "Hamty - The Return",
@@ -74,6 +74,6 @@ var Songs = {
       youtube: "https://www.youtube.com/watch?v=g5KG7cE5y44",
       bandcamp: "https://hamty.bandcamp.com/track/the-return"
     },
-    date: new Date(2014, 06, 17)
+    date: new Date(2014, 6, 17)
   }
 }
