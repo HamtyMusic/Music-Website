@@ -133,7 +133,7 @@ function drawSongs(Songs) {
         a.href = link;
       }
       a.target = "_blank";
-      var dlbtn = newElem("img", a, "dlbtn");
+      var dlbtn = newElem("img", a, "link");
       if (key == "downloadFlac") {
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
