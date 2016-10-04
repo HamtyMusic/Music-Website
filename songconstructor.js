@@ -123,7 +123,7 @@ function drawSongs(Songs) {
     }
     var tal = newElem("div", elem, "TitleAndLinks");
     tal.innerHTML += "<div class='songTitleDiv'><div class='songTitle'>" + Song.name + "</div></div>\n";
-    var links = newElem("div", tal, "LinkContainer");
+    var links = newElem("div", tal, ".link-buttons");
     for (var key in Song.links) {
       link = Song.links[key];
       var a = newElem("a", links, "link");
@@ -133,7 +133,7 @@ function drawSongs(Songs) {
         a.href = link;
       }
       a.target = "_blank";
-      var dlbtn = newElem("img", a, "link");
+      var dlbtn = newElem("img", a, "link-button");
       if (key == "downloadFlac") {
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
