@@ -119,7 +119,7 @@ function drawSongs(Songs) {
     var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
       var imgPar = newElem("div", elem, "song-image-parent")
-      var img = newElem("img", imgPar, "song-image");
+      var img = newElem("img", imgPar, "song-image shadow");
       img.src = Song.img;
     }
     var title = newElem("div", elem, "song-title");
