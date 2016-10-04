@@ -137,16 +137,16 @@ function drawSongs(Songs) {
       if (key == "downloadFlac") {
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
-      } else if (key == downloadMp3) {
+      } else if (key == "downloadMp3") {
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/ra44DKt.png";
-      } else if (key == soundcloud) {
+      } else if (key == "soundcloud") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
         dlbtn.src = "http://i.imgur.com/ybW9dgy.png";
-      } else if (key == youtube) {
+      } else if (key == "youtube") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
         dlbtn.src = "http://i.imgur.com/qXf7WJw.png";
-      } else if (key == bandcamp) {
+      } else if (key == "bandcamp") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
         dlbtn.src = "http://i.imgur.com/ic0KOox.png";
       }
