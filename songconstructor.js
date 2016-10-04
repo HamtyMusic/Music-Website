@@ -131,9 +131,9 @@ function drawSongs(Songs) {
     
     var links = newElem("div", elem, "link-buttons");
     var a = newElem("a", links, "link");
-    var arrowBox = newElem("a", links, "arrow_box");
+    var arrowBox = newElem("div", links, "arrow_box");
     var dlbtn = newElem("img", a, "link-button");
-    a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
+    a.setAttribute("title", "Click for download options");
     dlbtn.src = "http://static.tumblr.com/mv8e1sl/xQOoejjgl/download.svg";
     dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Zldoejjgh/download.png'";
     }
