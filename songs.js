@@ -3,7 +3,7 @@ var Songs = {
     name: "Lockyn - Aqua ( Hamty\'s Remix )",
     title: "Aqua ( Hamty\'s Remix )",
     author: "Lockyn",
-    img: "https://i.imgur.com/rNbn0Mn.jpg",
+    img: "http://i.imgur.com/FNkzp0S.jpg",
     links: {
       downloadFlac: "http://sh.st/HzIKA",
       downloadMp3: "http://sh.st/HzP5W",
