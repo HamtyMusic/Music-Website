@@ -76,4 +76,4 @@ var Songs = {
     },
     date: new Date(2014, 06, 17)
   }
-]
+}
