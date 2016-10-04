@@ -142,18 +142,23 @@ function drawSongs(Songs) {
       if (key == "downloadFlac") {
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
+        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
       } else if (key == "downloadMp3") {
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
         dlbtn.src = "http://i.imgur.com/ra44DKt.png";
+        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
       } else if (key == "soundcloud") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
-        dlbtn.src = "http://i.imgur.com/ybW9dgy.png";
+        dlbtn.src = "http://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
+        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
       } else if (key == "youtube") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
-        dlbtn.src = "http://i.imgur.com/qXf7WJw.png";
+        dlbtn.src = "http://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
+        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
       } else if (key == "bandcamp") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
-        dlbtn.src = "http://i.imgur.com/ic0KOox.png";
+        dlbtn.src = "http://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
+        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
       }
     }
     //Release Date
