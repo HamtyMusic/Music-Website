@@ -115,7 +115,8 @@ function drawSongs(Songs) {
   }
   for (var i in Songs) {
     var Song = Songs[i];
-    var elem = newElem("div", songParent, "song pb shadow");
+    var wrap = newElem("div", songParent, "song-wrap");
+    var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
       var imgPar = newElem("div", elem, "songImgPar")
       var img = newElem("img", imgPar, "songImg");
