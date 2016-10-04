@@ -122,9 +122,13 @@ function drawSongs(Songs) {
       var img = newElem("img", imgPar, "songImg");
       img.src = Song.img;
     }
-    var tal = newElem("div", elem, "TitleAndLinks");
-    tal.innerHTML += "<div class='songTitleDiv'><div class='songTitle'>" + Song.name + "</div></div>\n";
-    var links = newElem("div", tal, "link-buttons");
+    var title = newElem("div", elem, "song-title");
+    title.innerHTML = Song.title;
+    title.setAttribute("title", Song.name);
+    var author = newElem("div", elem, "song-title");
+    author.innerHTML = Song.author;
+    author.setAttribute("title", Song.name);
+    var links = newElem("div", elem, "link-buttons");
     for (var key in Song.links) {
       link = Song.links[key];
       var a = newElem("a", links, "link");
