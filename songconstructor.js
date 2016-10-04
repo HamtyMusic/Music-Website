@@ -113,7 +113,7 @@ function drawSongs(Songs) {
   if (Songs.length == 0) {
     return false;
   }
-  for (i in Songs) {
+  for (var i in Songs) {
     var Song = Songs[i];
     var elem = newElem("div", songParent, "SongElement");
     if (Song.img) {
@@ -124,53 +124,32 @@ function drawSongs(Songs) {
     var tal = newElem("div", elem, "TitleAndLinks");
     tal.innerHTML += "<div class='songTitleDiv'><div class='songTitle'>" + Song.name + "</div></div>\n";
     var links = newElem("div", tal, "LinkContainer");
-    if (Song.links.downloadFlac) {
+    for (var key in Song.links) {
+      link = Song.links[key];
       var a = newElem("a", links, "link");
-      if (Song.links.downloadFlac.constructor === Array) {
-        a.href = Song.links.downloadFlac.join("");
+      if (link.constructor === Array) {
+        a.href = link.join("");
       } else {
-        a.href = Song.links.downloadFlac;
+        a.href = link;
       }
       a.target = "_blank";
-      a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
       var dlbtn = newElem("img", a, "dlbtn");
-      dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
-    }
-    if (Song.links.download) {
-      var a = newElem("a", links, "link");
-      if (Song.links.download.constructor === Array) {
-        a.href = Song.links.download.join("");
-      } else {
-        a.href = Song.links.download;
+      if (key == "downloadFlac") {
+        a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
+        dlbtn.src = "http://i.imgur.com/fbpGjDR.png";
+      } else if (key == downloadMp3) {
+        a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
+        dlbtn.src = "http://i.imgur.com/ra44DKt.png";
+      } else if (key == soundcloud) {
+        a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
+        dlbtn.src = "http://i.imgur.com/ybW9dgy.png";
+      } else if (key == youtube) {
+        a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
+        dlbtn.src = "http://i.imgur.com/qXf7WJw.png";
+      } else if (key == bandcamp) {
+        a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
+        dlbtn.src = "http://i.imgur.com/ic0KOox.png";
       }
-      a.target = "_blank";
-      a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
-      var dlbtn = newElem("img", a, "dlbtn");
-      dlbtn.src = "http://i.imgur.com/ra44DKt.png";
-    }
-    if (Song.links.soundcloud) {
-      var a = newElem("a", links, "link");
-      a.href = Song.links.soundcloud;
-      a.target = "_blank";
-      a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
-      var dlbtn = newElem("img", a, "dlbtn");
-      dlbtn.src = "http://i.imgur.com/ybW9dgy.png";
-    }
-    if (Song.links.youtube) {
-      var a = newElem("a", links, "link");
-      a.href = Song.links.youtube;
-      a.target = "_blank";
-      a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
-      var dlbtn = newElem("img", a, "dlbtn");
-      dlbtn.src = "http://i.imgur.com/qXf7WJw.png";
-    }
-    if (Song.links.bandcamp) {
-      var a = newElem("a", links, "link");
-      a.href = Song.links.bandcamp;
-      a.target = "_blank";
-      a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
-      var dlbtn = newElem("img", a, "dlbtn");
-      dlbtn.src = "http://i.imgur.com/ic0KOox.png";
     }
     //Release Date
     if (Song.date) {
