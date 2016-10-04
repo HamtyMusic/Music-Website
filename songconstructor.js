@@ -123,7 +123,7 @@ function drawSongs(Songs) {
     }
     var tal = newElem("div", elem, "TitleAndLinks");
     tal.innerHTML += "<div class='songTitleDiv'><div class='songTitle'>" + Song.name + "</div></div>\n";
-    var links = newElem("div", tal, ".link-buttons");
+    var links = newElem("div", tal, "link-buttons");
     for (var key in Song.links) {
       link = Song.links[key];
       var a = newElem("a", links, "link");
