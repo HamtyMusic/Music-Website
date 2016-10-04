@@ -125,7 +125,7 @@ function drawSongs(Songs) {
     var title = newElem("div", elem, "song-title");
     title.innerHTML = Song.title;
     title.setAttribute("title", Song.name);
-    var author = newElem("div", elem, "song-title");
+    var author = newElem("div", elem, "song-author");
     author.innerHTML = Song.author;
     author.setAttribute("title", Song.name);
     var links = newElem("div", elem, "link-buttons");
