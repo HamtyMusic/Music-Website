@@ -108,7 +108,7 @@ function drawSongs(Songs) {
   if (Songs) {} else {
     return false;
   }
-  var songParent = document.getElementById("SongParent");
+  var songParent = document.getElementById("SongList");
   songParent.innerHTML = "";
   if (Songs.length == 0) {
     return false;
