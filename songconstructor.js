@@ -136,7 +136,6 @@ function drawSongs(Songs) {
     a.setAttribute("title", "Click for download options");
     dlbtn.src = "http://static.tumblr.com/mv8e1sl/xQOoejjgl/download.svg";
     dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Zldoejjgh/download.png'";
-    }
     for (var key in Song.links) {
       link = Song.links[key];
       var a = newElem("a", links, "link");
