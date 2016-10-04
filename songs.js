@@ -1,6 +1,8 @@
 var Songs = {
   lockynAqua: {
     name: "Lockyn - Aqua ( Hamty\'s Remix )",
+    title: "Aqua ( Hamty\'s Remix )",
+    author: "Lockyn",
     img: "https://i.imgur.com/rNbn0Mn.jpg",
     links: {
       downloadFlac: "http://sh.st/HzIKA",
@@ -12,6 +14,8 @@ var Songs = {
   },
   sunshine: {
     name: "Hamty - Sunshine",
+    title: "Sunshine",
+    author: "Hamty",
     img: "http://i.imgur.com/YtgvHhF.jpg",
     links: {
       downloadMp3: "http://sh.st/nqRuX",
@@ -23,6 +27,8 @@ var Songs = {
   },
   seaLights: {
     name: "Hamty - Sea Lights",
+    title: "Sea Lights",
+    author: "Hamty",
     img: "http://i.imgur.com/yzV6gD5.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1JcSyZ"],
@@ -34,6 +40,8 @@ var Songs = {
   },
   home: {
     name: "Hamty - Home",
+    title: "Home",
+    author: "Hamty",
     img: "http://i.imgur.com/7KvqLCa.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1Bkfyo"],
@@ -45,6 +53,8 @@ var Songs = {
   },
   inspiration: {
     name: "Hamty - Inspiration",
+    title: "Inspiration",
+    author: "Hamty",
     img: "http://i.imgur.com/IW0fpVX.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "wTZVo"],
@@ -56,6 +66,8 @@ var Songs = {
   },
   riverJourney: {
     name: "Hamty - River Journey",
+    title: "River Journey",
+    author: "Hamty",
     img: "http://i.imgur.com/SdQKV5Y.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDPor"],
@@ -67,6 +79,8 @@ var Songs = {
   },
   return: {
     name: "Hamty - The Return",
+    title: "The Return",
+    author: "Hamty",
     img: "http://i.imgur.com/yMuBKFT.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDQXi"],
