@@ -224,7 +224,7 @@ function drawSongs(Songs) {
         date2.setAttribute("title", (timeAgo(date)));
       }
     }
-    Song.elem = elem;
+    Song.elem = wrap;
   }
   return true;
 }
