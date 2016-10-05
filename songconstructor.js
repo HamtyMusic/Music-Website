@@ -148,13 +148,13 @@ function drawSongs(Songs) {
       var dlbtn = newElem("img", a, "link-button");
       if (key == "downloadFlac") {
         arrowBox.appendChild(a);
-        dlbtn.className += "download-button";
+        dlbtn.className += " download-button";
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/otnoejhpo/flac.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/6ttoejhq2/flac.png'";
       } else if (key == "downloadMp3") {
         arrowBox.appendChild(a);
-        dlbtn.className += "download-button";
+        dlbtn.className += " download-button";
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/NaQoejhqd/mp3.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/k2Moejhqh/mp3.png'";
