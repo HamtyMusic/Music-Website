@@ -104,10 +104,12 @@ function newElem(type, parent, class1) {
   return elem;
 }
 
-var SongStorage = newElem("div", document.body);
-SongStorage.id = "SongStorage";
-
 function hideSongs(Songs) {
+  var SongStorage = document.getElementById("SongStorage");
+  if(!SongStorage) {
+    SongStorage = newElem("div", document.body);
+    SongStorage.id = "SongStorage";
+  }
   if(SongStorage) {
     if (Songs) {} else {
       return false;
