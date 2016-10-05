@@ -84,9 +84,9 @@ function Search(str) {
       }
     }
   }
-  var results = [];
+  var results = {};
   for (i in mObj) {
-    results.push(Songs[i]);
+    results[i] = (Songs[i]);
   }
   return results;
 }
