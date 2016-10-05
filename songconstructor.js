@@ -104,17 +104,46 @@ function newElem(type, parent, class1) {
   return elem;
 }
 
+var SongStorage = newElem("div", document.body);
+SongStorage.id = "SongStorage";
+
+function hideSongs(Songs) {
+  if(SongStorage) {
+    if (Songs) {} else {
+      return false;
+    }
+    var songParent = document.getElementById("SongList");
+    if(songParent) {} else {
+      return false;
+    }
+    if (Songs.length == 0) {
+      return false;
+    }
+    for (var i in Songs) {
+      var Song = Songs[i];
+      if(Song.elem) {
+        SongStorage.appendChild(Song.elem);
+      }
+    }
+    songParent.innerHTML = "";
+  }
+}
+
 function drawSongs(Songs) {
   if (Songs) {} else {
     return false;
   }
   var songParent = document.getElementById("SongList");
-  songParent.innerHTML = "";
+  hideSongs(Songs);
   if (Songs.length == 0) {
     return false;
   }
   for (var i in Songs) {
     var Song = Songs[i];
+    if(Song.elem) {
+      songParent.appendChild(Song.elem);
+      continue;
+    }
     var wrap = newElem("div", songParent, "song-wrap");
     var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
@@ -193,6 +222,7 @@ function drawSongs(Songs) {
         date2.setAttribute("title", (timeAgo(date)));
       }
     }
+    Song.elem = elem;
   }
   return true;
 }
