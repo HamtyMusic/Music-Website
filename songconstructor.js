@@ -71,26 +71,22 @@ function Search(str) {
   for (var i = 0; i < srchTgs.length; i++) {
     srchTgs[i] = srchTgs[i].toLowerCase();
   }
-  var mObj = [];
-  for (var i = 0; i < Songs.length; i++) {
+  var mObj = {};
+  for (i in Songs) {
     mObj[i] = true;
   }
   for (var i = 0; i < srchTgs.length; i++) {
-    for (var y = 0; y < mObj.length; y++) {
-      if (mObj[y]) {
-        if (Songs[y].name) {
-          if (((Songs[y].name).toLowerCase()).search(srchTgs[i]) == -1) {
-            delete mObj[y];
-          }
+    for (var y in mObj) {
+      if (Songs[y].name) {
+        if (((Songs[y].name).toLowerCase()).search(srchTgs[i]) == -1) {
+          delete mObj[y];
         }
       }
     }
   }
   var results = [];
-  for (var i = 0; i < mObj.length; i++) {
-    if (mObj[i]) {
-      results.push(Songs[i]);
-    }
+  for (i in mObj) {
+    results.push(Songs[i]);
   }
   return results;
 }
