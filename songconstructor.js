@@ -130,10 +130,10 @@ function drawSongs(Songs) {
     author.setAttribute("title", Song.name);
     
     var links = newElem("div", elem, "link-buttons");
-    var a = newElem("a", links, "link");
-    var arrowBox = newElem("div", links, "arrow_box");
-    var dlbtn = newElem("img", a, "link-button");
+    var a = newElem("a", links, "link download-link");
     a.setAttribute("title", "Click for download options");
+    var arrowBox = newElem("div", links, "arrow_box");
+    var dlbtn = newElem("img", a, "link-button ");
     dlbtn.src = "http://static.tumblr.com/mv8e1sl/xQOoejjgl/download.svg";
     dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Zldoejjgh/download.png'";
     for (var key in Song.links) {
@@ -148,11 +148,13 @@ function drawSongs(Songs) {
       var dlbtn = newElem("img", a, "link-button");
       if (key == "downloadFlac") {
         arrowBox.appendChild(a);
+        dlbtn.className += "download-button";
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/otnoejhpo/flac.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/6ttoejhq2/flac.png'";
       } else if (key == "downloadMp3") {
         arrowBox.appendChild(a);
+        dlbtn.className += "download-button";
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/NaQoejhqd/mp3.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/k2Moejhqh/mp3.png'";
