@@ -64,7 +64,7 @@ String.prototype.isEmpty = function() {
 
 function Search(str) {
   str = str || "";
-  if (str.isEmpty()) {
+  if (str.length == 0) {
     return Songs;
   }
   var srchTgs = str.split(" ");
