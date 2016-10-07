@@ -173,18 +173,21 @@ function drawSongs(Songs) {
       }
       a.target = "_blank";
       var dlbtn = newElem("img", a, "link-button");
+      var span;
       if (key == "downloadFlac") {
         arrowBox.appendChild(a);
         dlbtn.className += " download-button flac";
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
-        a.innerHTML += "Download .flac";
+        span = newElem("span", a, "link-description");
+        span.innerHTML = "Download .flac";
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/otnoejhpo/flac.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/6ttoejhq2/flac.png'";
       } else if (key == "downloadMp3") {
         arrowBox.appendChild(a);
         dlbtn.className += " download-button mp3";
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
-        a.innerHTML += "Download .mp3";
+        span = newElem("span", a, "link-description");
+        span.innerHTML = "Download .mp3";
         dlbtn.src = "http://static.tumblr.com/mv8e1sl/NaQoejhqd/mp3.svg";
         dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/k2Moejhqh/mp3.png'";
       } else if (key == "soundcloud") {
