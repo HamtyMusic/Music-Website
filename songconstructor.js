@@ -176,13 +176,13 @@ function drawSongs(Songs) {
       var span;
       if (key == "downloadFlac") {
         arrowBox.appendChild(a);
-        dlbtn.className += " download-button flac";
+        dlbtn.style.display = "none";
         a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
         span = newElem("span", a, "link-description");
         span.innerHTML = "Download .flac";
       } else if (key == "downloadMp3") {
         arrowBox.appendChild(a);
-        dlbtn.className += " download-button mp3";
+        dlbtn.style.display = "none";
         a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
         span = newElem("span", a, "link-description");
         span.innerHTML = "Download .mp3";
