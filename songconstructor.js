@@ -162,7 +162,7 @@ function drawSongs(Songs) {
     a.setAttribute("title", "Click for download options");
     var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
     var dlbtn = newElem("img", a, "link-button ");
-    dlbtn.src = "http://static.tumblr.com/mv8e1sl/heuoeqnro/download.svg";
+    dlbtn.src = "http://static.tumblr.com/mv8e1sl/Bffoeqnxy/download.svg";
     dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Zldoejjgh/download.png'";
     for (var key in Song.links) {
       link = Song.links[key];
