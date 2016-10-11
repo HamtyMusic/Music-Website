@@ -149,7 +149,7 @@ function drawSongs(Songs) {
       var imgPar = newElem("a", elem, "song-image-parent");
       imgPar.href = "#" + i;
       var img = newElem("img", imgPar, "song-image shadow");
-      img.src = Song.img;
+      img.src = Song.img.replace(/^http:\/\//i, 'https://');
     }
     var title = newElem("div", elem, "song-title");
     title.innerHTML = Song.title;
@@ -234,7 +234,7 @@ function drawSong(Song) {
   }
   if (Song.img) {
     var img = ge("SongImage");
-    img.src = Song.img;
+    img.src = Song.img.replace(/^http:\/\//i, 'https://');
   }
   var title = ge("SongTitle");
   title.innerHTML = Song.name;
