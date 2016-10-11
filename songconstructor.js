@@ -166,7 +166,7 @@ function drawSongs(Songs) {
     dlbtn.src = "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg";
     dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png'";
     for (var key in Song.links) {
-      link = Song.links[key];
+      var link = Song.links[key];
       var a = newElem("a", links, "link");
       if (link.constructor === Array) {
         a.href = link.join("");
@@ -207,7 +207,7 @@ function drawSongs(Songs) {
       if (Object.prototype.toString.call(Song.date) === "[object Date]") {
         var date = Song.date;
         var dates = newElem("div", elem, "DateContainer");
-        var date1 = newElem("div", dates, "dateText");
+        var date1 = newElem("div", dates, "dateText dateAbsolute");
         date1.innerHTML = date.toLocaleDateString([], {
           day: "numeric",
           month: "short",
@@ -218,7 +218,7 @@ function drawSongs(Songs) {
           month: "long",
           year: "numeric"
         }) + " | " + date.toLocaleTimeString([])));
-        var date2 = newElem("div", dates, "dateText");
+        var date2 = newElem("div", dates, "dateText dateRelative");
         date2.innerHTML = (timeAgo(date, 1) + " ago");
         date2.setAttribute("title", (timeAgo(date)));
       }
@@ -237,75 +237,67 @@ function drawSong(Song) {
     img.src = Song.img;
   }
   var title = ge("SongTitle");
-    title.innerHTML = Song.name;
-    title.setAttribute("title", Song.title + " by " + Song.author);
-    
-    var links = newElem("div", elem, "link-buttons");
-    var a = newElem("a", links, "link download-link");
-    a.setAttribute("title", "Click for download options");
-    var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
-    var dlbtn = newElem("img", a, "link-button ");
-    dlbtn.src = "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg";
-    dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png'";
-    for (var key in Song.links) {
-      link = Song.links[key];
-      var a = newElem("a", links, "link");
-      if (link.constructor === Array) {
-        a.href = link.join("");
-      } else {
-        a.href = link;
-      }
-      a.target = "_blank";
-      var dlbtn = newElem("img", a, "link-button");
-      var span;
-      if (key == "downloadFlac") {
-        arrowBox.appendChild(a);
-        dlbtn.style.display = "none";
-        a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
-        span = newElem("span", a, "link-description");
-        span.innerHTML = ".flac";
-      } else if (key == "downloadMp3") {
-        arrowBox.appendChild(a);
-        dlbtn.style.display = "none";
-        a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
-        span = newElem("span", a, "link-description");
-        span.innerHTML = ".mp3";
-      } else if (key == "soundcloud") {
-        a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
-      } else if (key == "youtube") {
-        a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
-      } else if (key == "bandcamp") {
-        a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
-      }
+  title.innerHTML = Song.name;
+  title.setAttribute("title", Song.title + " by " + Song.author);
+  var links = ge("SongLinks");
+  var dlLinks = ge("SongDlLinks");
+  for (var key in Song.links) {
+    var link = Song.links[key];
+    var a = newElem("a", links, "link");
+    if (link.constructor === Array) {
+      a.href = link.join("");
+    } else {
+      a.href = link;
     }
-    //Release Date
-    if (Song.date) {
-      if (Object.prototype.toString.call(Song.date) === "[object Date]") {
-        var date = Song.date;
-        var dates = newElem("div", elem, "DateContainer");
-        var date1 = newElem("div", dates, "dateText");
-        date1.innerHTML = date.toLocaleDateString([], {
-          day: "numeric",
-          month: "short",
-          year: "numeric"
-        });
-        date1.setAttribute("title", (date.toLocaleDateString([], {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        }) + " | " + date.toLocaleTimeString([])));
-        var date2 = newElem("div", dates, "dateText");
-        date2.innerHTML = (timeAgo(date, 1) + " ago");
-        date2.setAttribute("title", (timeAgo(date)));
-      }
+    a.target = "_blank";
+    var dlbtn = newElem("img", a, "link-button");
+    var span;
+    if (key == "downloadFlac") {
+      dlLinks.appendChild(a);
+      dlbtn.style.display = "none";
+      a.setAttribute("title", ("Free Download .flac (" + Song.name + ")"));
+      span = newElem("span", a, "link-description");
+      span.innerHTML = ".flac";
+    } else if (key == "downloadMp3") {
+      dlLinks.appendChild(a);
+      dlbtn.style.display = "none";
+      a.setAttribute("title", ("Free Download .mp3 (" + Song.name + ")"));
+      span = newElem("span", a, "link-description");
+      span.innerHTML = ".mp3";
+    } else if (key == "soundcloud") {
+      a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
+      dlbtn.src = "http://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
+      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
+    } else if (key == "youtube") {
+      a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
+      dlbtn.src = "http://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
+      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
+    } else if (key == "bandcamp") {
+      a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
+      dlbtn.src = "http://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
+      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
     }
-    Song.elem = wrap;
+  }
+  //Release Date
+  if (Song.date) {
+    if (Object.prototype.toString.call(Song.date) === "[object Date]") {
+      var date = Song.date;
+      var dates = ge("ReleaseDate");
+      var date1 = newElem("div", dates, "dateText dateAbsolute");
+      date1.innerHTML = date.toLocaleDateString([], {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+      });
+      date1.setAttribute("title", (date.toLocaleDateString([], {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }) + " | " + date.toLocaleTimeString([])));
+      var date2 = newElem("div", dates, "dateText dateRelative");
+      date2.innerHTML = (timeAgo(date, 1) + " ago");
+      date2.setAttribute("title", (timeAgo(date)));
+    }
   }
   return true;
 }
