@@ -3,7 +3,7 @@ var Songs = {
     name: "Lockyn - Aqua ( Hamty\'s Remix )",
     title: "Aqua ( Hamty\'s Remix )",
     author: "Lockyn",
-    img: "http://i.imgur.com/FNkzp0S.jpg",
+    img: "https://i.imgur.com/FNkzp0S.jpg",
     links: {
       downloadFlac: "http://sh.st/HzIKA",
       downloadMp3: "http://sh.st/HzP5W",
@@ -16,7 +16,7 @@ var Songs = {
     name: "Hamty - Sunshine",
     title: "Sunshine",
     author: "Hamty",
-    img: "http://i.imgur.com/YtgvHhF.jpg",
+    img: "https://i.imgur.com/YtgvHhF.jpg",
     links: {
       downloadMp3: "http://sh.st/nqRuX",
       soundcloud: "https://soundcloud.com/hamty/sunshine",
@@ -29,7 +29,7 @@ var Songs = {
     name: "Hamty - Sea Lights",
     title: "Sea Lights",
     author: "Hamty",
-    img: "http://i.imgur.com/yzV6gD5.jpg",
+    img: "https://i.imgur.com/yzV6gD5.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1JcSyZ"],
       soundcloud: "https://soundcloud.com/hamty/sea-lights",
@@ -42,7 +42,7 @@ var Songs = {
     name: "Hamty - Home",
     title: "Home",
     author: "Hamty",
-    img: "http://i.imgur.com/7KvqLCa.jpg",
+    img: "https://i.imgur.com/7KvqLCa.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1Bkfyo"],
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
@@ -55,7 +55,7 @@ var Songs = {
     name: "Hamty - Inspiration",
     title: "Inspiration",
     author: "Hamty",
-    img: "http://i.imgur.com/IW0fpVX.jpg",
+    img: "https://i.imgur.com/IW0fpVX.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "wTZVo"],
       soundcloud: "https://soundcloud.com/hamty/hamty-inspiration",
@@ -68,7 +68,7 @@ var Songs = {
     name: "Hamty - River Journey",
     title: "River Journey",
     author: "Hamty",
-    img: "http://i.imgur.com/SdQKV5Y.jpg",
+    img: "https://i.imgur.com/SdQKV5Y.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDPor"],
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
@@ -81,7 +81,7 @@ var Songs = {
     name: "Hamty - The Return",
     title: "The Return",
     author: "Hamty",
-    img: "http://i.imgur.com/yMuBKFT.jpg",
+    img: "https://i.imgur.com/yMuBKFT.jpg",
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDQXi"],
       soundcloud: "https://soundcloud.com/hamty/the-return",
