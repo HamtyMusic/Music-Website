@@ -190,16 +190,16 @@ function drawSongs(Songs) {
         span.innerHTML = ".mp3";
       } else if (key == "soundcloud") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
+        dlbtn.src = "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
+        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
       } else if (key == "youtube") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
+        dlbtn.src = "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
+        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
       } else if (key == "bandcamp") {
         a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
-        dlbtn.src = "http://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
+        dlbtn.src = "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
+        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
       }
     }
     //Release Date
@@ -266,16 +266,16 @@ function drawSong(Song) {
       span.innerHTML = ".mp3";
     } else if (key == "soundcloud") {
       a.setAttribute("title", ("\"" + Song.name + "\" on Soundcloud"));
-      dlbtn.src = "http://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
-      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
+      dlbtn.src = "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
+      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
     } else if (key == "youtube") {
       a.setAttribute("title", ("\"" + Song.name + "\" on Youtube"));
-      dlbtn.src = "http://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
-      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
+      dlbtn.src = "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
+      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
     } else if (key == "bandcamp") {
       a.setAttribute("title", ("\"" + Song.name + "\" on Bandcamp"));
-      dlbtn.src = "http://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
-      dlbtn.onerror="this.onerror=null; this.src='http://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
+      dlbtn.src = "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
+      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
     }
   }
   //Release Date
