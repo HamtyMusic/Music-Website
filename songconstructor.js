@@ -1,4 +1,4 @@
-var ge = document.getElementById;
+function $(id) { return document.getElementById(id) }
 function timeAgo(oldDate, length) {
   length = length || 3;
   var newDate = new Date();
@@ -232,14 +232,14 @@ function drawSong(Song) {
     return false;
   }
   if (Song.img) {
-    var img = ge("SongImage");
+    var img = $("SongImage");
     img.src = Song.img.replace(/^http:\/\//i, 'https://');
   }
-  var title = ge("SongTitle");
+  var title = $("SongTitle");
   title.innerHTML = Song.name;
   title.setAttribute("title", Song.title + " by " + Song.author);
-  var links = ge("SongLinks");
-  var dlLinks = ge("SongDlLinks");
+  var links = $("SongLinks");
+  var dlLinks = $("SongDlLinks");
   for (var key in Song.links) {
     var link = Song.links[key];
     var a = newElem("a", links, "link");
@@ -281,7 +281,7 @@ function drawSong(Song) {
   if (Song.date) {
     if (Object.prototype.toString.call(Song.date) === "[object Date]") {
       var date = Song.date;
-      var dates = ge("ReleaseDate");
+      var dates = $("ReleaseDate");
       var date1 = newElem("div", dates, "dateText dateAbsolute");
       date1.innerHTML = date.toLocaleDateString([], {
         day: "numeric",
