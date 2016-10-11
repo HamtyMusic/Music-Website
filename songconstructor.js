@@ -228,7 +228,6 @@ function drawSongs(Songs) {
   return true;
 }
 function drawSong(Song) {
-  Song = Song || Songs[Song];
   if (Song) {} else {
     return false;
   }
