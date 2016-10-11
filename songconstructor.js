@@ -298,5 +298,8 @@ function drawSong(Song) {
       date2.setAttribute("title", (timeAgo(date)));
     }
   }
+  var price = Song.price || "Free";
+  $("SongPrice").innerHTML = price;
+  
   return true;
 }
