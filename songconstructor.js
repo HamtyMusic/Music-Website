@@ -1,4 +1,4 @@
-function $(id) { return document.getElementById(id) }
+function $(id) { return $(id) }
 function timeAgo(oldDate, length) {
   length = length || 3;
   var newDate = new Date();
@@ -102,7 +102,7 @@ function newElem(type, parent, class1) {
 }
 
 function hideSongs(Songs) {
-  var SongStorage = document.getElementById("SongStorage");
+  var SongStorage = $("SongStorage");
   if(!SongStorage) {
     SongStorage = newElem("div", document.body);
     SongStorage.id = "SongStorage";
@@ -111,7 +111,7 @@ function hideSongs(Songs) {
     if (Songs) {} else {
       return false;
     }
-    var songParent = document.getElementById("SongList");
+    var songParent = $("SongList");
     if(songParent) {} else {
       return false;
     }
@@ -132,7 +132,7 @@ function drawSongs(Songs) {
   if (Songs) {} else {
     return false;
   }
-  var songParent = document.getElementById("SongList");
+  var songParent = $("SongList");
   hideSongs(Songs);
   if (Songs.length == 0) {
     return false;
@@ -239,7 +239,9 @@ function drawSong(Song) {
   title.innerHTML = Song.name;
   title.setAttribute("title", Song.title + " by " + Song.author);
   var links = $("SongLinks");
+  links.innerHTML = "";
   var dlLinks = $("SongDlLinks");
+  dlLinks.innerHTML = "";
   for (var key in Song.links) {
     var link = Song.links[key];
     var a = newElem("a", links, "link");
