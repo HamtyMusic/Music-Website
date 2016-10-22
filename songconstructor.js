@@ -1,4 +1,4 @@
-function $(id) { return $(id) }
+function $(id) { return document.getElementById(id) }
 function timeAgo(oldDate, length) {
   length = length || 3;
   var newDate = new Date();
