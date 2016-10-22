@@ -283,8 +283,7 @@ function drawSong(Song) {
   if (Song.date) {
     if (Object.prototype.toString.call(Song.date) === "[object Date]") {
       var date = Song.date;
-      var dates = $("ReleaseDate");
-      var date1 = newElem("div", dates, "dateText dateAbsolute");
+      var date1 = $("dateAbsolute");
       date1.innerHTML = date.toLocaleDateString([], {
         day: "numeric",
         month: "short",
@@ -295,7 +294,7 @@ function drawSong(Song) {
         month: "long",
         year: "numeric"
       }) + " | " + date.toLocaleTimeString([])));
-      var date2 = newElem("div", dates, "dateText dateRelative");
+      var date2 = $("dateRelative");
       date2.innerHTML = (timeAgo(date, 1) + " ago");
       date2.setAttribute("title", (timeAgo(date)));
     }
