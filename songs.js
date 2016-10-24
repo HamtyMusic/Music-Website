@@ -1,4 +1,17 @@
 var Songs = {
+  promenade: {
+    name: "Hamty - Promenade",
+    title: "Promenade",
+    author: "Hamty",
+    img: "https://i.imgur.com/EOKKX6Z.jpg",
+    links: {
+      downloadFlac: "http://sh.st/4dIRW",
+      downloadMp3: "http://sh.st/4dIXo",
+      soundcloud: "https://soundcloud.com/hamty/promenade",
+      youtube: "https://youtu.be/2jD7uWM1edY"
+    },
+    date: new Date(2016, 6, 03)
+  },
   lockynAqua: {
     name: "Lockyn - Aqua ( Hamty\'s Remix )",
     title: "Aqua ( Hamty\'s Remix )",
