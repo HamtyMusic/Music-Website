@@ -2,6 +2,9 @@ function $(id) { return document.getElementById(id) }
 function timeAgo(oldDate, length) {
   length = length || 3;
   var newDate = new Date();
+  if((newDate - oldDate) < 0) {
+    return "Coming soon";
+  }
   var msInWeek = 1000 * 60 * 60 * 24 * 7,
     msInDay = 1000 * 60 * 60 * 24;
   var deltaYr = newDate.getFullYear() - oldDate.getFullYear();
@@ -47,7 +50,7 @@ function timeAgo(oldDate, length) {
   if (sb.length > length) {
     sb.length = length;
   }
-  return sb.join(', ');
+  return (sb.join(', ') + " ago");
 }
 
 function addEvent(elem, evnt, func) {
@@ -219,7 +222,7 @@ function drawSongs(Songs) {
           year: "numeric"
         }) + " | " + date.toLocaleTimeString([])));
         var date2 = newElem("div", dates, "dateText dateRelative");
-        date2.innerHTML = (timeAgo(date, 1) + " ago");
+        date2.innerHTML = timeAgo(date, 1);
         date2.setAttribute("title", (timeAgo(date)));
       }
     }
@@ -295,7 +298,7 @@ function drawSong(Song) {
         year: "numeric"
       }) + " | " + date.toLocaleTimeString([])));
       var date2 = $("dateRelative");
-      date2.innerHTML = (timeAgo(date, 1) + " ago");
+      date2.innerHTML = timeAgo(date, 1);
       date2.setAttribute("title", (timeAgo(date)));
     }
   }
