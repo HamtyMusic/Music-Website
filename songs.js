@@ -10,7 +10,7 @@ var Songs = {
       soundcloud: "https://soundcloud.com/hamty/promenade",
       youtube: "https://youtu.be/2jD7uWM1edY"
     },
-    date: new Date(2016, 10, 25)
+    date: new Date(2016, 9, 25)
   },
   lockynAqua: {
     name: "Lockyn - Aqua ( Hamty\'s Remix )",
