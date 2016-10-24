@@ -5,8 +5,8 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/EOKKX6Z.jpg",
     links: {
-      downloadFlac: "http://sh.st/4dIRW",
-      downloadMp3: "http://sh.st/4dIXo",
+      downloadFlac: "http://sh.st/4dPZJ",
+      downloadMp3: "http://sh.st/4dPYT",
       soundcloud: "https://soundcloud.com/hamty/promenade",
       youtube: "https://youtu.be/2jD7uWM1edY"
     },
