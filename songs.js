@@ -8,7 +8,8 @@ var Songs = {
       downloadFlac: "http://sh.st/4dPZJ",
       downloadMp3: "http://sh.st/4dPYT",
       soundcloud: "https://soundcloud.com/hamty/promenade",
-      youtube: "https://youtu.be/2jD7uWM1edY"
+      youtube: "https://youtu.be/2jD7uWM1edY",
+      bandcamp: "https://hamty.bandcamp.com/track/promenade"
     },
     date: new Date(2016, 9, 25)
   },
