@@ -305,11 +305,19 @@ function drawSong(Song) {
   var price = Song.price || "Free";
   $("SongPrice").innerHTML = price;
   
-  if(Song.links.youtube) { if(Song.links.youtube.id) {
-    var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
-    var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed shadow embed");
-    ytEmbed.src="https://www.youtube.com/embed/" + Song.links.youtube.id + "?autoplay=1&origin=" + (location.href || location || location.pathname);
+  if(Song.links.youtube) {
+    var ytid = Song.links.youtube.id;
+    if(ytid) {
+    if(window.ytEmbedWrap) {
+      if(ytEmbedWrap.dataset.id == ytid) {
+        $("embeds").appendChild(ytEmbedWrap);
+      }
+    }
+    window.ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
+    var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
+    ytEmbed.src="https://www.youtube.com/embed/" + ytid + "?autoplay=1&origin=" + (location.href || (location + "") || location.pathname);
     ytEmbed.setAttribute("frameborder", 0);
+    ytEmbedWrap.dataset.id = ytid;
   }}
   
   return true;
