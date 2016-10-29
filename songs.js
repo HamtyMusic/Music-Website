@@ -6,7 +6,9 @@ var Songs = {
     img: "https://i.imgur.com/EOKKX6Z.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/promenade",
-      youtubeId: "2jD7uWM1edY",
+      youtube: {
+        id: "2jD7uWM1edY"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/promenade"
     },
     download: {
@@ -22,7 +24,9 @@ var Songs = {
     img: "https://i.imgur.com/FNkzp0S.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/lockyn-aqua-remix",
-      youtubeId: "mEvwdNUg9jo"
+      youtube: {
+        id: "mEvwdNUg9jo"
+      },
     },
     download: {
       flac: "http://sh.st/HzIKA",
@@ -37,7 +41,9 @@ var Songs = {
     img: "https://i.imgur.com/YtgvHhF.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/sunshine",
-      youtubeId: "Z7T-bCQcJVQ",
+      youtube: {
+        id: "Z7T-bCQcJVQ"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/sunshine"
     },
     download: {
@@ -52,7 +58,9 @@ var Songs = {
     img: "https://i.imgur.com/yzV6gD5.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/sea-lights",
-      youtubeId: "UiGhXFMFY94",
+      youtube: {
+        id: "UiGhXFMFY94"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/sea-lights"
     },
     download: {
@@ -67,7 +75,9 @@ var Songs = {
     img: "https://i.imgur.com/7KvqLCa.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
-      youtubeId: "Idmo2W8zcAg",
+      youtube: {
+        id: "Idmo2W8zcAg"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/home"
     },
     download: {
@@ -82,7 +92,9 @@ var Songs = {
     img: "https://i.imgur.com/IW0fpVX.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/hamty-inspiration",
-      youtubeId: "Uo8Ozq5fZro",
+      youtube: {
+        id: "Uo8Ozq5fZro"
+      },
       bandcamp: "http://hamty.bandcamp.com/track/inspiration"
     },
     download: {
@@ -97,7 +109,9 @@ var Songs = {
     img: "https://i.imgur.com/SdQKV5Y.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
-      youtubeId: "edFv3BTwk5g",
+      youtube: {
+        id: "edFv3BTwk5g"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/river-journey"
     },
     download: {
@@ -112,7 +126,9 @@ var Songs = {
     img: "https://i.imgur.com/yMuBKFT.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/the-return",
-      youtubeId: "g5KG7cE5y44",
+      youtube: {
+        id: "g5KG7cE5y44"
+      },
       bandcamp: "https://hamty.bandcamp.com/track/the-return"
     },
     download: {
@@ -122,7 +138,9 @@ var Songs = {
   }
 }
 for (var i in Songs) {
-  if(Songs[i].links.youtubeId) {
-    Songs[i].links.youtube = "https://youtu.be/" + Songs[i].links.youtubeId;
+  if(Songs[i].links.youtube) {
+    if(Songs[i].links.youtube.id) {
+      Songs[i].links.youtube.href = "https://youtu.be/" + Songs[i].links.youtube.id;
+    }
   }
 }
