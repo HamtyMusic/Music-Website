@@ -244,12 +244,6 @@ function drawSong(Song) {
   var dlLinks = $("SongDlLinks");
   dlLinks.innerHTML = "";
   if(Song.download) {
-    var a = newElem("a", dlLinks, "link download-link");
-    a.setAttribute("title", "Click for download options");
-    var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
-    var dlbtn = newElem("img", a, "link-button ");
-    dlbtn.src = "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg";
-    dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png'";
     for (var key in Song.download) {
       var link = Song.download[key];
       var a = newElem("a", arrowBox, "link");
