@@ -308,8 +308,12 @@ function drawSong(Song) {
   if(Song.links.youtube) {
     var ytid = Song.links.youtube.id;
     if(ytid) {
-    if(window.curEmbed && (window.curEmbed.dataset.id == ytid)) {
-      
+    if(window.curEmbed) {
+      if(window.curEmbed.dataset.id == ytid) {
+        
+      } else {
+        window.curEmbed.outerHTML = "";
+      }
     } else {
       var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
       var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
