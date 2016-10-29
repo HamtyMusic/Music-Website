@@ -318,6 +318,7 @@ function drawSong(Song) {
     ytEmbed.src="https://www.youtube.com/embed/" + ytid + "?autoplay=1&origin=" + (location.href || (location + "") || location.pathname);
     ytEmbed.setAttribute("frameborder", 0);
     ytEmbedWrap.dataset.id = ytid;
+    window.curEmbed = ytEmbedWrap;
   }}
   
   return true;
