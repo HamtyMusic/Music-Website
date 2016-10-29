@@ -2,7 +2,7 @@ function $(id) { return document.getElementById(id) }
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
-Object.prototype.setVectorSource(id) {
+Object.prototype.setVectorSource = function(id) {
   if(id) {
     this.src = images[id].svg;
     this.onerror="this.onerror=null; this.src=\'" + images[id].png + "\'";
