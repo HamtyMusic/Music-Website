@@ -309,7 +309,7 @@ function drawSong(Song) {
     var ytid = Song.links.youtube.id;
     if(ytid) {
       if(window.curEmbedId != ytid) {
-        if(window.curEmbed.dataset.id != ytid) {
+        if(window.curEmbed) {
           window.curEmbed.outerHTML = "";
         }
         var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
