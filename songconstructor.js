@@ -175,6 +175,7 @@ function drawSongs(Songs) {
       for (var key in Song.download) {
         var link = Song.download[key];
         var a = newElem("a", arrowBox, "link");
+        link = (link.href) ? link.href : link;
         a.href = (link.constructor === Array) ? link.join("") : link;
         a.target = "_blank";
         var span = newElem("span", a, "link-description");
@@ -186,6 +187,7 @@ function drawSongs(Songs) {
     for (var key in Song.links) {
       var link = Song.links[key];
       var a = newElem("a", links, "link");
+      link = (link.href) ? link.href : link;
       a.href = (link.constructor === Array) ? link.join("") : link;
       a.target = "_blank";
       var dlbtn = newElem("img", a, "link-button");
@@ -252,6 +254,7 @@ function drawSong(Song) {
     for (var key in Song.download) {
       var link = Song.download[key];
       var a = newElem("a", arrowBox, "link");
+      link = (link.href) ? link.href : link;
       a.href = (link.constructor === Array) ? link.join("") : link;
       a.target = "_blank";
       var span = newElem("span", a, "link-description");
@@ -263,6 +266,7 @@ function drawSong(Song) {
   for (var key in Song.links) {
     var link = Song.links[key];
     var a = newElem("a", links, "link");
+    link = (link.href) ? link.href : link;
     a.href = (link.constructor === Array) ? link.join("") : link;
     a.target = "_blank";
     var dlbtn = newElem("img", a, "link-button");
