@@ -179,7 +179,6 @@ function drawSongs(Songs) {
         a.href = (link.constructor === Array) ? link.join("") : link;
         a.target = "_blank";
         var span = newElem("span", a, "link-description");
-        dlbtn.style.display = "none";
         a.setAttribute("title", ("Free Download ." + key + " (" + Song.name + ")"));
         span.innerHTML = "." + key;
       }
@@ -258,7 +257,6 @@ function drawSong(Song) {
       a.href = (link.constructor === Array) ? link.join("") : link;
       a.target = "_blank";
       var span = newElem("span", a, "link-description");
-      dlbtn.style.display = "none";
       a.setAttribute("title", ("Free Download ." + key + " (" + Song.name + ")"));
       span.innerHTML = "." + key;
     }
