@@ -196,8 +196,7 @@ function drawSongs(Songs) {
       a.setAttribute("title", "Click for download options");
       var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
       var dlbtn = newElem("img", a, "link-button ");
-      dlbtn.src = "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg";
-      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png'";
+      dlbtn.setVectorSource("download");
       for (var key in Song.download) {
         var link = Song.download[key];
         var a = newElem("a", arrowBox, "link");
@@ -217,16 +216,7 @@ function drawSongs(Songs) {
       a.target = "_blank";
       var dlbtn = newElem("img", a, "link-button");
       a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
-      if (key == "soundcloud") {
-        dlbtn.src = "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
-      } else if (key == "youtube") {
-        dlbtn.src = "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
-        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
-      } else if (key == "bandcamp") {
-        dlbtn.src = "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
-        dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
-      }
+      dlbtn.setVectorSource(key);
     }
     //Release Date
     if (Song.date) {
@@ -289,16 +279,7 @@ function drawSong(Song) {
     a.target = "_blank";
     var dlbtn = newElem("img", a, "link-button");
     a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
-    if (key == "soundcloud") {
-      dlbtn.src = "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg";
-      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png'";
-    } else if (key == "youtube") {
-      dlbtn.src = "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg";
-      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png'";
-    } else if (key == "bandcamp") {
-      dlbtn.src = "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg";
-      dlbtn.onerror="this.onerror=null; this.src='https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png'";
-    }
+    dlbtn.setVectorSource(key);
   }
 
   //Release Date
