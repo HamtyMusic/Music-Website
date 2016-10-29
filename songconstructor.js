@@ -318,6 +318,7 @@ function drawSong(Song) {
       ytEmbed.setAttribute("frameborder", 0);
       ytEmbedWrap.dataset.id = ytid;
       window.curEmbed = ytEmbedWrap;
+    }
   }
   
   return true;
