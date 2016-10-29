@@ -305,5 +305,12 @@ function drawSong(Song) {
   var price = Song.price || "Free";
   $("SongPrice").innerHTML = price;
   
+  if(Song.links.youtube) { if(Song.links.youtube.id) {
+    var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
+    var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
+    ytEmbed.src="https://www.youtube.com/embed/" + Song.links.youtube.id + "?autoplay=1&origin=" + (location.href || location || location.pathname);
+    ytEmbed.setAttribute("frameborder", 0);
+  }}
+  
   return true;
 }
