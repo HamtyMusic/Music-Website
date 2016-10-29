@@ -1,6 +1,32 @@
 function $(id) { return document.getElementById(id) }
 String.prototype.capFirstLetter = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
+Object.prototype.setVectorSource(id) {
+  if(id) {
+    this.src = images[id].svg;
+    this.onerror="this.onerror=null; this.src=\'" + images[id].png + "\'";
+  } else {
+    return false;
+  }
+}
+var images = {
+  soundcloud: {
+    svg: "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg",
+    png: "https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png"
+  },
+  youtube: {
+    svg: "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg",
+    png: "https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png"
+  },
+  bandcamp: {
+    svg: "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg",
+    png: "https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png"
+  },
+  download: {
+    svg: "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg",
+    png: "https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png"
+  }
 }
 function timeAgo(oldDate, length) {
   length = length || 3;
