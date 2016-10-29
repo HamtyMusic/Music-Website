@@ -307,7 +307,7 @@ function drawSong(Song) {
   
   if(Song.links.youtube) { if(Song.links.youtube.id) {
     var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
-    var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
+    var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed shadow embed");
     ytEmbed.src="https://www.youtube.com/embed/" + Song.links.youtube.id + "?autoplay=1&origin=" + (location.href || location || location.pathname);
     ytEmbed.setAttribute("frameborder", 0);
   }}
