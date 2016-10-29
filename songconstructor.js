@@ -246,7 +246,7 @@ function drawSong(Song) {
   if(Song.download) {
     for (var key in Song.download) {
       var link = Song.download[key];
-      var a = newElem("a", arrowBox, "link");
+      var a = newElem("a", dlLinks, "link");
       link = (link.href) ? link.href : link;
       a.href = (link.constructor === Array) ? link.join("") : link;
       a.target = "_blank";
