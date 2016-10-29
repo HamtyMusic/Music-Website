@@ -308,16 +308,17 @@ function drawSong(Song) {
   if(Song.links.youtube) {
     var ytid = Song.links.youtube.id;
     if(ytid) {
-    if((!window.curEmbed) || (window.curEmbed.dataset.id != ytid)) {
-      if(window.curEmbed.dataset.id != ytid) {
-        window.curEmbed.outerHTML = "";
+      if((!window.curEmbed) || (window.curEmbed.dataset.id != ytid)) {
+        if(window.curEmbed.dataset.id != ytid) {
+          window.curEmbed.outerHTML = "";
+        }
+        var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
+        var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
+        ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=1&origin=" + (location.href || (location + "") || location.pathname);
+        ytEmbed.setAttribute("frameborder", 0);
+        ytEmbedWrap.dataset.id = ytid;
+        window.curEmbed = ytEmbedWrap;
       }
-      var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
-      var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
-      ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=1&origin=" + (location.href || (location + "") || location.pathname);
-      ytEmbed.setAttribute("frameborder", 0);
-      ytEmbedWrap.dataset.id = ytid;
-      window.curEmbed = ytEmbedWrap;
     }
   }
   
