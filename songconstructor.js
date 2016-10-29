@@ -2,10 +2,10 @@ function $(id) { return document.getElementById(id) }
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
-Object.prototype.setVectorSource = function(id) {
-  if(id) {
-    this.src = images[id].svg;
-    this.onerror="this.onerror=null; this.src=\'" + images[id].png + "\'";
+function setVectorSource(elem, id) {
+  if(elem && id) {
+    elem.src = images[id].svg;
+    elem.onerror="this.onerror=null; this.src=\'" + images[id].png + "\'";
   } else {
     return false;
   }
@@ -196,7 +196,7 @@ function drawSongs(Songs) {
       a.setAttribute("title", "Click for download options");
       var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
       var dlbtn = newElem("img", a, "link-button ");
-      dlbtn.setVectorSource("download");
+      setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
         var link = Song.download[key];
         var a = newElem("a", arrowBox, "link");
@@ -216,7 +216,7 @@ function drawSongs(Songs) {
       a.target = "_blank";
       var dlbtn = newElem("img", a, "link-button");
       a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
-      dlbtn.setVectorSource(key);
+      setVectorSource(dlbtn, key);
     }
     //Release Date
     if (Song.date) {
@@ -279,7 +279,7 @@ function drawSong(Song) {
     a.target = "_blank";
     var dlbtn = newElem("img", a, "link-button");
     a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
-    dlbtn.setVectorSource(key);
+    setVectorSource(dlbtn, key);
   }
 
   //Release Date
