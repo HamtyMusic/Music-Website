@@ -8,7 +8,7 @@ var Songs = {
       downloadFlac: "http://sh.st/4dPZJ",
       downloadMp3: "http://sh.st/4dPYT",
       soundcloud: "https://soundcloud.com/hamty/promenade",
-      youtube: "https://youtu.be/2jD7uWM1edY",
+      youtube: "2jD7uWM1edY",
       bandcamp: "https://hamty.bandcamp.com/track/promenade"
     },
     date: new Date(2016, 9, 25)
@@ -22,7 +22,7 @@ var Songs = {
       downloadFlac: "http://sh.st/HzIKA",
       downloadMp3: "http://sh.st/HzP5W",
       soundcloud: "https://soundcloud.com/hamty/lockyn-aqua-remix",
-      youtube: "https://youtu.be/mEvwdNUg9jo"
+      youtube: "mEvwdNUg9jo"
     },
     date: new Date(2016, 6, 3)
   },
@@ -34,7 +34,7 @@ var Songs = {
     links: {
       downloadMp3: "http://sh.st/nqRuX",
       soundcloud: "https://soundcloud.com/hamty/sunshine",
-      youtube: "https://youtu.be/Z7T-bCQcJVQ",
+      youtube: "Z7T-bCQcJVQ",
       bandcamp: "https://hamty.bandcamp.com/track/sunshine"
     },
     date: new Date(2015, 10, 21)
@@ -47,7 +47,7 @@ var Songs = {
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1JcSyZ"],
       soundcloud: "https://soundcloud.com/hamty/sea-lights",
-      youtube: "https://www.youtube.com/watch?v=UiGhXFMFY94",
+      youtube: "UiGhXFMFY94",
       bandcamp: "https://hamty.bandcamp.com/track/sea-lights"
     },
     date: new Date(2015, 5, 22, 19)
@@ -60,7 +60,7 @@ var Songs = {
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "1Bkfyo"],
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
-      youtube: "https://www.youtube.com/watch?v=Idmo2W8zcAg",
+      youtube: "Idmo2W8zcAg",
       bandcamp: "https://hamty.bandcamp.com/track/home"
     },
     date: new Date(2015, 2, 25)
@@ -73,7 +73,7 @@ var Songs = {
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "wTZVo"],
       soundcloud: "https://soundcloud.com/hamty/hamty-inspiration",
-      youtube: "https://www.youtube.com/watch?v=Uo8Ozq5fZro",
+      youtube: "Uo8Ozq5fZro",
       bandcamp: "http://hamty.bandcamp.com/track/inspiration"
     },
     date: new Date(2015, 0, 20)
@@ -86,7 +86,7 @@ var Songs = {
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDPor"],
       soundcloud: "https://soundcloud.com/hamty/hamty-home",
-      youtube: "https://www.youtube.com/watch?v=edFv3BTwk5g",
+      youtube: "edFv3BTwk5g",
       bandcamp: "https://hamty.bandcamp.com/track/river-journey"
     },
     date: new Date(2014, 8, 16)
@@ -99,7 +99,7 @@ var Songs = {
     links: {
       downloadMp3: ["http://", "adf", ".ly/", "sDQXi"],
       soundcloud: "https://soundcloud.com/hamty/the-return",
-      youtube: "https://www.youtube.com/watch?v=g5KG7cE5y44",
+      youtube: "g5KG7cE5y44",
       bandcamp: "https://hamty.bandcamp.com/track/the-return"
     },
     date: new Date(2014, 6, 17)
