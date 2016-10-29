@@ -106,7 +106,7 @@ var Songs = {
   }
 }
 for (var i in Songs) {
-  if(Songs[i].youtubeId) {
-    Songs[i].youtube = "https://youtu.be/" + Songs[i].youtubeId;
+  if(Songs[i].links.youtubeId) {
+    Songs[i].links.youtube = "https://youtu.be/" + Songs[i].links.youtubeId;
   }
 }
