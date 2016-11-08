@@ -22,6 +22,9 @@
   .shadow {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
+  a.shadow:hover a:hover .shadow, input.shadow:hover, input.shadow:focus, input.shadow:not([value=""]) {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
   .pb {
     width:100%;
     background:#fff;
