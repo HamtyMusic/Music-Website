@@ -222,8 +222,8 @@ var Songs = {
     date: new Date(2014, 4, 3)
   },
   morningAtMountains: {
-    name: "Hamty - Morning At Mountains",
-    title: "Morning At Mountains",
+    name: "Hamty - Morning at Mountains",
+    title: "Morning at Mountains",
     author: "Hamty",
     img: "https://i.imgur.com/GRXKIcW.jpg",
     links: {
@@ -237,6 +237,40 @@ var Songs = {
       mp3: "http://vk.com/doc73722124_289449116"
     },
     date: new Date(2014, 3, 15)
+  },
+  skyIsYours: {
+    name: "Hamty - The Sky Is Yours",
+    title: "The Sky Is Yours",
+    author: "Hamty",
+    img: "https://i.imgur.com/sDlSDMJ.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/the-sky-is-yours",
+      youtube: {
+        id: "pPoXW-mXfdQ"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/the-sky-is-yours"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_285878202"
+    },
+    date: new Date(2014, 3, 3)
+  },
+  dayBeforeTommorow : {
+    name: "Hamty - A Day Before Tommorow",
+    title: "A Day Before Tommorow",
+    author: "Hamty",
+    img: "http://i.imgur.com/dGxI92Q.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/a-day-before-tommorow",
+      youtube: {
+        id: "BIvzkdIkS20"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/a-day-before-tommorow"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_284248677"
+    },
+    date: new Date(2014, 2, 29)
   }
 }
 for (var i in Songs) {
