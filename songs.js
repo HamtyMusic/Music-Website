@@ -255,11 +255,11 @@ var Songs = {
     },
     date: new Date(2014, 3, 3)
   },
-  dayBeforeTommorow : {
+  dayBeforeTommorow: {
     name: "Hamty - A Day Before Tommorow",
     title: "A Day Before Tommorow",
     author: "Hamty",
-    img: "http://i.imgur.com/dGxI92Q.jpg",
+    img: "https://i.imgur.com/dGxI92Q.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/a-day-before-tommorow",
       youtube: {
@@ -271,6 +271,40 @@ var Songs = {
       mp3: "http://vk.com/doc73722124_284248677"
     },
     date: new Date(2014, 2, 29)
+  },
+  lonelyIsland: {
+    name: "Hamty - Lonely Island",
+    title: "Lonely Island",
+    author: "Hamty",
+    img: "https://i.imgur.com/571H9cx.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/lonely-island",
+      youtube: {
+        id: "I5YiQ2pNDKg"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/lonely-island"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_269169331"
+    },
+    date: new Date(2014, 1, 8)
+  },
+  сupcake: {
+    name: "Hamty - Cupcake",
+    title: "Cupcake",
+    author: "Hamty",
+    img: "https://i.imgur.com/5mNRgLp.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/cupcake",
+      youtube: {
+        id: "rW5h_FAzc7c"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/cupcake"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_262489411"
+    },
+    date: new Date(2014, 0, 18)
   }
 }
 for (var i in Songs) {
