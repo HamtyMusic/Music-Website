@@ -314,7 +314,7 @@ function drawSong(Song) {
         }
         var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
         var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
-        ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=1&origin=" + (location.href || (location + "") || location.pathname);
+        ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
         ytEmbed.setAttribute("frameborder", 0);
         window.curEmbed = ytEmbedWrap;
         window.curEmbedId = ytid;
