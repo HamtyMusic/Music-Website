@@ -134,7 +134,7 @@ var Songs = {
     download: {
       mp3: ["http://", "adf", ".ly/", "sDQXi"]
     },
-    date: new Date(2014, 6, 17)
+    date: new Date(2014, 5, 17)
   },
   timeRift: {
     name: "Hamty - Time Rift",
@@ -151,7 +151,7 @@ var Songs = {
     download: {
       mp3: ["http://", "adf", ".ly/", "sDQnR"]
     },
-    date: new Date(2014, 5, 18)
+    date: new Date(2014, 5, 17)
   },
   adventure: {
     name: "Hamty - The Adventure",
@@ -168,7 +168,7 @@ var Songs = {
     download: {
       mp3: ["http://", "adf", ".ly/", "wTZVo"]
     },
-    date: new Date(2014, 4, 30)
+    date: new Date(2014, 4, 31)
   }
 }
 for (var i in Songs) {
