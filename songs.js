@@ -289,7 +289,7 @@ var Songs = {
     },
     date: new Date(2014, 1, 8)
   },
-  сupcake: {
+  cupcake: {
     name: "Hamty - Cupcake",
     title: "Cupcake",
     author: "Hamty",
@@ -305,6 +305,91 @@ var Songs = {
       mp3: "http://vk.com/doc73722124_262489411"
     },
     date: new Date(2014, 0, 18)
+  },
+  upInTheSky: {
+    name: "Hamty - Up in the Sky",
+    title: "Up in the Sky",
+    author: "Hamty",
+    img: "https://i.imgur.com/oG4lwCE.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/up-in-the-sky",
+      youtube: {
+        id: "5sWDRztm1mc"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/up-in-the-sky"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_256971167"
+    },
+    date: new Date(2014, 0, 1)
+  },
+  snowglobe: {
+    name: "Hamty - Snowglobe",
+    title: "Snowglobe",
+    author: "Hamty",
+    img: "https://i.imgur.com/jrzrYgL.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/snowglobe",
+      youtube: {
+        id: "GIYzDxHWrN0"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/snowglobe"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_267812810"
+    },
+    date: new Date(2013, 11, 21)
+  },
+  winterTime: {
+    name: "Hamty - Winter Time",
+    title: "Winter Time",
+    author: "Hamty",
+    img: "https://i.imgur.com/RXbjYM9.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/winter-time",
+      youtube: {
+        id: "a6h9m_VJ2Ao"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/winter-time"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_267810165"
+    },
+    date: new Date(2013, 11, 21)
+  },
+  sleepingCity: {
+    name: "Hamty - Sleeping City",
+    title: "Sleeping City",
+    author: "Hamty",
+    img: "https://i.imgur.com/TxmXLHn.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/sleeping-city",
+      youtube: {
+        id: "yZFzIMOpOCs"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/sleeping-city"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_267805133"
+    },
+    date: new Date(2013, 11, 13)
+  },
+  cubeGame: {
+    name: "Hamty - The Cube Game",
+    title: "The Cube Game",
+    author: "Hamty",
+    img: "https://i.imgur.com/skzGfmK.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/the-cube-game",
+      youtube: {
+        id: "TnKZk7iBMhk"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/the-cube-game"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_267800668"
+    },
+    date: new Date(2013, 11, 8)
   }
 }
 for (var i in Songs) {
