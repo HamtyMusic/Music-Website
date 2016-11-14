@@ -203,6 +203,40 @@ var Songs = {
       mp3: ["http://", "adf", ".ly/", "sDRMG"]
     },
     date: new Date(2014, 4, 10)
+  },
+  night: {
+    name: "Hamty - Night",
+    title: "Night",
+    author: "Hamty",
+    img: "https://i.imgur.com/qZtcOwO.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/night",
+      youtube: {
+        id: "AbjsM2ZjVYk"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/night"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_294652636"
+    },
+    date: new Date(2014, 4, 3)
+  },
+  morningAtMountains: {
+    name: "Hamty - Morning At Mountains",
+    title: "Morning At Mountains",
+    author: "Hamty",
+    img: "https://i.imgur.com/GRXKIcW.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/morning-at-mountains",
+      youtube: {
+        id: "H2xDQTu6TiE"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/morning-at-mountains"
+    },
+    download: {
+      mp3: "http://vk.com/doc73722124_289449116"
+    },
+    date: new Date(2014, 3, 15)
   }
 }
 for (var i in Songs) {
