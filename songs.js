@@ -134,7 +134,7 @@ var Songs = {
     download: {
       mp3: ["http://", "adf", ".ly/", "sDQXi"]
     },
-    date: new Date(2014, 5, 17)
+    date: new Date(2014, 6, 17)
   },
   timeRift: {
     name: "Hamty - Time Rift",
@@ -157,7 +157,7 @@ var Songs = {
     name: "Hamty - The Adventure",
     title: "The Adventure",
     author: "Hamty",
-    img: "http://i.imgur.com/HzsEy9F.jpg",
+    img: "https://i.imgur.com/HzsEy9F.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/the-adventure",
       youtube: {
@@ -169,6 +169,40 @@ var Songs = {
       mp3: ["http://", "adf", ".ly/", "wTZVo"]
     },
     date: new Date(2014, 4, 31)
+  },
+  waterfall: {
+    name: "Hamty - Waterfall",
+    title: "The Waterfall",
+    author: "Hamty",
+    img: "https://i.imgur.com/XDUzgw6.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/waterfall",
+      youtube: {
+        id: "WsDoJDo_r7o"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/waterfall"
+    },
+    download: {
+      mp3: ["http://", "adf", ".ly/", "sDR6S"]
+    },
+    date: new Date(2014, 4, 18)
+  },
+  dream: {
+    name: "Hamty - The Dream",
+    title: "The Dream",
+    author: "Hamty",
+    img: "https://i.imgur.com/8JFCdU0.jpg",
+    links: {
+      soundcloud: "https://soundcloud.com/hamty/the-dream",
+      youtube: {
+        id: "Ok-iXgMPFh8"
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/the-dream"
+    },
+    download: {
+      mp3: ["http://", "adf", ".ly/", "sDRMG"]
+    },
+    date: new Date(2014, 4, 10)
   }
 }
 for (var i in Songs) {
