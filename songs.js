@@ -89,7 +89,7 @@ var Songs = {
     name: "Hamty - Inspiration",
     title: "Inspiration",
     author: "Hamty",
-    img: "https://i.imgur.com/IW0fpVX.jpg",
+    img: "https://i.imgur.com/0eU7A0y.jpg",
     links: {
       soundcloud: "https://soundcloud.com/hamty/hamty-inspiration",
       youtube: {
