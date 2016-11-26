@@ -5,7 +5,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/EOKKX6Z.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/promenade",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/promenade",
+        id: "289789969"
+      },
       youtube: {
         id: "2jD7uWM1edY"
       },
