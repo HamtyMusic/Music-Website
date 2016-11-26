@@ -310,30 +310,24 @@ function drawSong(Song) {
   var price = Song.price || "Free";
   $("#SongPrice")[0].innerHTML = price;
   
+  if(window.curEmbedSong != Song) {
+    $("#embeds")[0].innerHTML = "";
+    window.curEmbedSong = Song;
+  }
   if(Song.links.youtube) {
     var ytid = Song.links.youtube.id;
     if(ytid) {
-      try {
-        if(window.curYtEmbedId != ytid) {
-          if(window.curYtEmbed) {
-            window.curYtEmbed.outerHTML = "";
-          }
-          var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap");
-          var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
-          ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
-          ytEmbed.setAttribute("frameborder", 0);
-          window.curYtEmbed = ytEmbedWrap;
-          window.curYtEmbedId = ytid;
-        }
-      } catch(e) {}
+      var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap");
+      var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
+      ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
+      ytEmbed.setAttribute("frameborder", 0);
+      window.curYtEmbed = ytEmbedWrap;
+      window.curYtEmbedId = ytid;
     }
   }
   if(Song.links.soundcloud) {
     scid = Song.links.soundcloud.id;
-    if(scid & window.curScEmbedId != scid) {
-      if(window.curScEmbed) {
-        window.curScEmbed.outerHTML = "";
-      }
+    if(scid) {
       var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap");
       var scEmbed = newElem("iframe", scEmbedWrap, "sc-embed embed");
       scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&color=ff5500&auto_play=false&amp;show_comments=true&show_artwork=false";
