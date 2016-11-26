@@ -328,9 +328,9 @@ function drawSong(Song) {
       } catch(e) {}
     }
   }
-  if(Song.scid) {
-    scId = Song.scid;
-    if(window.curScEmbedId != scid) {
+  if(Song.links.soundcloud) {
+    scid = Song.links.soundcloud.id;
+    if(scid & window.curScEmbedId != scid) {
       if(window.curScEmbed) {
         window.curScEmbed.outerHTML = "";
       }
