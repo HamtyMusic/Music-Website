@@ -324,7 +324,7 @@ function drawSong(Song) {
           window.curEmbed = ytEmbedWrap;
           window.curEmbedId = ytid;
         }
-      }
+      } catch(e) {}
     }
   }
   if(Song.links.soundcloud) {
