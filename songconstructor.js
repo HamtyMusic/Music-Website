@@ -329,10 +329,11 @@ function drawSong(Song) {
   }
   if(Song.links.soundcloud) {
     var scEmbedWrap = newElem("div", $("embeds"), "sc-embed-wrap embed-wrap");
+    scEmbedWrap.id = "scEmbedWrap"
     ToneDenReady = window.ToneDenReady || [];
     ToneDenReady.push(function() {
       ToneDen.player.create({
-        dom: ".sc-embed-wrap",
+        dom: "#scEmbedWrap",
         urls: [Song.links.soundcloud]
       });
     });
