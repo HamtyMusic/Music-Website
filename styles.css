@@ -33,11 +33,11 @@ a.shadow, a .shadow, input.shadow {
   background:#fff;
   padding:1em;
 }
-.lighten, .lighten:active {
-  opacity: 1;
-}
 .lighten:hover {
   opacity: 0.9;
+}
+.lighten, .lighten:active {
+  opacity: 1;
 }
 .nopad {
   padding:0;
