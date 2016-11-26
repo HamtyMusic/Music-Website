@@ -183,7 +183,7 @@ function drawSongs(Songs) {
     var wrap = newElem("div", songParent, "song-wrap");
     var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
-      var imgPar = newElem("a", elem, "song-image-parent");
+      var imgPar = newElem("a", elem, "song-image-parent lighten");
       imgPar.href = "#" + i;
       var img = newElem("img", imgPar, "song-image shadow");
       img.src = Song.img.replace(/^http:\/\//i, 'https://');
