@@ -332,7 +332,7 @@ function drawSong(Song) {
     ToneDenReady = window.ToneDenReady || [];
     ToneDenReady.push(function() {
       ToneDen.player.create({
-        dom: scEmbedWrap,
+        dom: ".sc-embed-wrap",
         urls: [Song.links.soundcloud]
       });
     });
