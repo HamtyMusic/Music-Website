@@ -26,7 +26,10 @@ var Songs = {
     author: "Lockyn",
     img: "https://i.imgur.com/FNkzp0S.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/lockyn-aqua-remix",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/lockyn-aqua-remix",
+        id: "272023163"
+	    },
       youtube: {
         id: "mEvwdNUg9jo"
       },
@@ -43,7 +46,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/YtgvHhF.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/sunshine",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/sunshine",
+        id: "234120701"
+	    },
       youtube: {
         id: "Z7T-bCQcJVQ"
       },
@@ -60,7 +66,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/yzV6gD5.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/sea-lights",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/sea-lights",
+        id: "211472761"
+	    },
       youtube: {
         id: "UiGhXFMFY94"
       },
@@ -77,7 +86,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/7KvqLCa.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/hamty-home",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/hamty-home",
+        id: "197628146"
+	    },
       youtube: {
         id: "Idmo2W8zcAg"
       },
@@ -94,7 +106,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/0eU7A0y.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/hamty-inspiration",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/hamty-inspiration",
+        id: "188781969"
+	    },
       youtube: {
         id: "Uo8Ozq5fZro"
       },
@@ -111,7 +126,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/SdQKV5Y.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/hamty-home",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/hamty-home",
+        id: "168005259"
+	    },
       youtube: {
         id: "edFv3BTwk5g"
       },
@@ -128,7 +146,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/yMuBKFT.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/the-return",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/the-return",
+        id: "159126579"
+	    },
       youtube: {
         id: "g5KG7cE5y44"
       },
@@ -145,7 +166,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/MXMrcYl.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/time-rift",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/time-rift",
+        id: "154753490"
+	    },
       youtube: {
         id: "eMzHfDn8oxQ"
       },
@@ -162,7 +186,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/HzsEy9F.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/the-adventure",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/the-adventure",
+        id: "152132897"
+	    },
       youtube: {
         id: "YJvl1S2oPZk"
       },
@@ -179,7 +206,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/XDUzgw6.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/waterfall",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/waterfall",
+        id: "150125450"
+	    },
       youtube: {
         id: "WsDoJDo_r7o"
       },
@@ -196,7 +226,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/8JFCdU0.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/the-dream",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/the-dream",
+        id: "148844848"
+	    },
       youtube: {
         id: "Ok-iXgMPFh8"
       },
@@ -213,7 +246,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/qZtcOwO.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/night",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/night",
+        id: "147683128"
+	    },
       youtube: {
         id: "AbjsM2ZjVYk"
       },
@@ -230,7 +266,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/GRXKIcW.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/morning-at-mountains",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/morning-at-mountains",
+        id: "144771494"
+	    },
       youtube: {
         id: "H2xDQTu6TiE"
       },
@@ -247,7 +286,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/sDlSDMJ.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/the-sky-is-yours",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/the-sky-is-yours",
+        id: "142873172"
+	    },
       youtube: {
         id: "pPoXW-mXfdQ"
       },
@@ -264,7 +306,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/dGxI92Q.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/a-day-before-tommorow",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/a-day-before-tommorow",
+        id: "142003805"
+	    },
       youtube: {
         id: "BIvzkdIkS20"
       },
@@ -281,7 +326,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/571H9cx.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/lonely-island",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/lonely-island",
+        id: "133859908"
+	    },
       youtube: {
         id: "I5YiQ2pNDKg"
       },
@@ -298,7 +346,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/5mNRgLp.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/cupcake",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/cupcake",
+        id: "130147289"
+	    },
       youtube: {
         id: "rW5h_FAzc7c"
       },
@@ -315,7 +366,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/oG4lwCE.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/up-in-the-sky",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/up-in-the-sky",
+        id: "127409517"
+	    },
       youtube: {
         id: "5sWDRztm1mc"
       },
@@ -332,7 +386,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/jrzrYgL.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/snowglobe",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/snowglobe",
+        id: "125914573"
+	    },
       youtube: {
         id: "GIYzDxHWrN0"
       },
@@ -349,7 +406,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/RXbjYM9.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/winter-time",
+      soundcloud: {
+	    href: "https://soundcloud.com/hamty/winter-time",
+        id: "125861775"
+	    },
       youtube: {
         id: "a6h9m_VJ2Ao"
       },
@@ -366,7 +426,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/TxmXLHn.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/sleeping-city",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/sleeping-city",
+        id: "125435154"
+	    },
       youtube: {
         id: "yZFzIMOpOCs"
       },
@@ -383,7 +446,10 @@ var Songs = {
     author: "Hamty",
     img: "https://i.imgur.com/skzGfmK.jpg",
     links: {
-      soundcloud: "https://soundcloud.com/hamty/the-cube-game",
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/the-cube-game",
+        id: "125435167"
+	    },
       youtube: {
         id: "TnKZk7iBMhk"
       },
