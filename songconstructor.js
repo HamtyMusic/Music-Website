@@ -1,4 +1,5 @@
-function $(id) { return document.getElementById(id) }
+function $(q) { return document.querySelectorAll(q) }
+
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -138,7 +139,7 @@ function newElem(type, parent, class1) {
 }
 
 function hideSongs(Songs) {
-  var SongStorage = $("SongStorage");
+  var SongStorage = $("#SongStorage");
   if(!SongStorage) {
     SongStorage = newElem("div", document.body);
     SongStorage.id = "SongStorage";
@@ -147,7 +148,7 @@ function hideSongs(Songs) {
     if (Songs) {} else {
       return false;
     }
-    var songParent = $("SongList");
+    var songParent = $("#SongList");
     if(songParent) {} else {
       return false;
     }
@@ -168,7 +169,7 @@ function drawSongs(Songs) {
   if (Songs) {} else {
     return false;
   }
-  var songParent = $("SongList");
+  var songParent = $("#SongList");
   hideSongs(Songs);
   if (Songs.length == 0) {
     return false;
@@ -252,16 +253,16 @@ function drawSong(Song) {
     return false;
   }
   if (Song.img) {
-    var img = $("SongImage");
+    var img = $("#SongImage");
     img.src = Song.img.replace(/^http:\/\//i, 'https://');
   }
-  var title = $("SongTitle");
+  var title = $("#SongTitle");
   title.innerHTML = Song.name;
   title.setAttribute("title", Song.title + " by " + Song.author);
   
-  var links = $("SongLinks");
+  var links = $("#SongLinks");
   links.innerHTML = "";
-  var dlLinks = $("SongDlLinks");
+  var dlLinks = $("#SongDlLinks");
   dlLinks.innerHTML = "";
   if(Song.download) {
     for (var key in Song.download) {
@@ -290,7 +291,7 @@ function drawSong(Song) {
   if (Song.date) {
     if (Object.prototype.toString.call(Song.date) === "[object Date]") {
       var date = Song.date;
-      var date1 = $("dateAbsolute");
+      var date1 = $("#dateAbsolute");
       date1.innerHTML = date.toLocaleDateString([], {
         day: "numeric",
         month: "short",
@@ -301,42 +302,45 @@ function drawSong(Song) {
         month: "long",
         year: "numeric"
       }) + " | " + date.toLocaleTimeString([])));
-      var date2 = $("dateRelative");
+      var date2 = $("#dateRelative");
       date2.innerHTML = timeAgo(date, 1);
       date2.setAttribute("title", (timeAgo(date)));
     }
   }
   var price = Song.price || "Free";
-  $("SongPrice").innerHTML = price;
+  $("#SongPrice").innerHTML = price;
   
   if(Song.links.youtube) {
     var ytid = Song.links.youtube.id;
     if(ytid) {
       try {
-        if(window.curEmbedId != ytid) {
-          if(window.curEmbed) {
-            window.curEmbed.outerHTML = "";
+        if(window.curYtEmbedId != ytid) {
+          if(window.curYtEmbed) {
+            window.curYtEmbed.outerHTML = "";
           }
-          var ytEmbedWrap = newElem("div", $("embeds"), "yt-embed-wrap embed-wrap");
+          var ytEmbedWrap = newElem("div", $("#embeds"), "yt-embed-wrap embed-wrap");
           var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
           ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
           ytEmbed.setAttribute("frameborder", 0);
-          window.curEmbed = ytEmbedWrap;
-          window.curEmbedId = ytid;
+          window.curYtEmbed = ytEmbedWrap;
+          window.curYtEmbedId = ytid;
         }
       } catch(e) {}
     }
   }
-  if(Song.links.soundcloud) {
-    var scEmbedWrap = newElem("div", $("embeds"), "sc-embed-wrap embed-wrap");
-    scEmbedWrap.id = "scEmbedWrap"
-    ToneDenReady = window.ToneDenReady || [];
-    ToneDenReady.push(function() {
-      ToneDen.player.create({
-        dom: "#scEmbedWrap",
-        urls: [Song.links.soundcloud]
-      });
-    });
+  if(Song.scid) {
+    scId = Song.scid;
+    if(window.curScEmbedId != scid) {
+      if(window.curScEmbed) {
+        window.curScEmbed.outerHTML = "";
+      }
+      var scEmbedWrap = newElem("div", $("#embeds"), "sc-embed-wrap embed-wrap");
+      var scEmbed = newElem("iframe", scEmbedWrap, "sc-embed embed");
+      scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&color=ff5500&auto_play=false&amp;show_comments=true&show_artwork=false";
+      scEmbed.setAttribute("frameborder", 0);
+      window.curScEmbed = scEmbedWrap;
+      window.curScEmbedId = scid;
+    }
   }
   return true;
 }
