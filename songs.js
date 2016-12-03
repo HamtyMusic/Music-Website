@@ -1,4 +1,25 @@
 var Songs = {
+  nightOwls: {
+    name: "3MBER & SRK - Night Owls (Hamty's Remix)",
+    title: "Night Owls (Hamty\'s Remix)",
+    author: "3MBER \& SRK",
+    img: "i.imgur.com/66DWb0p.jpg",
+    links: {
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/promenade",
+        id: "289789969"
+      },
+      youtube: {
+        id: "65F6nA7xdTs"
+      },
+      bandcamp: ""
+    },
+    download: {
+      flac: "",
+      mp3: ""
+    },
+    date: new Date(2016, 10, 3)
+  },
   promenade: {
     name: "Hamty - Promenade",
     title: "Promenade",
@@ -33,6 +54,7 @@ var Songs = {
       youtube: {
         id: "mEvwdNUg9jo"
       },
+      bandcamp: "https://hamty.bandcamp.com/track/aqua-hamtys-remix"
     },
     download: {
       flac: "http://sh.st/HzIKA",
