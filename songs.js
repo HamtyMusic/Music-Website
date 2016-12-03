@@ -11,7 +11,8 @@ var Songs = {
       },
       youtube: {
         id: "65F6nA7xdTs"
-      }
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
     },
     date: new Date(2016, 11, 3)
   },
