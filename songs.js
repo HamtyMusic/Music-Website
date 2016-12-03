@@ -11,12 +11,7 @@ var Songs = {
       },
       youtube: {
         id: "65F6nA7xdTs"
-      },
-      bandcamp: ""
-    },
-    download: {
-      flac: "",
-      mp3: ""
+      }
     },
     date: new Date(2016, 11, 3)
   },
