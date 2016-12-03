@@ -14,6 +14,10 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
     },
+    download: {
+      flac: "http://viid.me/qw3mvz",
+      mp3: "http://viid.me/qw3nlY"
+    },
     date: new Date(2016, 11, 3)
   },
   promenade: {
