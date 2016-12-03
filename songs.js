@@ -3,7 +3,7 @@ var Songs = {
     name: "3MBER & SRK - Night Owls (Hamty's Remix)",
     title: "Night Owls (Hamty\'s Remix)",
     author: "3MBER \& SRK",
-    img: "i.imgur.com/66DWb0p.jpg",
+    img: "https://i.imgur.com/66DWb0p.jpg",
     links: {
       soundcloud: {
         href: "https://soundcloud.com/hamty/promenade",
@@ -18,7 +18,7 @@ var Songs = {
       flac: "",
       mp3: ""
     },
-    date: new Date(2016, 10, 3)
+    date: new Date(2016, 11, 3)
   },
   promenade: {
     name: "Hamty - Promenade",
