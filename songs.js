@@ -6,8 +6,8 @@ var Songs = {
     img: "https://i.imgur.com/66DWb0p.jpg",
     links: {
       soundcloud: {
-        href: "https://soundcloud.com/hamty/promenade",
-        id: "289789969"
+        href: "https://soundcloud.com/hamty/3mber-srk-night-owls-remix",
+        id: "296019861"
       },
       youtube: {
         id: "65F6nA7xdTs"
