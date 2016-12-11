@@ -79,7 +79,7 @@ function LetItSnow() {
   }
 }
 (function() {
-  var m = month(getCurrentMonth());
+  var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
     window.addEventListener("load", LetItSnow);
   }
