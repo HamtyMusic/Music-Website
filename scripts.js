@@ -8,7 +8,10 @@ function LetItSnow() {
     framerate = 30,
     flakeNumberModifier = 0.1,
     fallSpeedModifier = 0.4;
-  var canvas = document.createElement("CANVAS");
+  var canvas = document.getElementById(snowCanvasId);
+  if(!canvas) {
+    canvas = document.createElement("CANVAS");
+  }
   canvas.id = snowCanvasId;
   document.body.appendChild(canvas);
   var context = canvas.getContext("2d"),
