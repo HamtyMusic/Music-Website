@@ -98,6 +98,18 @@ a.shadow, a .shadow, input.shadow {
   border-top-color: rgba(160, 174, 239, .8);
   border-radius: 100%;
 }
+#snowCanvas {
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  z-index:999999999999;
+  top:0;
+  left:0;
+  pointer-events: none;
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  -o-pointer-events: none;
+}
 @keyframes rotation {
   from { transform: rotate(0deg); }
   to { transform: rotate(359deg); }
