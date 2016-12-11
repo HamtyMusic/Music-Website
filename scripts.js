@@ -22,6 +22,8 @@ function LetItSnow() {
   if(canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    snowCanvas.numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier;
+    snowCanvas.flakes = [];
     for(var x = 0; x < snowCanvas.numFlakes; x++) {
       snowCanvas.flakes[x] = getRandomFlake(true);
     }
@@ -33,11 +35,11 @@ function LetItSnow() {
   var context = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
-    numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier,
     TWO_PI = Math.PI * 2,
     radHeight = 40;
-  window.snowCanvas = [];
-  window.snowCanvas.flakes = [];
+  window.snowCanvas = {};
+  snowCanvas.numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier;
+  snowCanvas.flakes = [];
   canvas.width = width;
   canvas.height = height;
   console.log(width + "x" + height);
@@ -102,6 +104,7 @@ function LetItSnow() {
   var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
     window.addEventListener("load", LetItSnow);
+    window.addEventListener("resize", LetItSnow);
   }
 })();
 
