@@ -53,6 +53,7 @@ a.shadow, a .shadow, input.shadow {
   position:relative;
   display:block;
   margin-top:1em;
+  margin-top:0;
 }
 @media only screen and (min-width: 1000px) {
   .banner-wrap {
