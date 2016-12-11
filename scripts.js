@@ -13,6 +13,7 @@ function LetItSnow() {
     canvas.outerHTML = "";
     return LetItSnow();
   }
+  canvas = document.createElement("CANVAS");
   canvas.id = snowCanvasId;
   document.body.appendChild(canvas);
   var context = canvas.getContext("2d"),
