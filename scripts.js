@@ -2,16 +2,6 @@ var month = ["January", "February", "March", "April", "May", "June", "July", "Au
 function getCurrentMonth() {
   return (new Date()).getMonth()
 }
-CanvasRenderingContext2D.prototype.clear = CanvasRenderingContext2D.prototype.clear || function (preserveTransform) {
-  if (preserveTransform) {
-    this.save();
-    this.setTransform(1, 0, 0, 1, 0, 0);
-  }
-  this.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  if (preserveTransform) {
-    this.restore();
-  }           
-};
 function LetItSnow() {
   window.removeEventListener("load", LetItSnow);
   var snowCanvasId = "snowCanvas",
@@ -20,26 +10,18 @@ function LetItSnow() {
     fallSpeedModifier = 0.4;
   var canvas = document.getElementById(snowCanvasId);
   if(canvas) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    snowCanvas.numFlakes = Math.min(canvas.width, 300) * canvas.height / 400 * flakeNumberModifier;
-    snowCanvas.flakes = [];
-    for(var x = 0; x < snowCanvas.numFlakes; x++) {
-      snowCanvas.flakes[x] = getRandomFlake(true);
-    }
-    return "Canvas resized successfully.";
+    canvas.outerHTML = "";
+    return LetItSnow();
   }
-  canvas = document.createElement("CANVAS");
   canvas.id = snowCanvasId;
   document.body.appendChild(canvas);
   var context = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
+    numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier,
+    flakes = [],
     TWO_PI = Math.PI * 2,
     radHeight = 40;
-  window.snowCanvas = {};
-  snowCanvas.numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier;
-  snowCanvas.flakes = [];
   canvas.width = width;
   canvas.height = height;
   console.log(width + "x" + height);
@@ -53,8 +35,8 @@ function LetItSnow() {
   flakeContext.arc(4, 4, 4, 0, TWO_PI);
   flakeContext.fill();
   // init snowflakes
-  for(var x = 0; x < snowCanvas.numFlakes; x++) {
-    snowCanvas.flakes[x] = getRandomFlake(true);
+  for(var x = 0; x < numFlakes; x++) {
+    flakes[x] = getRandomFlake(true);
   }
   // start tick at specified fps
   window.setInterval(tick, Math.floor(1000 / framerate));
@@ -63,26 +45,26 @@ function LetItSnow() {
     var posX = 0,
       imageData;
     // reset canvas for next frame
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    for(var x = 0; x < snowCanvas.numFlakes; x++) {
+    context.clearRect(0, 0, width, height);
+    for(var x = 0; x < numFlakes; x++) {
       // calculate changes to snowflake
-      posX = snowCanvas.flakes[x].x + Math.sin(snowCanvas.flakes[x].yMod + snowCanvas.flakes[x].y / radHeight * (5 - snowCanvas.flakes[x].size)) * snowCanvas.flakes[x].waveSize * (1 - snowCanvas.flakes[x].size);
-      snowCanvas.flakes[x].y += snowCanvas.flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
+      posX = flakes[x].x + Math.sin(flakes[x].yMod + flakes[x].y / radHeight * (5 - flakes[x].size)) * flakes[x].waveSize * (1 - flakes[x].size);
+      flakes[x].y += flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
       // if snowflake is out of bounds, reset
-      if(snowCanvas.flakes[x].y > canvas.height + 5) {
-        snowCanvas.flakes[x] = getRandomFlake();
+      if(flakes[x].y > height + 5) {
+        flakes[x] = getRandomFlake();
       }
       // draw snowflake
-      context.globalAlpha = (snowCanvas.flakes[x].size - 1) / 3;
-      context.drawImage(flake, posX, snowCanvas.flakes[x].y, snowCanvas.flakes[x].size, snowCanvas.flakes[x].size);
+      context.globalAlpha = (flakes[x].size - 1) / 3;
+      context.drawImage(flake, posX, flakes[x].y, flakes[x].size, flakes[x].size);
     }
     // repeat 300px wide strip with snowflakes to fill whole canvas
-    if(canvas.width > 300) {
+    if(width > 300) {
       context.globalAlpha = 1;
       context.drawImage(canvas, 300, 0);
-      if(canvas.width > 600) context.drawImage(canvas, 600, 0);
-      if(canvas.width > 1200) context.drawImage(canvas, 1200, 0);
-      if(canvas.width > 2400) context.drawImage(canvas, 2400, 0);
+      if(width > 600) context.drawImage(canvas, 600, 0);
+      if(width > 1200) context.drawImage(canvas, 1200, 0);
+      if(width > 2400) context.drawImage(canvas, 2400, 0);
     }
   }
   // randomize flake data
@@ -104,7 +86,5 @@ function LetItSnow() {
   var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
     window.addEventListener("load", LetItSnow);
-    window.addEventListener("resize", LetItSnow);
   }
 })();
-
