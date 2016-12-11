@@ -51,10 +51,11 @@ a.shadow, a .shadow, input.shadow {
   height:0;
   padding-bottom: 45%;
   position:relative;
-  display:block;
+  display:table;
 }
 @media only screen and (min-width: 1000px) {
   .banner-wrap {
+    display:block;
     height:450px;
     padding-bottom:0;
     margin-top:1em;
