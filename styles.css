@@ -109,6 +109,7 @@ a.shadow, a .shadow, input.shadow {
   -moz-pointer-events: none;
   -webkit-pointer-events: none;
   -o-pointer-events: none;
+  animation: fade-in 0.25s linear;
 }
 @keyframes rotation {
   from { transform: rotate(0deg); }
@@ -121,4 +122,8 @@ a.shadow, a .shadow, input.shadow {
 @keyframes appear-two {
   0% { transform: translateX(1em); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
