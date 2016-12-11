@@ -22,7 +22,7 @@ function LetItSnow() {
   if(canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    snowCanvas.numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier;
+    snowCanvas.numFlakes = Math.min(canvas.width, 300) * canvas.height / 400 * flakeNumberModifier;
     snowCanvas.flakes = [];
     for(var x = 0; x < snowCanvas.numFlakes; x++) {
       snowCanvas.flakes[x] = getRandomFlake(true);
