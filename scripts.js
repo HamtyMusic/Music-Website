@@ -21,11 +21,11 @@ function LetItSnow() {
   var canvas = document.getElementById(snowCanvasId);
   if(!canvas) {
     canvas = document.createElement("CANVAS");
-  } else {
-    canvas.clear();
-  }
-  canvas.id = snowCanvasId;
+    canvas.id = snowCanvasId;
   document.body.appendChild(canvas);
+  } else {
+    canvas.getContext("2d").clear();
+  }
   var context = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
