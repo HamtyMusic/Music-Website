@@ -67,7 +67,7 @@ function LetItSnow() {
     for(var x = 0; x < snowCanvas.numFlakes; x++) {
       // calculate changes to snowflake
       posX = snowCanvas.flakes[x].x + Math.sin(snowCanvas.flakes[x].yMod + snowCanvas.flakes[x].y / radHeight * (5 - snowCanvas.flakes[x].size)) * snowCanvas.flakes[x].waveSize * (1 - snowCanvas.flakes[x].size);
-      snowCanvas.flakes[x].y += flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
+      snowCanvas.flakes[x].y += snowCanvas.flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
       // if snowflake is out of bounds, reset
       if(snowCanvas.flakes[x].y > canvas.height + 5) {
         snowCanvas.flakes[x] = getRandomFlake();
