@@ -57,13 +57,13 @@ function LetItSnow() {
     var posX = 0,
       imageData;
     // reset canvas for next frame
-    context.clearRect(0, 0, width, height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     for(var x = 0; x < numFlakes; x++) {
       // calculate changes to snowflake
       posX = flakes[x].x + Math.sin(flakes[x].yMod + flakes[x].y / radHeight * (5 - flakes[x].size)) * flakes[x].waveSize * (1 - flakes[x].size);
       flakes[x].y += flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
       // if snowflake is out of bounds, reset
-      if(flakes[x].y > height + 5) {
+      if(flakes[x].y > canvas.height + 5) {
         flakes[x] = getRandomFlake();
       }
       // draw snowflake
@@ -71,12 +71,12 @@ function LetItSnow() {
       context.drawImage(flake, posX, flakes[x].y, flakes[x].size, flakes[x].size);
     }
     // repeat 300px wide strip with snowflakes to fill whole canvas
-    if(width > 300) {
+    if(canvas.width > 300) {
       context.globalAlpha = 1;
       context.drawImage(canvas, 300, 0);
-      if(width > 600) context.drawImage(canvas, 600, 0);
-      if(width > 1200) context.drawImage(canvas, 1200, 0);
-      if(width > 2400) context.drawImage(canvas, 2400, 0);
+      if(canvas.width > 600) context.drawImage(canvas, 600, 0);
+      if(canvas.width > 1200) context.drawImage(canvas, 1200, 0);
+      if(canvas.width > 2400) context.drawImage(canvas, 2400, 0);
     }
   }
   // randomize flake data
