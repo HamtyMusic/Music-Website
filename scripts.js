@@ -22,6 +22,9 @@ function LetItSnow() {
   if(canvas) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    for(var x = 0; x < snowCanvas.numFlakes; x++) {
+      snowCanvas.flakes[x] = getRandomFlake(true);
+    }
     return "Canvas resized successfully.";
   }
   canvas = document.createElement("CANVAS");
@@ -31,9 +34,10 @@ function LetItSnow() {
     width = window.innerWidth,
     height = window.innerHeight,
     numFlakes = Math.min(width, 300) * height / 400 * flakeNumberModifier,
-    flakes = [],
     TWO_PI = Math.PI * 2,
     radHeight = 40;
+  window.snowCanvas = [];
+  window.snowCanvas.flakes = [];
   canvas.width = width;
   canvas.height = height;
   console.log(width + "x" + height);
@@ -47,8 +51,8 @@ function LetItSnow() {
   flakeContext.arc(4, 4, 4, 0, TWO_PI);
   flakeContext.fill();
   // init snowflakes
-  for(var x = 0; x < numFlakes; x++) {
-    flakes[x] = getRandomFlake(true);
+  for(var x = 0; x < snowCanvas.numFlakes; x++) {
+    snowCanvas.flakes[x] = getRandomFlake(true);
   }
   // start tick at specified fps
   window.setInterval(tick, Math.floor(1000 / framerate));
@@ -58,17 +62,17 @@ function LetItSnow() {
       imageData;
     // reset canvas for next frame
     context.clearRect(0, 0, canvas.width, canvas.height);
-    for(var x = 0; x < numFlakes; x++) {
+    for(var x = 0; x < snowCanvas.numFlakes; x++) {
       // calculate changes to snowflake
-      posX = flakes[x].x + Math.sin(flakes[x].yMod + flakes[x].y / radHeight * (5 - flakes[x].size)) * flakes[x].waveSize * (1 - flakes[x].size);
-      flakes[x].y += flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
+      posX = snowCanvas.flakes[x].x + Math.sin(snowCanvas.flakes[x].yMod + snowCanvas.flakes[x].y / radHeight * (5 - snowCanvas.flakes[x].size)) * snowCanvas.flakes[x].waveSize * (1 - snowCanvas.flakes[x].size);
+      snowCanvas.flakes[x].y += flakes[x].size * fallSpeedModifier; // bigger flakes are nearer to screen, thus they fall faster to create 3d effect
       // if snowflake is out of bounds, reset
-      if(flakes[x].y > canvas.height + 5) {
-        flakes[x] = getRandomFlake();
+      if(snowCanvas.flakes[x].y > canvas.height + 5) {
+        snowCanvas.flakes[x] = getRandomFlake();
       }
       // draw snowflake
-      context.globalAlpha = (flakes[x].size - 1) / 3;
-      context.drawImage(flake, posX, flakes[x].y, flakes[x].size, flakes[x].size);
+      context.globalAlpha = (snowCanvas.flakes[x].size - 1) / 3;
+      context.drawImage(flake, posX, snowCanvas.flakes[x].y, snowCanvas.flakes[x].size, snowCanvas.flakes[x].size);
     }
     // repeat 300px wide strip with snowflakes to fill whole canvas
     if(canvas.width > 300) {
