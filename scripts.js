@@ -40,7 +40,7 @@ function LetItSnow() {
     flakes[x] = getRandomFlake(true);
   }
   // start tick at specified fps
-  window.setInterval(tick, Math.floor(1000 / framerate));
+  window.snowCanvasInterval = setInterval(tick, Math.floor(1000 / framerate));
   // main routine
   function tick() {
     var posX = 0,
