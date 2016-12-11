@@ -2,6 +2,16 @@ var month = ["January", "February", "March", "April", "May", "June", "July", "Au
 function getCurrentMonth() {
   return (new Date()).getMonth()
 }
+CanvasRenderingContext2D.prototype.clear = CanvasRenderingContext2D.prototype.clear || function (preserveTransform) {
+  if (preserveTransform) {
+    this.save();
+    this.setTransform(1, 0, 0, 1, 0, 0);
+  }
+  this.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  if (preserveTransform) {
+    this.restore();
+  }           
+};
 function LetItSnow() {
   window.removeEventListener("load", LetItSnow);
   var snowCanvasId = "snowCanvas",
@@ -11,6 +21,8 @@ function LetItSnow() {
   var canvas = document.getElementById(snowCanvasId);
   if(!canvas) {
     canvas = document.createElement("CANVAS");
+  } else {
+    canvas.clear();
   }
   canvas.id = snowCanvasId;
   document.body.appendChild(canvas);
