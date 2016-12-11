@@ -19,13 +19,14 @@ function LetItSnow() {
     flakeNumberModifier = 0.1,
     fallSpeedModifier = 0.4;
   var canvas = document.getElementById(snowCanvasId);
-  if(!canvas) {
-    canvas = document.createElement("CANVAS");
-    canvas.id = snowCanvasId;
-  document.body.appendChild(canvas);
-  } else {
-    canvas.getContext("2d").clear();
+  if(canvas) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    return "Canvas resized successfully.";
   }
+  canvas = document.createElement("CANVAS");
+  canvas.id = snowCanvasId;
+  document.body.appendChild(canvas);
   var context = canvas.getContext("2d"),
     width = window.innerWidth,
     height = window.innerHeight,
