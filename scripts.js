@@ -1,4 +1,9 @@
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+function getCurrentMonth() {
+  return (new Date()).getMonth()
+}
 function LetItSnow() {
+  window.removeEventListener("load", LetItSnow);
   var snowCanvasId = "snowCanvas",
     framerate = 30,
     flakeNumberModifier = 0.1,
@@ -73,4 +78,10 @@ function LetItSnow() {
     return Math.random() * (end - start) + start;
   }
 }
-window.addEventListener("load", LetItSnow);
+(function() {
+  var m = month(getCurrentMonth());
+  if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
+    window.addEventListener("load", LetItSnow);
+  }
+})();
+
