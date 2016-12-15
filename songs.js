@@ -42,8 +42,8 @@ var Songs = {
     date: new Date(2016, 9, 25)
   },
   lockynAqua: {
-    name: "Lockyn - Aqua ( Hamty\'s Remix )",
-    title: "Aqua ( Hamty\'s Remix )",
+    name: "Lockyn - Aqua (Hamty\'s Remix)",
+    title: "Aqua (Hamty\'s Remix)",
     author: "Lockyn",
     img: "https://i.imgur.com/FNkzp0S.jpg",
     links: {
