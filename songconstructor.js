@@ -114,11 +114,12 @@ function Search(str) {
   }
   var mObj = {};
   for (i in Songs) {
+    if (!Songs.hasOwnProperty(i)) { continue; }
     mObj[i] = true;
   }
   for (var i = 0; i < srchTgs.length; i++) {
     for (var y in mObj) {
-      if (Songs[y].name) {
+      if (Songs[y].name && mObj.hasOwnProperty(y)) {
         if (((Songs[y].name).toLowerCase()).search(srchTgs[i]) == -1) {
           delete mObj[y];
         }
@@ -127,6 +128,7 @@ function Search(str) {
   }
   var results = {};
   for (i in mObj) {
+    if (!mObj.hasOwnProperty(i)) { continue; }
     results[i] = (Songs[i]);
   }
   return results;
@@ -159,6 +161,7 @@ function hideSongs(Songs) {
       return false;
     }
     for (var i in Songs) {
+      if (!Songs.hasOwnProperty(i)) { continue; }
       var Song = Songs[i];
       if(Song.elem) {
         SongStorage.appendChild(Song.elem);
@@ -178,6 +181,7 @@ function drawSongs(Songs) {
     return false;
   }
   for (var i in Songs) {
+    if (!Songs.hasOwnProperty(i)) { continue; }
     var Song = Songs[i];
     if(Song.elem) {
       songParent.appendChild(Song.elem);
@@ -209,6 +213,7 @@ function drawSongs(Songs) {
       addEvent(arrowBoxContainer, "mouseleave", function() { this.style.display = "none" });
       setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
+        if (!Song.download.hasOwnProperty(key)) { continue; }
         var link = Song.download[key];
         var a = newElem("a", arrowBox, "link");
         link = (link.href) ? link.href : link;
@@ -220,6 +225,7 @@ function drawSongs(Songs) {
       }
     }
     for (var key in Song.links) {
+      if (!Song.links.hasOwnProperty(key)) { continue; }
       var link = Song.links[key];
       var a = newElem("a", links, "link");
       link = (link.href) ? link.href : link;
@@ -272,6 +278,7 @@ function drawSong(Song) {
   dlLinks.innerHTML = "";
   if(Song.download) {
     for (var key in Song.download) {
+      if (!Song.download.hasOwnProperty(key)) { continue; }
       var link = Song.download[key];
       var a = newElem("a", dlLinks, "link");
       link = (link.href) ? link.href : link;
@@ -283,6 +290,7 @@ function drawSong(Song) {
     }
   }
   for (var key in Song.links) {
+    if (!Song.links.hasOwnProperty(key)) { continue; }
     var link = Song.links[key];
     var a = newElem("a", links, "link");
     link = (link.href) ? link.href : link;
