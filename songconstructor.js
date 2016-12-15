@@ -203,7 +203,7 @@ function drawSongs(Songs) {
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
         dlbtn = newElem("img", a, "link-button ");
       addEvent(dlbtn, "mousedown", function() { arrowBoxContainer.style.display = "block" });
-      addEvent(arrowBoxContainer, "mouseleave", function() { arrowBoxContainer.style.display = "" });
+      addEvent(arrowBoxContainer, "mouseleave", function() { arrowBoxContainer.style.display = "none" });
       setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
         var link = Song.download[key];
