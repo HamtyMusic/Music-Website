@@ -1,4 +1,7 @@
 function $(q) { return document.querySelectorAll(q) }
+Object.prototype.$ = function(q) {
+  return this.querySelectorAll(q);
+}
 
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
@@ -202,8 +205,8 @@ function drawSongs(Songs) {
       var arrowBoxContainer = newElem("div", links, "arrow_box-container"),
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
         dlbtn = newElem("img", a, "link-button ");
-      addEvent(dlbtn, "mousedown", function() { arrowBoxContainer.style.display = "block" });
-      addEvent(arrowBoxContainer, "mouseleave", function() { arrowBoxContainer.style.display = "none" });
+      addEvent(dlbtn, "mousedown", function() { this.parentElement.parentElement.$(".arrow_box-container")[0].style.display = "block" });
+      addEvent(arrowBoxContainer, "mouseleave", function() { this.style.display = "none" });
       setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
         var link = Song.download[key];
