@@ -199,8 +199,11 @@ function drawSongs(Songs) {
     if(Song.download) {
       var a = newElem("a", links, "link download-link");
       a.setAttribute("title", "Click for download options");
-      var arrowBox = newElem("div", newElem("div", links, "arrow_box-container"), "arrow_box shadow");
-      var dlbtn = newElem("img", a, "link-button ");
+      var arrowBoxContainer = newElem("div", links, "arrow_box-container"),
+        arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
+        dlbtn = newElem("img", a, "link-button ");
+      addEvent(dlbtn, "mousedown", function() { arrowBoxContainer.style.display = block });
+      addEvent(arrowBoxContainer, "mouseleave", function() { arrowBoxContainer.style.display = "" });
       setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
         var link = Song.download[key];
