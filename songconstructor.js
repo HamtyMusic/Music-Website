@@ -209,8 +209,13 @@ function drawSongs(Songs) {
       var arrowBoxContainer = newElem("div", links, "arrow_box-container"),
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
         dlbtn = newElem("img", a, "link-button ");
-      addEvent(dlbtn, "mousedown", function() { this.parentElement.parentElement.$(".arrow_box-container")[0].style.display = "block" });
+      addEvent(dlbtn, "mousedown", function() {
+        var abc = this.parentElement.parentElement.$(".arrow_box-container")[0];
+        abc.style.display = "block";
+        abc.focus();
+      });
       addEvent(arrowBoxContainer, "mouseleave", function() { this.style.display = "none" });
+      addEvent(arrowBoxContainer, "blur", function() { this.style.display = "none" });
       setVectorSource(dlbtn, "download");
       for (var key in Song.download) {
         if (!Song.download.hasOwnProperty(key)) { continue; }
