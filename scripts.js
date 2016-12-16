@@ -3,7 +3,7 @@ function getCurrentMonth() {
   return (new Date()).getMonth()
 }
 function LetItSnow() {
-  window.removeEventListener("load", LetItSnow);
+  document.removeEventListener("load", LetItSnow);
   var snowCanvasId = "snowCanvas",
     framerate = 30,
     flakeNumberModifier = 0.1,
@@ -89,7 +89,7 @@ function LetItSnow() {
 (function() {
   var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
-    window.addEventListener("load", LetItSnow);
+    document.addEventListener("load", LetItSnow);
     window.addEventListener("resize", LetItSnow);
   }
 })();
