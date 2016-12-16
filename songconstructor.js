@@ -1,6 +1,6 @@
 function $(q) { return document.querySelectorAll(q) }
-Object.prototype.$ = function(q) {
-  return (this.querySelectorAll(q));
+Object.prototype.constructor.$ = function(q) {
+  return this.querySelectorAll(q);
 }
 
 String.prototype.capFirstLetter = function() {
