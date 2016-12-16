@@ -1,7 +1,4 @@
 function $(q) { return document.querySelectorAll(q) }
-Object.prototype.constructor.$ = function(q) {
-  return this.querySelectorAll(q);
-}
 
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
@@ -210,7 +207,7 @@ function drawSongs(Songs) {
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
         dlbtn = newElem("img", a, "link-button ");
       addEvent(dlbtn, "mousedown", function() {
-        var abc = this.parentElement.parentElement.$(".arrow_box-container")[0];
+        var abc = this.parentElement.parentElement.querySelectorAll(".arrow_box-container")[0];
         abc.style.display = "block";
         abc.focus();
       });
