@@ -8,7 +8,7 @@ String.prototype.capFirstLetter = function() {
 function setVectorSource(elem, id) {
   if(elem && id) {
     elem.src = images[id].svg;
-    elem.onerror="this.onerror=null; this.src=\'" + images[id].png + "\'";
+    elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'";
   } else {
     return false;
   }
