@@ -56,7 +56,6 @@ a.shadow, a .shadow, input.shadow {
     display:block;
     height:450px;
     padding-bottom:0;
-    box-shadow: none;
   }
 }
 .banner {
