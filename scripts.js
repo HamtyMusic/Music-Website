@@ -1,4 +1,7 @@
-function $(q) { return document.querySelectorAll(q) }
+function $(q, caller) {
+  caller = caller || document;
+  return caller.querySelectorAll(q);
+}
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
