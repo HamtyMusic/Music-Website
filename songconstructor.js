@@ -234,7 +234,7 @@ function drawSong(Song) {
       if(scid) {
         var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap");
         var scEmbed = newElem("iframe", scEmbedWrap, "sc-embed embed");
-        scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&color=ff5500&auto_play=false&amp;show_comments=true;visual=true";
+        scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&auto_play=false;show_comments=true;visual=true";
         scEmbed.setAttribute("frameborder", 0);
         window.curScEmbed = scEmbedWrap;
         window.curScEmbedId = scid;
