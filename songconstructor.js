@@ -75,27 +75,20 @@ function drawSongs(Songs) {
     var wrap = newElem("div", songParent, "song-wrap");
     var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
-      var imgPar = newElem("a", elem, "song-image-parent lighten");
-      imgPar.href = "#" + i;
-      var img = newElem("img", imgPar, "song-image shadow");
-      img.src = Song.img.replace(/^http:\/\//i, 'https://');
+      var imgPar = newElem("a", elem, { class: "song-image-parent lighten", href = "#" + i });
+      var img = newElem("img", imgPar, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
     }
-    var title = newElem("div", elem, "song-title");
-    title.innerHTML = Song.title;
-    title.setAttribute("title", Song.name);
-    var author = newElem("div", elem, "song-author");
-    author.innerHTML = Song.author;
-    author.setAttribute("title", Song.name);
+    var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
+    var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
     
     var links = newElem("div", elem, "link-buttons");
     if(Song.download) {
-      var a = newElem("a", links, "link download-link");
-      a.setAttribute("title", "Click for download options");
+      var a = newElem("a", links, { class: "link download-link", title: "Click for download options" });
       var arrowBoxContainer = newElem("div", links, "arrow_box-container"),
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
-        dlbtn = newElem("img", a, "link-button ");
+        dlbtn = newElem("img", a, "link-button");
       addEvent(dlbtn, "mousedown", function() {
-        var abc = $(".arrow_box-container", this.parentElement.parentElement)[0];
+        var abc = this.parentElement.parentElement)[0];
         abc.style.display = "block";
         abc.focus();
       });
@@ -105,13 +98,9 @@ function drawSongs(Songs) {
       for (var key in Song.download) {
         if (!Song.download.hasOwnProperty(key)) { continue; }
         var link = Song.download[key];
-        var a = newElem("a", arrowBox, "link");
         link = (link.href) ? link.href : link;
-        a.href = (link.constructor === Array) ? link.join("") : link;
-        a.target = "_blank";
-        var span = newElem("span", a, "link-description");
-        a.setAttribute("title", ("Free Download ." + key + " (" + Song.name + ")"));
-        span.innerHTML = "." + key;
+        var a = newElem("a", arrowBox, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+        var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
       }
     }
     for (var key in Song.links) {
