@@ -97,7 +97,7 @@ function newElem(type, parent, arg3, id) {
   (parent || document.body).appendChild(elem);
   if(isObject(arg3)) {
     for(var i in arg3) {
-      if (arg3.download.hasOwnProperty(i)) {
+      if (arg3.hasOwnProperty(i)) {
         elem.setAttribute(i, arg3[i]);
       }
     }
