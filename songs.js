@@ -10,7 +10,8 @@ var Songs = {
         id: "296019861"
       },
       youtube: {
-        id: "65F6nA7xdTs"
+        id: "65F6nA7xdTs",
+        aspectRatio: 2.39
       },
       bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
     },
