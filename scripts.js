@@ -88,12 +88,19 @@ function timeAgo(oldDate, length) {
   }
   return (sb.join(', ') + " ago");
 }
-function newElem(type, parent, classes, id) {
-  parent = parent || document.body;
+function isObject(val) {
+  if (val === null) { return false; }
+  return ((typeof val === 'function') || (typeof val === 'object'));
+}
+function newElem(type, parent, arg3, id) {
   var elem = document.createElement(type);
-  parent.appendChild(elem);
-  if (classes) {
-    elem.className = classes;
+  (parent || document.body).appendChild(elem);
+  if(isObject(arg3)) {
+    for(var i in arg3) {
+      elem.setAttribute(i, arg3[i]);
+    }
+  } else {
+    elem.className = arg3;
   }
   if (id) {
     elem.id = id;
