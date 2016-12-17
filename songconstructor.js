@@ -221,6 +221,9 @@ function drawSong(Song) {
       var ytid = Song.links.youtube.id;
       if(ytid) {
         var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap shadow");
+        if(Song.links.youtube.aspectRatio) {
+          ytEmbedWrap.style["padding-bottom"] = 100 / Song.links.youtube.aspectRatio + "%";
+        }
         var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
         ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
         ytEmbed.setAttribute("frameborder", 0);
