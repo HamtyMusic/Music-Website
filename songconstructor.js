@@ -75,7 +75,7 @@ function drawSongs(Songs) {
     var wrap = newElem("div", songParent, "song-wrap");
     var elem = newElem("div", wrap, "song pb shadow");
     if (Song.img) {
-      var imgPar = newElem("a", elem, { class: "song-image-parent lighten", href = "#" + i });
+      var imgPar = newElem("a", elem, { class: "song-image-parent lighten", href: "#" + i });
       var img = newElem("img", imgPar, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
     }
     var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
@@ -106,12 +106,9 @@ function drawSongs(Songs) {
     for (var key in Song.links) {
       if (!Song.links.hasOwnProperty(key)) { continue; }
       var link = Song.links[key];
-      var a = newElem("a", links, "link");
       link = (link.href) ? link.href : link;
-      a.href = (link.constructor === Array) ? link.join("") : link;
-      a.target = "_blank";
+      var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
       var dlbtn = newElem("img", a, "link-button");
-      a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
       setVectorSource(dlbtn, key);
     }
     //Release Date
@@ -119,20 +116,20 @@ function drawSongs(Songs) {
       if (Object.prototype.toString.call(Song.date) === "[object Date]") {
         var date = Song.date;
         var dates = newElem("div", elem, "DateContainer");
-        var date1 = newElem("div", dates, "dateText dateAbsolute");
-        date1.innerHTML = date.toLocaleDateString([], {
-          day: "numeric",
-          month: "short",
-          year: "numeric"
+        var date1 = newElem("div", dates, {
+          class: "dateText dateAbsolute",
+          innerHTML: date.toLocaleDateString([], {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+          }),
+          title: (date.toLocaleDateString([], {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          }) + " | " + date.toLocaleTimeString([]))
         });
-        date1.setAttribute("title", (date.toLocaleDateString([], {
-          day: "numeric",
-          month: "long",
-          year: "numeric"
-        }) + " | " + date.toLocaleTimeString([])));
-        var date2 = newElem("div", dates, "dateText dateRelative");
-        date2.innerHTML = timeAgo(date, 1);
-        date2.setAttribute("title", (timeAgo(date)));
+        var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
       }
     }
     Song.elem = wrap;
@@ -159,24 +156,17 @@ function drawSong(Song) {
     for (var key in Song.download) {
       if (!Song.download.hasOwnProperty(key)) { continue; }
       var link = Song.download[key];
-      var a = newElem("a", dlLinks, "link");
       link = (link.href) ? link.href : link;
-      a.href = (link.constructor === Array) ? link.join("") : link;
-      a.target = "_blank";
-      var span = newElem("span", a, "link-description");
-      a.setAttribute("title", ("Free Download ." + key + " (" + Song.name + ")"));
-      span.innerHTML = "." + key;
+      var a = newElem("a", dlLinks, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
   }
   for (var key in Song.links) {
     if (!Song.links.hasOwnProperty(key)) { continue; }
     var link = Song.links[key];
-    var a = newElem("a", links, "link");
     link = (link.href) ? link.href : link;
-    a.href = (link.constructor === Array) ? link.join("") : link;
-    a.target = "_blank";
+    var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
     var dlbtn = newElem("img", a, "link-button");
-    a.setAttribute("title", ("\"" + Song.name + "\" on " + key.capFirstLetter()));
     setVectorSource(dlbtn, key);
   }
 
@@ -213,9 +203,7 @@ function drawSong(Song) {
         if(Song.links.youtube.aspectRatio) {
           ytEmbedWrap.style["padding-bottom"] = 100 / Song.links.youtube.aspectRatio + "%";
         }
-        var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
-        ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
-        ytEmbed.setAttribute("frameborder", 0);
+        var ytEmbed = newElem("iframe", ytEmbedWrap, { class: "yt-embed embed", src: "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname), frameborder: 0, allowfullscreen: true });
         window.curYtEmbed = ytEmbedWrap;
         window.curYtEmbedId = ytid;
       }
@@ -224,9 +212,7 @@ function drawSong(Song) {
       scid = Song.links.soundcloud.id;
       if(scid) {
         var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap shadow");
-        var scEmbed = newElem("iframe", scEmbedWrap, "sc-embed embed");
-        scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true";
-        scEmbed.setAttribute("frameborder", 0);
+        var scEmbed = newElem("iframe", scEmbedWrap, { class: "sc-embed embed", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", frameborder: 0 });
         window.curScEmbed = scEmbedWrap;
         window.curScEmbedId = scid;
       }
