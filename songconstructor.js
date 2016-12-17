@@ -198,9 +198,9 @@ function drawSong(Song) {
   }
 
   if(Song.details) {
-    var price = Song.details.price || "Free"
+    var price = Song.details.price || "Free";
   }
-  $("#SongPrice")[0].innerHTML = price;
+  $("#SongPrice")[0].innerHTML = price || "Free";
   
   if(Song.links && (window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "")) {
     $("#embeds")[0].innerHTML = "";
