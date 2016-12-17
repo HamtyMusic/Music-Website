@@ -140,19 +140,21 @@ function drawSong(Song) {
   if (Song) {} else {
     return false;
   }
+  var img = $("#SongImage")[0];
   if (Song.img) {
-    var img = $("#SongImage")[0];
     img.src = Song.img.replace(/^http:\/\//i, 'https://');
+  } else {
+    img.src = "";
   }
   var title = $("#SongTitle")[0];
-  title.innerHTML = Song.name;
+  title.innerHTML = Song.name || "No name";
   title.setAttribute("title", Song.title + " by " + Song.author);
   
   var links = $("#SongLinks")[0];
   links.innerHTML = "";
   var dlLinks = $("#SongDlLinks")[0];
   dlLinks.innerHTML = "";
-  if(Song.download) {
+  if(Song.download && Song.download.length != 0) {
     for (var key in Song.download) {
       if (!Song.download.hasOwnProperty(key)) { continue; }
       var link = Song.download[key];
@@ -160,6 +162,8 @@ function drawSong(Song) {
       var a = newElem("a", dlLinks, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
       var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
+  } else {
+    dlLinks.innerHTML = "Nothing here...";
   }
   for (var key in Song.links) {
     if (!Song.links.hasOwnProperty(key)) { continue; }
@@ -171,6 +175,8 @@ function drawSong(Song) {
   }
 
   //Release Date
+  $("#dateAbsolute")[0].innerHTML = "";
+  $("#dateRelative")[0].innerHTML = "";
   if (Song.date) {
     if (Object.prototype.toString.call(Song.date) === "[object Date]") {
       var date = Song.date;
@@ -190,8 +196,8 @@ function drawSong(Song) {
       date2.setAttribute("title", (timeAgo(date)));
     }
   }
-  var price = Song.price || "Free";
-  $("#SongPrice")[0].innerHTML = price;
+
+  $("#SongPrice")[0].innerHTML = Song.details.price || "Free";
   
   if(window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "") {
     $("#embeds")[0].innerHTML = "";
