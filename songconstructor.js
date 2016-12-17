@@ -197,7 +197,10 @@ function drawSong(Song) {
     }
   }
 
-  $("#SongPrice")[0].innerHTML = Song.details.price || "Free";
+  if(Song.details) {
+    var price = Song.details.price || "Free"
+  }
+  $("#SongPrice")[0].innerHTML = price;
   
   if(window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "") {
     $("#embeds")[0].innerHTML = "";
