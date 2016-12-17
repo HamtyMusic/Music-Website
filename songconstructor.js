@@ -243,7 +243,7 @@ function drawSong(Song) {
       var closeButton = newElem("div", $("#embeds")[0], false, "embeds-close");
       addEvent(closeButton, "click", function() {
         $("#embeds")[0].innerHTML = "";
-      }
+      });
     }
   }
   return true;
