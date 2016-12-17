@@ -19,6 +19,12 @@ var Songs = {
       flac: "http://viid.me/qw3mvz",
       mp3: "http://viid.me/qw3nlY"
     },
+    details: {
+      type: 1,
+      tempo: 110,
+      genre: "Glitch Hop",
+      duration: 264
+    },
     date: new Date(2016, 11, 3)
   },
   promenade: {
@@ -39,6 +45,12 @@ var Songs = {
     download: {
       flac: "http://sh.st/4dPZJ",
       mp3: "http://sh.st/4dPYT"
+    },
+    details: {
+      type: 0,
+      tempo: 128,
+      genre: "House",
+      duration: 187
     },
     date: new Date(2016, 9, 25)
   },
@@ -61,6 +73,12 @@ var Songs = {
       flac: "http://sh.st/HzIKA",
       mp3: "http://sh.st/HzP5W"
     },
+    details: {
+      type: 1,
+      tempo: 140,
+      genre: "Dubstep",
+      duration: 274
+    },
     date: new Date(2016, 6, 3)
   },
   sunshine: {
@@ -81,6 +99,12 @@ var Songs = {
     download: {
       mp3: "http://sh.st/nqRuX"
     },
+    details: {
+      type: 0,
+      tempo: 128,
+      genre: "House",
+      duration: 195
+    },
     date: new Date(2015, 10, 21)
   },
   seaLights: {
@@ -100,6 +124,12 @@ var Songs = {
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1JcSyZ"]
+    },
+    details: {
+      type: 0,
+      tempo: 128,
+      genre: "House",
+      duration: 191
     },
     date: new Date(2015, 5, 22, 19)
   },
