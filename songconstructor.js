@@ -208,7 +208,7 @@ function drawSong(Song) {
           value = ["Original", "Remix"][value];
         } else if(i == "duration") {
           var mins = Math.floor(value / 60);
-          value = mins + ":" + (value - mins);
+          value = mins + ":" + (value - mins * 60);
         }
         var row = newElem("div", table, "song-details-table-row");
         newElem("div", row, { class: "song-details-table-cell name", innerHTML: name })
