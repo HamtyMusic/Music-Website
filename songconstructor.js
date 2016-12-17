@@ -220,7 +220,7 @@ function drawSong(Song) {
     if(Song.links.youtube) {
       var ytid = Song.links.youtube.id;
       if(ytid) {
-        var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap");
+        var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap shadow");
         var ytEmbed = newElem("iframe", ytEmbedWrap, "yt-embed embed");
         ytEmbed.src = "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname);
         ytEmbed.setAttribute("frameborder", 0);
@@ -231,7 +231,7 @@ function drawSong(Song) {
     if(Song.links.soundcloud) {
       scid = Song.links.soundcloud.id;
       if(scid) {
-        var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap");
+        var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap shadow");
         var scEmbed = newElem("iframe", scEmbedWrap, "sc-embed embed");
         scEmbed.src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true";
         scEmbed.setAttribute("frameborder", 0);
