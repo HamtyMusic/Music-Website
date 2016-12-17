@@ -201,7 +201,7 @@ function drawSong(Song) {
   table.innerHTML = "";
   if(Song.details) {
     ["genre", "duration", "tempo", "type"].forEach(function(i) {
-      if(Song.details[i]) {
+      if(Song.details.hasOwnProperty(i)) {
         var name = i.capFirstLetter();
         var value = Song.details[i];
         if(i == "type") {
