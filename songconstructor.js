@@ -196,9 +196,26 @@ function drawSong(Song) {
       date2.setAttribute("title", (timeAgo(date)));
     }
   }
-
+  
+  var table = $("#SongDetailsTable")[0];
+  table.innerHTML = "";
   if(Song.details) {
-    var price = Song.details.price || "Free";
+    ["genre", "duration", "tempo", "type"].forEach(function(this) {
+      if(Song.details[this]) {
+        var name = this.capFirstLetter();
+        var value = Song.details[this];
+        if(this == "type") {
+          value = ["Original", "Remix"][value];
+        } else if(this == "duration") {
+          var mins = Math.floor(value / 60);
+          value = mins + ":" + (value - mins);
+        }
+        var row = newElem("div", table, "song-details-table-row");
+        newElem("div", row, { class: "song-details-table-cell name", innerHTML: name })
+        newElem("div", row, { class: "song-details-table-cell value", innerHTML: value })
+      }
+    });
+    var price = Song.details.price;
   }
   $("#SongPrice")[0].innerHTML = price || "Free";
   
