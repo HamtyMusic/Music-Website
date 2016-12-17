@@ -32,8 +32,7 @@ function Search(str) {
 function hideSongs(Songs) {
   var SongStorage = $("#SongStorage")[0];
   if(!SongStorage) {
-    SongStorage = newElem("div", document.body);
-    SongStorage.id = "SongStorage";
+    SongStorage = newElem("div", document.body, false, "SongStorage");
   }
   if(SongStorage) {
     if (Songs) {} else {
@@ -215,7 +214,7 @@ function drawSong(Song) {
   var price = Song.price || "Free";
   $("#SongPrice")[0].innerHTML = price;
   
-  if(window.curEmbedSong != Song) {
+  if(window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "") {
     $("#embeds")[0].innerHTML = "";
     window.curEmbedSong = Song;
     if(Song.links.youtube) {
@@ -238,6 +237,12 @@ function drawSong(Song) {
         scEmbed.setAttribute("frameborder", 0);
         window.curScEmbed = scEmbedWrap;
         window.curScEmbedId = scid;
+      }
+    }
+    if($("#embeds")[0].innerHTML != "") {
+      var closeButton = newElem("div", $("#embeds")[0], false, "embeds-close");
+      addEvent(closeButton, "click", function() {
+        $("#embeds")[0].innerHTML = "";
       }
     }
   }
