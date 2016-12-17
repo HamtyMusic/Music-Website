@@ -200,13 +200,13 @@ function drawSong(Song) {
   var table = $("#SongDetailsTable")[0];
   table.innerHTML = "";
   if(Song.details) {
-    ["genre", "duration", "tempo", "type"].forEach(function() {
-      if(Song.details[this]) {
-        var name = this.capFirstLetter();
-        var value = Song.details[this];
-        if(this == "type") {
+    ["genre", "duration", "tempo", "type"].forEach(function(i) {
+      if(Song.details[i]) {
+        var name = i.capFirstLetter();
+        var value = Song.details[i];
+        if(i == "type") {
           value = ["Original", "Remix"][value];
-        } else if(this == "duration") {
+        } else if(i == "duration") {
           var mins = Math.floor(value / 60);
           value = mins + ":" + (value - mins);
         }
