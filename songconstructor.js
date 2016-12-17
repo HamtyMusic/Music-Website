@@ -202,7 +202,7 @@ function drawSong(Song) {
   }
   $("#SongPrice")[0].innerHTML = price;
   
-  if(window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "") {
+  if(Song.links && (window.curEmbedSong != Song || $("#embeds")[0].innerHTML == "")) {
     $("#embeds")[0].innerHTML = "";
     window.curEmbedSong = Song;
     if(Song.links.youtube) {
