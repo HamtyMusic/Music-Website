@@ -200,7 +200,7 @@ function drawSong(Song) {
   var table = $("#SongDetailsTable")[0];
   table.innerHTML = "";
   if(Song.details) {
-    ["genre", "duration", "tempo", "type"].forEach(function(this) {
+    ["genre", "duration", "tempo", "type"].forEach(function() {
       if(Song.details[this]) {
         var name = this.capFirstLetter();
         var value = Song.details[this];
