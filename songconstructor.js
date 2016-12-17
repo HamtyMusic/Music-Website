@@ -88,7 +88,7 @@ function drawSongs(Songs) {
         arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
         dlbtn = newElem("img", a, "link-button");
       addEvent(dlbtn, "mousedown", function() {
-        var abc = this.parentElement.parentElement)[0];
+        var abc = $(".arrow_box-container", this.parentElement.parentElement)[0];
         abc.style.display = "block";
         abc.focus();
       });
