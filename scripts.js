@@ -99,7 +99,10 @@ function newElem(type, parent, arg3, id) {
     for(var i in arg3) {
       elem.setAttribute(i, arg3[i]);
     }
-  } else {
+    if(arg3.class) {
+      elem.className = arg3.class;
+    }
+  } else if(arg3) {
     elem.className = arg3;
   }
   if (id) {
@@ -210,7 +213,7 @@ function LetItSnow() {
 (function() {
   var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
-    document.addEventListener("DOMContentLoaded", LetItSnow);
-    window.addEventListener("resize", LetItSnow);
+    addEvent(document, "DOMContentLoaded", LetItSnow);
+    addEvent(window, "resize", LetItSnow);
   }
 })();
