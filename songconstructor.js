@@ -241,10 +241,7 @@ function drawSong(Song) {
     }
     if($("#embeds")[0].innerHTML != "") {
       var closeButton = newElem("div", $("#embeds")[0], false, "embeds-close");
-      var svg = newElem("svg", closeButton, "embeds-close-svg");
-      var closeButtonIcon = newElem("path", svg, false, "embeds-close-icon");
-      closeButtonIcon.setAttribute("d", "M16 16 36 36 M36 16 16 36");
-      closeButtonIcon.setAttribute("fill", "none");
+      var closeButtonIcon = newElem("div", closeButton, "close", "embeds-close-icon");
       addEvent(closeButton, "click", function() {
         $("#embeds")[0].innerHTML = "";
       });
