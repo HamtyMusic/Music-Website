@@ -98,12 +98,14 @@ function newElem(type, parent, arg3, id) {
   if(isObject(arg3)) {
     for(var i in arg3) {
       if (arg3.hasOwnProperty(i)) {
-        if(i.toLowerCase == "innerhtml" || i.toLowerCase == "outerhtml" || i.toLowerCase == "id") {
-          elem[i] = arg3[i];
-        } else if(i.toLowerCase == "class") {
-          elem.className = arg3[i];
-        } else {
-          elem.setAttribute(i, arg3[i]);
+        if(i.toLowerCase) {
+          if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
+            elem[i] = arg3[i];
+          } else if(i.toLowerCase() == "class") {
+            elem.className = arg3[i];
+          } else {
+            elem.setAttribute(i, arg3[i]);
+          }
         }
       }
     }
