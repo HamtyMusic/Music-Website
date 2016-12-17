@@ -113,9 +113,6 @@ a.shadow, a .shadow, input.shadow {
   height: 100%;
   overflow: hidden;
 }
-.close:hover::before, .close:hover::after, .close:active::before, .close:active::after {
-  background: #1ebcc5;
-}
 .close::before, .close::after {
   content: '';
   position: absolute;
@@ -131,24 +128,6 @@ a.shadow, a .shadow, input.shadow {
 }
 .close::after {
   transform: rotate(-45deg);
-}
-.close.big {
-  transform: scale(3);
-}
-.close.hairline::before, .close.hairline::after {
-  height: 1px;
-}
-.close.thick::before, .close.thick::after {
-  height: 4px;
-  margin-top: -2px;
-}
-.close.black::before, .close.black::after {
-  height: 8px;
-  margin-top: -4px;
-}
-.close.heavy::before, .close.heavy::after {
-  height: 12px;
-  margin-top: -6px;
 }
 #snowCanvas {
   position:fixed;
