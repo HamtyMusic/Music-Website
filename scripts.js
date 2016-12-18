@@ -137,7 +137,7 @@ function LetItSnow() {
   document.removeEventListener("DOMContentLoaded", LetItSnow);
   var snowCanvasId = "snowCanvas",
     framerate = 30,
-    flakeNumberModifier = 0.5,
+    flakeNumberModifier = 0.1,
     fallSpeedModifier = 0.4;
   var canvas = document.getElementById(snowCanvasId);
   if(canvas) {
