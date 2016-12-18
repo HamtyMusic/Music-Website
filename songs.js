@@ -1,4 +1,10 @@
 var Songs = {
+  luminescence: {
+    name: "Hamty - Luminescence",
+    title: "Luminescence",
+    author: "Hamty",
+    img: "https://i.imgur.com/HeMbHY6.jpg"
+  },
   nightOwls: {
     name: "3MBER & SRK - Night Owls (Hamty's Remix)",
     title: "Night Owls (Hamty\'s Remix)",
