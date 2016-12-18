@@ -137,9 +137,8 @@ function LetItSnow() {
   document.removeEventListener("DOMContentLoaded", LetItSnow);
   var snowCanvasId = "snowCanvas",
     framerate = 30,
-    flakeNumberModifier = 0.1,
-    fallSpeedModifier = 0.4,
-    minFlakeSize = 2;
+    flakeNumberModifier = 0.05,
+    fallSpeedModifier = 0.3;
   var canvas = document.getElementById(snowCanvasId);
   if(canvas) {
     canvas.outerHTML = "";
@@ -208,7 +207,7 @@ function LetItSnow() {
     return {
       x: range(10, 310),
       y: init ? range(-5, height + 5) : -5,
-      size: (Math.max(range(minFlakeSize, 4), 2)),
+      size: (Math.max(range(1, 4), 2)),
       yMod: range(0, 150),
       waveSize: range(1, 4)
     };
