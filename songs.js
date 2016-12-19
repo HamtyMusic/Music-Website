@@ -3,7 +3,28 @@ var Songs = {
     name: "Hamty - Luminescence",
     title: "Luminescence",
     author: "Hamty",
-    img: "https://i.imgur.com/HeMbHY6.jpg"
+    img: "https://i.imgur.com/VjFhnjx.jpg",
+    links: {
+      soundcloud: {
+        href: "https://soundcloud.com/hamty/luminescence",
+        id: ""
+      },
+      youtube: {
+        id: "UUx1BnTf7WE",
+        aspectRatio: 43 / 18
+      },
+      bandcamp: "https://hamty.bandcamp.com/track/luminescence"
+    },
+    download: {
+      flac: "https://www.toneden.io/hamty/post/luminescence-flac",
+      mp3: "https://www.toneden.io/hamty/post/luminescence-mp3"
+    },
+    details: {
+      type: 0,
+      tempo: 128,
+      genre: "Ambient",
+      duration: 196
+    }
   },
   nightOwls: {
     name: "3MBER & SRK - Night Owls (Hamty's Remix)",
