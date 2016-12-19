@@ -11,7 +11,7 @@ var Songs = {
       },
       youtube: {
         id: "UUx1BnTf7WE",
-        aspectRatio: 2580 / 1080
+        aspectRatio: 21 / 9
       },
       bandcamp: "https://hamty.bandcamp.com/track/luminescence"
     },
@@ -39,7 +39,7 @@ var Songs = {
       },
       youtube: {
         id: "65F6nA7xdTs",
-        aspectRatio: 2580 / 1080
+        aspectRatio: 21 / 9
       },
       bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
     },
