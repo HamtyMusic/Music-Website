@@ -11,7 +11,7 @@ var Songs = {
       },
       youtube: {
         id: "UUx1BnTf7WE",
-        aspectRatio: 43 / 18
+        aspectRatio: 2580 / 1080
       },
       bandcamp: "https://hamty.bandcamp.com/track/luminescence"
     },
@@ -24,7 +24,8 @@ var Songs = {
       tempo: 128,
       genre: "Ambient",
       duration: 196
-    }
+    },
+    date: new Date(2016, 12, 31)
   },
   nightOwls: {
     name: "3MBER & SRK - Night Owls (Hamty's Remix)",
@@ -38,7 +39,7 @@ var Songs = {
       },
       youtube: {
         id: "65F6nA7xdTs",
-        aspectRatio: 43 / 18
+        aspectRatio: 2580 / 1080
       },
       bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
     },
