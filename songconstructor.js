@@ -246,7 +246,7 @@ function drawSong(Song) {
       }
     }
     if($("#embeds")[0].innerHTML != "") {
-      var closeButton = newElem("div", $("#embeds")[0], false, "embeds-close");
+      var closeButton = newElem("div", $("#embeds")[0], "close-wrap", "embeds-close");
       var closeButtonIcon = newElem("div", closeButton, "close", "embeds-close-icon");
       addEvent(closeButton, "click", function() {
         $("#embeds")[0].innerHTML = "";
