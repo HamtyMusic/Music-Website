@@ -141,20 +141,18 @@ a.shadow, a .shadow, input.shadow {
 }
 .close-wrap {
   position: absolute;
-  width: 0.9em;
-  height: 0.9em;
-  top: 0.1em;
-  right: 0.1em;
-  display: block;
-  cursor: pointer;
-  padding: 4px;
-}
-.close-wrap.small {
   width: 1.4em;
   height: 1.4em;
   top: 0.1em;
   right: 0.1em;
+  display: block;
+  cursor: pointer;
   padding: 6px;
+}
+.close-wrap.small {
+  width: 0.9em;
+  height: 0.9em;
+  padding: 4px;
 }
 .close-wrap:hover, .close::before, .close::after {
   background: #bbb;
