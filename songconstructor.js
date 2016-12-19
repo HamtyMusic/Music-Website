@@ -246,12 +246,22 @@ function downloadSong(Song) {
   if(!isObject(Song)) {
     Song = Songs[Song];
   }
-  for(var key in Song.download) {
-    if(Song.download.hasOwnProperty(key)) {
+  if (!Song || !Song.download) return false;
+  var popup = newPopup();
+  if (Song.img) {
+    var img = newElem("img", popup, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
+  }
+  var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
+  newElem("span", dlTextWrap, { innerHTML: "Download ", title: Song.name });
+  if (Song.title) {
+    var title = newElem("span", popup, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
+  }
+  var linksWrap = newElem("div", popup, "popup-dl-links-wrap");
+  for (var key in Song.download) {
+    if (Song.download.hasOwnProperty(key)) {
       var link = Song.download[key];
       link = (link.href) ? link.href : link;
-      var popup = newPopup();
-      var a = newElem("a", popup, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var a = newElem("a", linksWrap, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
       var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
   }
