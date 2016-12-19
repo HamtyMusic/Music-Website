@@ -229,8 +229,7 @@ function drawSong(Song) {
       if(ytid) {
         var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap shadow");
         if(Song.links.youtube.aspectRatio) {
-          ytEmbedWrap.dataset.aspectRatio = Song.links.youtube.aspectRatio;
-          ytEmbedWrap.onclick = "this.style[\"padding-bottom\"] = 100 / this.dataset.aspectRatio + \"%\"";
+          ytEmbedWrap.style["padding-bottom"] = 100 / Song.links.youtube.aspectRatio + "%";
         }
         var ytEmbed = newElem("iframe", ytEmbedWrap, { class: "yt-embed embed", src: "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname), frameborder: 0, allowfullscreen: true });
         window.curYtEmbed = ytEmbedWrap;
