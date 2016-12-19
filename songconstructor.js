@@ -57,7 +57,7 @@ function hideSongs(Songs) {
 }
 
 function drawSongs(Songs) {
-  if (Songs) {} else {
+  if (!Songs) {
     return false;
   }
   var songParent = $("#SongList")[0];
@@ -66,60 +66,62 @@ function drawSongs(Songs) {
     return false;
   }
   for (var i in Songs) {
-    if (!Songs.hasOwnProperty(i)) { continue; }
-    var Song = Songs[i];
-    if(Song.elem) {
-      songParent.appendChild(Song.elem);
-      continue;
-    }
-    var wrap = newElem("div", songParent, "song-wrap");
-    var elem = newElem("div", wrap, "song pb shadow");
-    if (Song.img) {
-      var imgPar = newElem("a", elem, { class: "song-image-parent lighten", href: "#" + i });
-      var img = newElem("img", imgPar, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
-    }
-    var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
-    var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
-    
-    var links = newElem("div", elem, "link-buttons");
-    if(Song.download) {
-      var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
-        dlbtn = newElem("img", a, "link-button");
-      setVectorSource(dlbtn, "download");
-      addEvent(a, "click", function() {
-        downloadSong(Song);
-      });
-    }
-    for (var key in Song.links) {
-      if (!Song.links.hasOwnProperty(key)) { continue; }
-      var link = Song.links[key];
-      link = (link.href) ? link.href : link;
-      var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
-      var dlbtn = newElem("img", a, "link-button");
-      setVectorSource(dlbtn, key);
-    }
-    //Release Date
-    if (Song.date) {
-      if (Object.prototype.toString.call(Song.date) === "[object Date]") {
-        var date = Song.date;
-        var dates = newElem("div", elem, "DateContainer");
-        var date1 = newElem("div", dates, {
-          class: "dateText dateAbsolute",
-          innerHTML: date.toLocaleDateString([], {
-            day: "numeric",
-            month: "short",
-            year: "numeric"
-          }),
-          title: (date.toLocaleDateString([], {
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-          }) + " | " + date.toLocaleTimeString([]))
-        });
-        var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
+    (function () {
+      if (!Songs.hasOwnProperty(i)) { continue; }
+      var Song = Songs[i];
+      if(Song.elem) {
+        songParent.appendChild(Song.elem);
+        continue;
       }
-    }
-    Song.elem = wrap;
+      var wrap = newElem("div", songParent, "song-wrap");
+      var elem = newElem("div", wrap, "song pb shadow");
+      if (Song.img) {
+        var imgPar = newElem("a", elem, { class: "song-image-parent lighten", href: "#" + i });
+        var img = newElem("img", imgPar, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
+      }
+      var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
+      var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
+
+      var links = newElem("div", elem, "link-buttons");
+      if(Song.download) {
+        var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
+          dlbtn = newElem("img", a, "link-button");
+        setVectorSource(dlbtn, "download");
+        addEvent(a, "click", function() {
+          downloadSong(Song);
+        });
+      }
+      for (var key in Song.links) {
+        if (!Song.links.hasOwnProperty(key)) { continue; }
+        var link = Song.links[key];
+        link = (link.href) ? link.href : link;
+        var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+        var dlbtn = newElem("img", a, "link-button");
+        setVectorSource(dlbtn, key);
+      }
+      //Release Date
+      if (Song.date) {
+        if (Object.prototype.toString.call(Song.date) === "[object Date]") {
+          var date = Song.date;
+          var dates = newElem("div", elem, "DateContainer");
+          var date1 = newElem("div", dates, {
+            class: "dateText dateAbsolute",
+            innerHTML: date.toLocaleDateString([], {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            }),
+            title: (date.toLocaleDateString([], {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            }) + " | " + date.toLocaleTimeString([]))
+          });
+          var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
+        }
+      }
+      Song.elem = wrap;
+    }());
   }
   return true;
 }
@@ -252,9 +254,9 @@ function downloadSong(Song) {
     var img = newElem("img", popup, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
   }
   var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
-  newElem("span", dlTextWrap, { innerHTML: "Download ", title: Song.name });
+  newElem("span", dlTextWrap, { innerHTML: "Download", title: Song.name });
   if (Song.title) {
-    var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
+    var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: " \"" + Song.title + "\"", title: Song.name });
   }
   var linksWrap = newElem("div", popup, "popup-dl-links-wrap");
   var n = 0;
