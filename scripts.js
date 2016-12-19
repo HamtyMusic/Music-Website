@@ -49,17 +49,17 @@ function isObject(val) {
   if (val === null) { return false; }
   return ((typeof val === 'function') || (typeof val === 'object'));
 }
-function createPopup() {
+function newPopup() {
   var otherPopup = $(".popup-body")[0];
   if(otherPopup) {
     otherPopup.outerHTML = "";
-    return createPopup();
+    return newPopup();
   }
   var popupBody = newElem("div", false, "popup-body"),
     popupBg = newElem("div", popupBody, "popup-bg"),
     popupWrap = newElem("div", popupBody, "popup-wrap"),
     popup = newElem("div", popupWrap, "popup pb shadow"),
-    popupInner = newElem("div", popup, "popup-wrap"),
+    popupInner = newElem("div", popup, "popup-inner"),
     closeButton = newElem("div", popup, "close-wrap", "embeds-close"),
     closeButtonIcon = newElem("div", closeButton, "close", "embeds-close-icon");
   addEvent(popupBg, "click", closePopup);
