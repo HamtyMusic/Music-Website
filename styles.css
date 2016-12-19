@@ -118,6 +118,7 @@ a.shadow, a .shadow, input.shadow {
   overflow-x: hidden;
 }
 .popup-bg {
+  position:absolute;
   width:100%; height:100%;
   background: rgba(255,255,255,0.9);
 }
@@ -131,6 +132,7 @@ a.shadow, a .shadow, input.shadow {
 }
 .popup {
   position: relative;
+  width: auto;
 }
 .close-wrap {
   position: absolute;
