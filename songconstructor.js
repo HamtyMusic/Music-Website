@@ -258,8 +258,8 @@ function downloadSong(Song) {
   }
   var linksWrap = newElem("div", popup, "popup-dl-links-wrap");
   var n = 0;
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) size++;
+  for (var key in Song.download) {
+    if (Song.download.hasOwnProperty(key)) size++;
   }
   for (var key in Song.download) {
     if (Song.download.hasOwnProperty(key)) {
