@@ -230,9 +230,9 @@ function drawSong(Song) {
         var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap shadow");
         if(Song.links.youtube.aspectRatio) {
           function setAspectRatio() {
-            this.style["padding-bottom"] = 100 / this.dataset["aspect-ratio"] + "%";
+            this.style["padding-bottom"] = 100 / this.dataset.aspectRatio + "%";
           }
-          ytEmbedWrap.dataset["aspect-ratio"] = Song.links.youtube.aspectRatio;
+          ytEmbedWrap.dataset.aspectRatio = Song.links.youtube.aspectRatio;
           addEvent(ytEmbedWrap, "click", setAspectRatio);
         }
         var ytEmbed = newElem("iframe", ytEmbedWrap, { class: "yt-embed embed", src: "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname), frameborder: 0, allowfullscreen: true });
