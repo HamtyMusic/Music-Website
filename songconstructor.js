@@ -66,8 +66,8 @@ function drawSongs(Songs) {
     return false;
   }
   for (var i in Songs) {
+    if (!Songs.hasOwnProperty(i)) { continue; }
     (function () {
-      if (!Songs.hasOwnProperty(i)) { continue; }
       var Song = Songs[i];
       if(Song.elem) {
         songParent.appendChild(Song.elem);
