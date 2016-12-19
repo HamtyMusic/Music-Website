@@ -256,7 +256,7 @@ function downloadSong(Song) {
   var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
   newElem("span", dlTextWrap, { innerHTML: "Download", title: Song.name });
   if (Song.title) {
-    var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: " \"" + Song.title + "\"", title: Song.name });
+    var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
   }
   var linksWrap = newElem("div", popup, "popup-dl-links-wrap");
   var n = 0;
