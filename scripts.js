@@ -1,9 +1,73 @@
+String.prototype.isEmpty = function() {
+  return (this.length === 0 || !this.trim());
+};
+String.prototype.capFirstLetter = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
 function $(q, caller) {
   caller = caller || document;
   return caller.querySelectorAll(q);
 }
-String.prototype.capFirstLetter = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
+function newElem(type, parent, arg3, id) {
+  var elem = document.createElement(type);
+  (parent || document.body).appendChild(elem);
+  function setAttributes(obj) {
+    for(var i in obj) {
+      if (obj.hasOwnProperty(i)) {
+        if(i.toLowerCase) {
+          if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
+            elem[i] = obj[i];
+          } else if(i.toLowerCase() == "class") {
+            elem.className = obj[i];
+          } else {
+            elem.setAttribute(i, obj[i]);
+          }
+        }
+      }
+    }
+  }
+  if(isObject(arg3)) {
+    setAttributes(arg3);
+  } else if(arg3) {
+    elem.className = arg3;
+  }
+  if (id) {
+    elem.id = id;
+  }
+  return elem;
+}
+function addEvent(elem, evnt, func) {
+  if (elem.addEventListener) { // W3C DOM
+    elem.addEventListener(evnt, func, false);
+  } else if (elem.attachEvent) { // IE DOM
+    elem.attachEvent("on" + evnt, func);
+  } else { // No much to do
+    elem[evnt] = func;
+  }
+}
+function isObject(val) {
+  if (val === null) { return false; }
+  return ((typeof val === 'function') || (typeof val === 'object'));
+}
+function createPopup() {
+  var otherPopup = $(".popup-body")[0];
+  if(otherPopup) {
+    otherPopup.outerHTML = "";
+    return createPopup();
+  }
+  var popupBody = newElem("div", false, "popup-body"),
+    popupBg = newElem("div", popupBody, "popup-bg"),
+    popupWrap = newElem("div", popupBody, "popup-wrap"),
+    popup = newElem("div", popupWrap, "popup pb shadow"),
+    popupInner = newElem("div", popup, "popup-wrap"),
+    closeButton = newElem("div", popup, "close-wrap", "embeds-close"),
+    closeButtonIcon = newElem("div", closeButton, "close", "embeds-close-icon");
+  addEvent(popupBg, "click", closePopup);
+  addEvent(closeButton, "click", closePopup);
+  return popupInner;
+  function closePopup() {
+    $(".popup-body")[0].outerHTML = "";
+  }
 }
 function setVectorSource(elem, id) {
   if(elem && id) {
@@ -88,47 +152,6 @@ function timeAgo(oldDate, length) {
   }
   return (sb.join(', ') + " ago");
 }
-function isObject(val) {
-  if (val === null) { return false; }
-  return ((typeof val === 'function') || (typeof val === 'object'));
-}
-function newElem(type, parent, arg3, id) {
-  var elem = document.createElement(type);
-  (parent || document.body).appendChild(elem);
-  if(isObject(arg3)) {
-    for(var i in arg3) {
-      if (arg3.hasOwnProperty(i)) {
-        if(i.toLowerCase) {
-          if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
-            elem[i] = arg3[i];
-          } else if(i.toLowerCase() == "class") {
-            elem.className = arg3[i];
-          } else {
-            elem.setAttribute(i, arg3[i]);
-          }
-        }
-      }
-    }
-  } else if(arg3) {
-    elem.className = arg3;
-  }
-  if (id) {
-    elem.id = id;
-  }
-  return elem;
-}
-function addEvent(elem, evnt, func) {
-  if (elem.addEventListener) { // W3C DOM
-    elem.addEventListener(evnt, func, false);
-  } else if (elem.attachEvent) { // IE DOM
-    elem.attachEvent("on" + evnt, func);
-  } else { // No much to do
-    elem[evnt] = func;
-  }
-}
-String.prototype.isEmpty = function() {
-  return (this.length === 0 || !this.trim());
-};
 var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 function getCurrentMonth() {
   return (new Date()).getMonth()
