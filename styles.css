@@ -205,6 +205,7 @@ a.shadow, a .shadow, input.shadow {
 }
 @keyframes appear-three {
   0% { transform: translateX(-20em); opacity: 0; }
+  100% { transform: translateX(4em); }
   100% { transform: translateX(0); opacity: 1; }
 }
 @keyframes fade-in {
