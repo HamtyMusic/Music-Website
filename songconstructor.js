@@ -71,7 +71,7 @@ function drawSongs(Songs) {
       var Song = Songs[i];
       if(Song.elem) {
         songParent.appendChild(Song.elem);
-        continue;
+        return true;
       }
       var wrap = newElem("div", songParent, "song-wrap");
       var elem = newElem("div", wrap, "song pb shadow");
