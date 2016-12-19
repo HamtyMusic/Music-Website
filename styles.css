@@ -128,6 +128,7 @@ a.shadow, a .shadow, input.shadow {
 .popup-wrap {
   width:100%; min-height:100%;
   padding: 2em;
+  padding-bottom:4em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,6 +137,7 @@ a.shadow, a .shadow, input.shadow {
 }
 .popup {
   position: relative;
+  padding: 1.5em;
   max-width: 22em;
   animation: appear-three ease-out 1 0.5s;
 }
