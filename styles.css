@@ -109,6 +109,16 @@ a.shadow, a .shadow, input.shadow {
   border-top-color: rgba(160, 174, 239, .8);
   border-radius: 100%;
 }
+.popup-body {
+  position: fixed;
+  width:100%; height:100%;
+  top:0; bottom:0; left:0; right:0;
+  margin:0; padding:0;
+}
+.popup-bg {
+  width:100%; height:100%;
+  background: rgba(255,255,255,0.8);
+}
 .close-wrap {
   position: absolute;
   width: 0.9em;
