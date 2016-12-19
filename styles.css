@@ -134,7 +134,8 @@ a.shadow, a .shadow, input.shadow {
 }
 .popup {
   position: relative;
-  max-width: 20em;
+  max-width: 22em;
+  animation: appear-three 1 0.5s;
 }
 .close-wrap {
   position: absolute;
@@ -143,8 +144,8 @@ a.shadow, a .shadow, input.shadow {
   top: 0.1em;
   right: 0.1em;
   display: block;
-  cursor:pointer;
-  padding:4px;
+  cursor: pointer;
+  padding: 4px;
 }
 .close-wrap:hover, .close::before, .close::after {
   background: #bbb;
@@ -200,6 +201,10 @@ a.shadow, a .shadow, input.shadow {
 }
 @keyframes appear-two {
   0% { transform: translateX(1em); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes appear-three {
+  0% { transform: translateX(-20em); opacity: 0; }
   100% { transform: translateX(0); opacity: 1; }
 }
 @keyframes fade-in {
