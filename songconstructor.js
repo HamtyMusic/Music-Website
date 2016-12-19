@@ -83,25 +83,12 @@ function drawSongs(Songs) {
     
     var links = newElem("div", elem, "link-buttons");
     if(Song.download) {
-      var a = newElem("a", links, { class: "link download-link", title: "Click for download options" });
-      var arrowBoxContainer = newElem("div", links, "arrow_box-container"),
-        arrowBox = newElem("div", arrowBoxContainer, "arrow_box shadow"),
+      var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
         dlbtn = newElem("img", a, "link-button");
-      addEvent(dlbtn, "mousedown", function() {
-        var abc = $(".arrow_box-container", this.parentElement.parentElement)[0];
-        abc.style.display = "block";
-        abc.focus();
-      });
-      addEvent(arrowBoxContainer, "mouseleave", function() { this.style.display = "none" });
-      addEvent(arrowBoxContainer, "blur", function() { this.style.display = "none" });
       setVectorSource(dlbtn, "download");
-      for (var key in Song.download) {
-        if (!Song.download.hasOwnProperty(key)) { continue; }
-        var link = Song.download[key];
-        link = (link.href) ? link.href : link;
-        var a = newElem("a", arrowBox, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
-        var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
-      }
+      addEvent(a, "click", function() {
+        downloadSong(Song);
+      });
     }
     for (var key in Song.links) {
       if (!Song.links.hasOwnProperty(key)) { continue; }
@@ -255,3 +242,18 @@ function drawSong(Song) {
   }
   return true;
 }
+function downloadSong(Song) {
+  if(!isObject(Song)) {
+    Song = Songs[Song];
+  }
+  for(var key in Song.download) {
+    if(Song.download.hasOwnProperty(key)) {
+      var link = Song.download[key];
+      link = (link.href) ? link.href : link;
+      var popup = newPopup();
+      var a = newElem("a", popup, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
+    }
+  }
+}
+  
