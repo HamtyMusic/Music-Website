@@ -122,7 +122,7 @@ a.shadow, a .shadow, input.shadow {
   position:fixed;
   width:100%; height:100%; min-height:100%;
   background:rgba(255,255,255,0.9);
-  animation: fade-in 1 0.2s;
+  animation: fade-in 1 0.05s;
 }
 .popup-wrap {
   width:100%; min-height:100%;
@@ -206,7 +206,7 @@ a.shadow, a .shadow, input.shadow {
 }
 @keyframes appear-three {
   0% { transform: translateX(-20em); opacity: 0; }
-  100% { transform: translateX(4em); }
+  50% { transform: translateX(4em); }
   100% { transform: translateX(0); opacity: 1; }
 }
 @keyframes fade-in {
