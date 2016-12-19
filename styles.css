@@ -109,6 +109,22 @@ a.shadow, a .shadow, input.shadow {
   border-top-color: rgba(160, 174, 239, .8);
   border-radius: 100%;
 }
+.close-wrap {
+  position: absolute;
+  width: 0.9em;
+  height: 0.9em;
+  top: 0.1em;
+  right: 0.1em;
+  display: block;
+  cursor:pointer;
+  padding:4px;
+}
+.close-wrap:hover, .close::before, .close::after {
+  background: #bbb;
+}
+.close-wrap:active {
+  background: #f00;
+}
 .close {
   position: relative;
   display: inline-block;
@@ -124,13 +140,15 @@ a.shadow, a .shadow, input.shadow {
   top: 50%;
   left: 0;
   margin-top: -1px;
-  background: #000;
 }
 .close::before {
   transform: rotate(45deg);
 }
 .close::after {
   transform: rotate(-45deg);
+}
+.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after {
+  background: #fff;
 }
 #snowCanvas {
   position:fixed;
