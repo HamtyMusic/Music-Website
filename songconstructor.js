@@ -254,14 +254,20 @@ function downloadSong(Song) {
   var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
   newElem("span", dlTextWrap, { innerHTML: "Download ", title: Song.name });
   if (Song.title) {
-    var title = newElem("span", popup, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
+    var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
   }
   var linksWrap = newElem("div", popup, "popup-dl-links-wrap");
+  var n = 0;
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
   for (var key in Song.download) {
     if (Song.download.hasOwnProperty(key)) {
       var link = Song.download[key];
       link = (link.href) ? link.href : link;
-      var a = newElem("a", linksWrap, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var linkWrap = newElem("div", linksWrap, "link-wrap");
+      linkWrap.style.width = 100 / n + "%";
+      var a = newElem("a", linkWrap, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
       var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
   }
