@@ -149,14 +149,14 @@ a.shadow, a .shadow, input.shadow {
   right: 0.2em;
   display: block;
   cursor: pointer;
-  padding: 6px;
+  padding: 0.3em;
 }
 .close-wrap.small {
   width: 0.9em;
   height: 0.9em;
   top: 0.1em;
   right: 0.1em;
-  padding: 4px;
+  padding: 0.2em;
 }
 .close-wrap:hover, .close::before, .close::after {
   background: #bbb;
