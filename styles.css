@@ -170,6 +170,9 @@ a.shadow, a .shadow, input.shadow {
 .close-wrap:active {
   background: #f00;
 }
+.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after {
+  background: #fff;
+}
 .close-wrap, .close-wrap:hover, .close-wrap:active {
   border-radius:50%;
 }
@@ -188,18 +191,19 @@ a.shadow, a .shadow, input.shadow {
   top: 50%;
   left: 0;
   margin-top: -1px;
-  animation: width 1;
 }
 .close::before {
-  animation-duration: 0.5s;
+  animation: close-icon-stroke 0.5s ease-out 1;
   transform: rotate(45deg);
 }
 .close::after {
-  animation-duration: 0.6s;
+  animation: close-icon-stroke 0.6s 1;
   transform: rotate(-45deg);
 }
-.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after {
-  background: #fff;
+@keyframes close-icon-stroke {
+  0% { width:0 }
+  80% { width:0 }
+  100% { width: 100%; }
 }
 #snowCanvas {
   position:fixed;
@@ -237,11 +241,6 @@ a.shadow, a .shadow, input.shadow {
 }
 @keyframes roundify {
   100% { border-radius: 50%; }
-}
-@keyframes width {
-  0% { width:0 }
-  80% { width:0 }
-  100% { width: 100%; }
 }
 @keyframes stroke {
   100% { stroke-dashoffset: 0; }
