@@ -60,8 +60,8 @@ function newPopup() {
     popupWrap = newElem("div", popupBody, "popup-wrap"),
     popup = newElem("div", popupWrap, "popup pb shadow"),
     popupInner = newElem("div", popup, "popup-inner"),
-    closeButton = newElem("div", popup, "close-wrap", "embeds-close"),
-    closeButtonIcon = newElem("div", closeButton, "close", "embeds-close-icon");
+    closeButton = newElem("div", popup, "close-wrap"),
+    closeButtonIcon = newElem("div", closeButton, "close");
   addEvent(popupBg, "click", closePopup);
   addEvent(closeButton, "click", closePopup);
   return popupInner;
