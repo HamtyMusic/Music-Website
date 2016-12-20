@@ -161,16 +161,20 @@ a.shadow, a .shadow, input.shadow {
   right: 0.1em;
   padding: 0.2em;
 }
-.close-wrap, .close::before, .close::after {
+.close-wrap:before {
+  position:absolute;
+  width:100%; height:100%; min-height:100%;
+}
+.close-wrap:before, .close::before, .close::after {
   transition: 0.2s;
 }
-.close-wrap:hover, .close::before, .close::after {
+.close-wrap:hover:before, .close::before, .close::after {
   background: #bbb;
 }
 .close-wrap:active {
   background: #f00;
 }
-.close-wrap:hover, .close-wrap:active {
+.close-wrap, .close-wrap:hover:before, .close-wrap:active:before {
   border-radius:50%;
 }
 .close {
