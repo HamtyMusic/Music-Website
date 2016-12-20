@@ -201,8 +201,7 @@ a.shadow, a .shadow, input.shadow {
   transform: rotate(-45deg);
 }
 @keyframes close-icon-stroke {
-  0% { width:0 }
-  80% { width:0 }
+  0%, 80% { width:0 }
   100% { width: 100%; }
 }
 #snowCanvas {
