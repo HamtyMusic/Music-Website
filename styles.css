@@ -44,6 +44,9 @@ a.shadow, a .shadow, input.shadow {
 .lighten, .lighten:active {
   opacity: 1;
 }
+.clickable {
+  cursor:pointer;
+}
 .nopad {
   padding:0;
 }
