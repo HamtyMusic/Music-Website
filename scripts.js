@@ -243,7 +243,9 @@ function LetItSnow() {
 (function() {
   var m = month[getCurrentMonth()];
   if((location.pathname != "/banner") && (m == "December" || m == "January" || m == "February")) {
-    addEvent(document, "DOMContentLoaded", LetItSnow);
-    addEvent(window, "resize", LetItSnow);
+    addEvent(document, "DOMContentLoaded", function() {
+      LetItSnow();
+      addEvent(window, "resize", LetItSnow);
+    });
   }
 })();
