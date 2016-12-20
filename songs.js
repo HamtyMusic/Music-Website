@@ -25,7 +25,7 @@ var Songs = {
       genre: "Ambient",
       duration: 196
     },
-    date: new Date(2016, 11, 999999999999)
+    date: new Date(2016, 11, 999999)
   },
   nightOwls: {
     name: "3MBER & SRK - Night Owls (Hamty's Remix)",
