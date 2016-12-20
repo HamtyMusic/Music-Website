@@ -171,7 +171,7 @@ a.shadow, a .shadow, input.shadow {
 .close-wrap:hover:before, .close::before, .close::after {
   background: #bbb;
 }
-.close-wrap:active {
+.close-wrap:active:before {
   background: #f00;
 }
 .close-wrap, .close-wrap:hover:before, .close-wrap:active:before {
