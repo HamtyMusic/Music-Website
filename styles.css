@@ -153,6 +153,7 @@ a.shadow, a .shadow, input.shadow {
   display: block;
   cursor: pointer;
   padding: 0.3em;
+  transition: background 0.1s, border-radius 0.2s;
 }
 .close-wrap.small {
   width: 0.9em;
@@ -166,6 +167,9 @@ a.shadow, a .shadow, input.shadow {
 }
 .close-wrap:active {
   background: #f00;
+}
+.close-wrap:hover, .close-wrap:active {
+  border-radius:50%;
 }
 .close {
   position: relative;
@@ -226,8 +230,9 @@ a.shadow, a .shadow, input.shadow {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+@keyframes roundify {
+  100% { border-radius: 50%; }
+}
 @keyframes stroke {
-  100% {
-    stroke-dashoffset: 0;
-  }
+  100% { stroke-dashoffset: 0; }
 }
