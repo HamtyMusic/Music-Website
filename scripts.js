@@ -156,6 +156,18 @@ var month = ["January", "February", "March", "April", "May", "June", "July", "Au
 function getCurrentMonth() {
   return (new Date()).getMonth()
 }
+function selectText(elem) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(elem);
+    range.select();
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNodeContents(elem);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+  }
+}
 function LetItSnow() {
   document.removeEventListener("DOMContentLoaded", LetItSnow);
   var snowCanvasId = "snowCanvas",
