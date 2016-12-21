@@ -80,6 +80,9 @@ function drawSongs(Songs) {
         var img = newElem("img", imgPar, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
       }
       var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
+      addEvent(title, "dblclick", function() {
+        selectText(title);
+      });
       var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
 
       var links = newElem("div", elem, "link-buttons");
@@ -138,6 +141,9 @@ function drawSong(Song) {
   var title = $("#SongTitle")[0];
   title.innerHTML = Song.name || "No name";
   title.setAttribute("title", Song.title + " by " + Song.author);
+  addEvent(title, "dblclick", function() {
+    selectText(title);
+  });
   
   var links = $("#SongLinks")[0];
   links.innerHTML = "";
