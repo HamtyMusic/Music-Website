@@ -173,7 +173,7 @@ a.shadow, a .shadow, input.shadow {
 .close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after {
   background: #fff;
 }
-.close-wrap, .close-wrap:hover, .close-wrap:active {
+.close-wrap:hover, .close-wrap:active {
   border-radius:50%;
 }
 .close {
