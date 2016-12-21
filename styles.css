@@ -240,6 +240,10 @@ a.shadow, a .shadow, input.shadow {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+@keyframes visible {
+  0% { display:block; }
+  100% { display:block; }
+}
 @keyframes roundify {
   100% { border-radius: 50%; }
 }
