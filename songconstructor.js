@@ -149,7 +149,7 @@ function drawSong(Song) {
       var link = Song.download[key];
       link = (link.href) ? link.href : link;
       var a = newElem("a", dlLinks, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
-      var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
+      var span = newElem("span", a, { class: "link-description lighten", innerHTML: "." + key });
     }
   } else {
     dlLinks.innerHTML = "Nothing here...";
@@ -270,7 +270,7 @@ function downloadSong(Song) {
       var linkWrap = newElem("div", linksWrap, "link-wrap");
       linkWrap.style.width = 100 / n + "%";
       var a = newElem("a", linkWrap, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
-      var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
+      var span = newElem("span", a, { class: "link-description lighten", innerHTML: "." + key });
     }
   }
 }
