@@ -283,7 +283,7 @@ var Songs = {
   },
   waterfall: {
     name: "Hamty - Waterfall",
-    title: "The Waterfall",
+    title: "Waterfall",
     author: "Hamty",
     img: "https://i.imgur.com/XDUzgw6.jpg",
     links: {
