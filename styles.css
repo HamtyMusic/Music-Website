@@ -233,7 +233,6 @@ a.shadow, a .shadow, input.shadow {
   0% { transform: translateX(-20em); opacity: 0; }
   40% { transform: translateX(0.8em); }
   50% { transform: translateX(1em); }
-  60% { transform: translateX(0.8em); }
   100% { transform: translateX(0); opacity: 1; }
 }
 @keyframes fade-in {
