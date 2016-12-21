@@ -164,16 +164,16 @@ a.shadow, a .shadow, input.shadow {
 .close-wrap, .close::before, .close::after {
   transition: 0.2s;
 }
-.close-wrap:hover, .close::before, .close::after {
+.popup-bg:hover + * > * > .close-wrap, .close-wrap:hover, .close::before, .close::after {
   background: #bbb;
 }
-.close-wrap:active {
+.popup-bg:active + * > * > .close-wrap, .close-wrap:active {
   background: #f00;
 }
-.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after {
+.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after, .popup-bg:hover + * > * > .close-wrap > .close::before, .popup-bg:hover + * > * > .close-wrap > .close::after, .popup-bg:active + * > * > .close-wrap > .close::before, .popup-bg:active + * > * > .close-wrap > .close::after {
   background: #fff;
 }
-.close-wrap:hover, .close-wrap:active {
+.popup-bg:hover + * > * > .close-wrap, .popup-bg:active + * > * > .close-wrap, .close-wrap:hover, .close-wrap:active {
   border-radius:50%;
 }
 .close {
