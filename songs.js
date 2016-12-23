@@ -1,13 +1,14 @@
+var me = "Hamty";
 var Songs = {
   luminescence: {
-    name: "Hamty - Luminescence",
+    name: me + " - Luminescence",
     title: "Luminescence",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/VjFhnjx.jpg",
     links: {
       soundcloud: {
         href: "https://soundcloud.com/hamty/luminescence",
-        id: ""
+        id: "299164687"
       },
       youtube: {
         id: "UUx1BnTf7WE",
@@ -28,8 +29,8 @@ var Songs = {
     date: new Date(2016, 11, 22)
   },
   nightOwls: {
-    name: "3MBER & SRK - Night Owls (Hamty's Remix)",
-    title: "Night Owls (Hamty\'s Remix)",
+    name: "3MBER & SRK - Night Owls (" + me + "'s Remix)",
+    title: "Night Owls (" + me + "\'s Remix)",
     author: "3MBER \& SRK",
     img: "https://i.imgur.com/66DWb0p.jpg",
     links: {
@@ -56,9 +57,9 @@ var Songs = {
     date: new Date(2016, 11, 3)
   },
   promenade: {
-    name: "Hamty - Promenade",
+    name: me + " - Promenade",
     title: "Promenade",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/EOKKX6Z.jpg",
     links: {
       soundcloud: {
@@ -83,8 +84,8 @@ var Songs = {
     date: new Date(2016, 9, 25)
   },
   lockynAqua: {
-    name: "Lockyn - Aqua (Hamty\'s Remix)",
-    title: "Aqua (Hamty\'s Remix)",
+    name: "Lockyn - Aqua (" + me + "\'s Remix)",
+    title: "Aqua (" + me + "\'s Remix)",
     author: "Lockyn",
     img: "https://i.imgur.com/FNkzp0S.jpg",
     links: {
@@ -110,9 +111,9 @@ var Songs = {
     date: new Date(2016, 6, 3)
   },
   sunshine: {
-    name: "Hamty - Sunshine",
+    name: me + " - Sunshine",
     title: "Sunshine",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/YtgvHhF.jpg",
     links: {
       soundcloud: {
@@ -136,9 +137,9 @@ var Songs = {
     date: new Date(2015, 10, 21)
   },
   seaLights: {
-    name: "Hamty - Sea Lights",
+    name: me + " - Sea Lights",
     title: "Sea Lights",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/yzV6gD5.jpg",
     links: {
       soundcloud: {
@@ -162,9 +163,9 @@ var Songs = {
     date: new Date(2015, 5, 22, 19)
   },
   home: {
-    name: "Hamty - Home",
+    name: me + " - Home",
     title: "Home",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/7KvqLCa.jpg",
     links: {
       soundcloud: {
@@ -182,9 +183,9 @@ var Songs = {
     date: new Date(2015, 2, 25)
   },
   inspiration: {
-    name: "Hamty - Inspiration",
+    name: me + " - Inspiration",
     title: "Inspiration",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/0eU7A0y.jpg",
     links: {
       soundcloud: {
@@ -202,9 +203,9 @@ var Songs = {
     date: new Date(2015, 0, 20)
   },
   riverJourney: {
-    name: "Hamty - River Journey",
+    name: me + " - River Journey",
     title: "River Journey",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/SdQKV5Y.jpg",
     links: {
       soundcloud: {
@@ -222,9 +223,9 @@ var Songs = {
     date: new Date(2014, 8, 16)
   },
   return: {
-    name: "Hamty - The Return",
+    name: me + " - The Return",
     title: "The Return",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/yMuBKFT.jpg",
     links: {
       soundcloud: {
@@ -242,9 +243,9 @@ var Songs = {
     date: new Date(2014, 6, 17)
   },
   timeRift: {
-    name: "Hamty - Time Rift",
+    name: me + " - Time Rift",
     title: "Time Rift",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/MXMrcYl.jpg",
     links: {
       soundcloud: {
@@ -262,9 +263,9 @@ var Songs = {
     date: new Date(2014, 5, 17)
   },
   adventure: {
-    name: "Hamty - The Adventure",
+    name: me + " - The Adventure",
     title: "The Adventure",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/HzsEy9F.jpg",
     links: {
       soundcloud: {
@@ -282,9 +283,9 @@ var Songs = {
     date: new Date(2014, 4, 31)
   },
   waterfall: {
-    name: "Hamty - Waterfall",
+    name: me + " - Waterfall",
     title: "Waterfall",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/XDUzgw6.jpg",
     links: {
       soundcloud: {
@@ -302,9 +303,9 @@ var Songs = {
     date: new Date(2014, 4, 18)
   },
   dream: {
-    name: "Hamty - The Dream",
+    name: me + " - The Dream",
     title: "The Dream",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/8JFCdU0.jpg",
     links: {
       soundcloud: {
@@ -322,9 +323,9 @@ var Songs = {
     date: new Date(2014, 4, 10)
   },
   night: {
-    name: "Hamty - Night",
+    name: me + " - Night",
     title: "Night",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/qZtcOwO.jpg",
     links: {
       soundcloud: {
@@ -342,9 +343,9 @@ var Songs = {
     date: new Date(2014, 4, 3)
   },
   morningAtMountains: {
-    name: "Hamty - Morning at Mountains",
+    name: me + " - Morning at Mountains",
     title: "Morning at Mountains",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/GRXKIcW.jpg",
     links: {
       soundcloud: {
@@ -362,9 +363,9 @@ var Songs = {
     date: new Date(2014, 3, 15)
   },
   skyIsYours: {
-    name: "Hamty - The Sky Is Yours",
+    name: me + " - The Sky Is Yours",
     title: "The Sky Is Yours",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/sDlSDMJ.jpg",
     links: {
       soundcloud: {
@@ -382,9 +383,9 @@ var Songs = {
     date: new Date(2014, 3, 3)
   },
   dayBeforeTommorow: {
-    name: "Hamty - A Day Before Tommorow",
+    name: me + " - A Day Before Tommorow",
     title: "A Day Before Tommorow",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/dGxI92Q.jpg",
     links: {
       soundcloud: {
@@ -402,9 +403,9 @@ var Songs = {
     date: new Date(2014, 2, 29)
   },
   lonelyIsland: {
-    name: "Hamty - Lonely Island",
+    name: me + " - Lonely Island",
     title: "Lonely Island",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/571H9cx.jpg",
     links: {
       soundcloud: {
@@ -422,9 +423,9 @@ var Songs = {
     date: new Date(2014, 1, 8)
   },
   cupcake: {
-    name: "Hamty - Cupcake",
+    name: me + " - Cupcake",
     title: "Cupcake",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/5mNRgLp.jpg",
     links: {
       soundcloud: {
@@ -442,9 +443,9 @@ var Songs = {
     date: new Date(2014, 0, 18)
   },
   upInTheSky: {
-    name: "Hamty - Up in the Sky",
+    name: me + " - Up in the Sky",
     title: "Up in the Sky",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/oG4lwCE.jpg",
     links: {
       soundcloud: {
@@ -462,9 +463,9 @@ var Songs = {
     date: new Date(2014, 0, 1)
   },
   snowglobe: {
-    name: "Hamty - Snowglobe",
+    name: me + " - Snowglobe",
     title: "Snowglobe",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/jrzrYgL.jpg",
     links: {
       soundcloud: {
@@ -482,9 +483,9 @@ var Songs = {
     date: new Date(2013, 11, 21)
   },
   winterTime: {
-    name: "Hamty - Winter Time",
+    name: me + " - Winter Time",
     title: "Winter Time",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/RXbjYM9.jpg",
     links: {
       soundcloud: {
@@ -502,9 +503,9 @@ var Songs = {
     date: new Date(2013, 11, 21)
   },
   sleepingCity: {
-    name: "Hamty - Sleeping City",
+    name: me + " - Sleeping City",
     title: "Sleeping City",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/TxmXLHn.jpg",
     links: {
       soundcloud: {
@@ -522,9 +523,9 @@ var Songs = {
     date: new Date(2013, 11, 13)
   },
   cubeGame: {
-    name: "Hamty - The Cube Game",
+    name: me + " - The Cube Game",
     title: "The Cube Game",
-    author: "Hamty",
+    author: me,
     img: "https://i.imgur.com/skzGfmK.jpg",
     links: {
       soundcloud: {
