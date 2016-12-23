@@ -96,9 +96,7 @@ function drawSongs(Songs) {
       }
       for (var key in Song.links) {
         if (!Song.links.hasOwnProperty(key)) { continue; }
-        var link = Song.links[key];
-        link = (link.href) ? link.href : link;
-        var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+        var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
         var dlbtn = newElem("img", a, "link-button");
         setVectorSource(dlbtn, key);
       }
@@ -134,7 +132,7 @@ function drawSong(Song) {
   }
   var img = $("#SongImage")[0];
   if (Song.img) {
-    img.src = Song.img.replace(/^http:\/\//i, 'https://');
+    img.src = processLink(Song.img, true);
   } else {
     img.src = "";
   }
@@ -152,9 +150,7 @@ function drawSong(Song) {
   if(Song.download && Song.download.length != 0) {
     for (var key in Song.download) {
       if (!Song.download.hasOwnProperty(key)) { continue; }
-      var link = Song.download[key];
-      link = (link.href) ? link.href : link;
-      var a = newElem("a", dlLinks, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var a = newElem("a", dlLinks, { class: "link", href: processLink(Song.download[key]), target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
       var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
   } else {
@@ -162,9 +158,7 @@ function drawSong(Song) {
   }
   for (var key in Song.links) {
     if (!Song.links.hasOwnProperty(key)) { continue; }
-    var link = Song.links[key];
-    link = (link.href) ? link.href : link;
-    var a = newElem("a", links, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+    var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
     var dlbtn = newElem("img", a, "link-button");
     setVectorSource(dlbtn, key);
   }
@@ -257,7 +251,7 @@ function downloadSong(Song) {
   if (!Song || !Song.download) return false;
   var popup = newPopup();
   if (Song.img) {
-    var img = newElem("img", popup, { class: "song-image shadow", src: Song.img.replace(/^http:\/\//i, 'https://') });
+    var img = newElem("img", popup, { class: "song-image shadow", src: processLink(Song.img, true) });
   }
   var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
   newElem("span", dlTextWrap, { innerHTML: "Download", title: Song.name });
@@ -271,11 +265,9 @@ function downloadSong(Song) {
   }
   for (var key in Song.download) {
     if (Song.download.hasOwnProperty(key)) {
-      var link = Song.download[key];
-      link = (link.href) ? link.href : link;
       var linkWrap = newElem("div", linksWrap, "link-wrap");
       linkWrap.style.width = 100 / n + "%";
-      var a = newElem("a", linkWrap, { class: "link", href: (link.constructor === Array) ? link.join("") : link, target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var a = newElem("a", linkWrap, { class: "link", href: processLink(Song.download[key]), target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
       var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
     }
   }
