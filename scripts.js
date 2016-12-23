@@ -99,6 +99,19 @@ var images = {
     png: "http://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
   }
 }
+function processLink(link, https) {
+  if (!link) return undefined;
+  if (link.href) {
+    link = link.href;
+  }
+  if (link.constructor === Array) {
+    link = link.join("");
+  }
+  if (https) {
+    link = link.replace(/^http:\/\//i, 'https://');
+  }
+  return link;
+}
 function timeAgo(oldDate, length) {
   length = length || 3;
   var newDate = new Date();
