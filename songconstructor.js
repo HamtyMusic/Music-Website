@@ -94,7 +94,7 @@ function drawSongs(Songs) {
           downloadSong(Song);
         });
       }
-      ["soundcloud", "youtube", "bandcamp", "routenote"].forEach(function(key) {
+      ["soundcloud", "youtube", "routenote", "bandcamp"].forEach(function(key) {
         if(Song.links.hasOwnProperty(key)) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
           var dlbtn = newElem("img", a, "link-button");
@@ -157,7 +157,7 @@ function drawSong(Song) {
   } else {
     dlLinks.innerHTML = "Nothing here...";
   }
-  ["soundcloud", "youtube", "bandcamp", "routenote"].forEach(function(key) {
+  ["soundcloud", "youtube", "routenote", "bandcamp"].forEach(function(key) {
     if(Song.links.hasOwnProperty(key)) {
       var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
       var dlbtn = newElem("img", a, "link-button");
