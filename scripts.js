@@ -97,6 +97,10 @@ var images = {
   download2: {
     svg: "http://static.tumblr.com/mv8e1sl/rRrogsjia/dl3.svg",
     png: "http://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
+  },
+  routenote: {
+    svg: "http://static.tumblr.com/mv8e1sl/pn7oiydky/rn.svg",
+    png: "http://static.tumblr.com/mv8e1sl/Tw2oiydkw/rn.png"
   }
 }
 function processLink(link, https) {
