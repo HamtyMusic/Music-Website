@@ -94,11 +94,12 @@ function drawSongs(Songs) {
           downloadSong(Song);
         });
       }
-      for (var key in Song.links) {
-        if (!Song.links.hasOwnProperty(key)) { continue; }
-        var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
-        var dlbtn = newElem("img", a, "link-button");
-        setVectorSource(dlbtn, key);
+      ["soundcloud", "youtube", "bandcamp", "routenote"].forEach(function(key) {
+        if(Song.links.hasOwnProperty(key)) {
+          var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+          var dlbtn = newElem("img", a, "link-button");
+          setVectorSource(dlbtn, key);
+        }
       }
       //Release Date
       if (Song.date) {
@@ -156,11 +157,12 @@ function drawSong(Song) {
   } else {
     dlLinks.innerHTML = "Nothing here...";
   }
-  for (var key in Song.links) {
-    if (!Song.links.hasOwnProperty(key)) { continue; }
-    var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
-    var dlbtn = newElem("img", a, "link-button");
-    setVectorSource(dlbtn, key);
+  ["soundcloud", "youtube", "bandcamp", "routenote"].forEach(function(key) {
+    if(Song.links.hasOwnProperty(key)) {
+      var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+      var dlbtn = newElem("img", a, "link-button");
+      setVectorSource(dlbtn, key);
+    }
   }
 
   //Release Date
