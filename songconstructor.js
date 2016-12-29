@@ -100,7 +100,7 @@ function drawSongs(Songs) {
           var dlbtn = newElem("img", a, "link-button");
           setVectorSource(dlbtn, key);
         }
-      }
+      });
       //Release Date
       if (Song.date) {
         if (Object.prototype.toString.call(Song.date) === "[object Date]") {
@@ -163,7 +163,7 @@ function drawSong(Song) {
       var dlbtn = newElem("img", a, "link-button");
       setVectorSource(dlbtn, key);
     }
-  }
+  });
 
   //Release Date
   $("#dateAbsolute")[0].innerHTML = "";
