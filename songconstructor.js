@@ -85,7 +85,8 @@ function drawSongs(Songs) {
       });
       var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
 
-      var links = newElem("div", elem, "link-buttons");
+      var linksWrap = newElem("div", elem, "link-buttons-wrap");
+      var links = newElem("div", linksWrap, "link-buttons");
       if(Song.download) {
         var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
           dlbtn = newElem("img", a, "link-button");
