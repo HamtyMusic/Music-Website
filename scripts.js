@@ -70,9 +70,9 @@ function newPopup() {
   }
 }
 function setVectorSource(elem, id) {
-  if(elem && id) {
-    elem.src = images[id].svg;
-    elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'";
+  if(elem && id && images[id]) {
+    if (images[id].svg) { elem.src = images[id].svg; }
+    if (images[id].png) { elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'"; }
   } else {
     return false;
   }
