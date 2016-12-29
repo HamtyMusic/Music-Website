@@ -14,7 +14,8 @@ var Songs = {
         id: "UUx1BnTf7WE",
         aspectRatio: 21 / 9
       },
-      bandcamp: "https://hamty.bandcamp.com/track/luminescence"
+      bandcamp: "https://hamty.bandcamp.com/track/luminescence",
+      routenote: "https://routenote.com/r/Hamty/5057302302047"
     },
     download: {
       flac: "https://www.toneden.io/hamty/post/luminescence-flac",
@@ -42,7 +43,8 @@ var Songs = {
         id: "65F6nA7xdTs",
         aspectRatio: 21 / 9
       },
-      bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix"
+      bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix",
+      routenote: "https://routenote.com/r/Hamty/5051813106149"
     },
     download: {
       flac: "http://viid.me/qw3mvz",
@@ -69,7 +71,8 @@ var Songs = {
       youtube: {
         id: "2jD7uWM1edY"
       },
-      bandcamp: "https://hamty.bandcamp.com/track/promenade"
+      bandcamp: "https://hamty.bandcamp.com/track/promenade",
+      routenote: "https://routenote.com/r/Hamty/5057302536046"
     },
     download: {
       flac: "http://sh.st/4dPZJ",
@@ -96,7 +99,8 @@ var Songs = {
       youtube: {
         id: "mEvwdNUg9jo"
       },
-      bandcamp: "https://hamty.bandcamp.com/track/aqua-hamtys-remix"
+      bandcamp: "https://hamty.bandcamp.com/track/aqua-hamtys-remix",
+      routenote: "https://routenote.com/r/Hamty/5054316976394"
     },
     download: {
       flac: "http://sh.st/HzIKA",
@@ -123,7 +127,8 @@ var Songs = {
       youtube: {
         id: "Z7T-bCQcJVQ"
       },
-      bandcamp: "https://hamty.bandcamp.com/track/sunshine"
+      bandcamp: "https://hamty.bandcamp.com/track/sunshine",
+      routenote: "https://routenote.com/r/Hamty/5054316679721"
     },
     download: {
       mp3: "http://sh.st/nqRuX"
@@ -149,7 +154,8 @@ var Songs = {
       youtube: {
         id: "UiGhXFMFY94"
       },
-      bandcamp: "https://hamty.bandcamp.com/track/sea-lights"
+      bandcamp: "https://hamty.bandcamp.com/track/sea-lights",
+      routenote: "https://routenote.com/r/Hamty/5054316912866"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1JcSyZ"]
@@ -175,7 +181,8 @@ var Songs = {
       youtube: {
         id: "Idmo2W8zcAg"
       },
-      bandcamp: "https://hamty.bandcamp.com/track/home"
+      bandcamp: "https://hamty.bandcamp.com/track/home",
+      routenote: "https://routenote.com/r/Hamty/5054316598497"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1Bkfyo"]
@@ -195,7 +202,8 @@ var Songs = {
       youtube: {
         id: "Uo8Ozq5fZro"
       },
-      bandcamp: "http://hamty.bandcamp.com/track/inspiration"
+      bandcamp: "http://hamty.bandcamp.com/track/inspiration",
+      routenote: "https://routenote.com/r/Hamty/5057302785420"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "wTZVo"]
