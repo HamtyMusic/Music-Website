@@ -104,8 +104,8 @@ function drawSongs(Songs) {
           numberOfLinks++;
         }
       });
-      if (numberOfLinks > 3) {
-        links.className += " over3";
+      if (numberOfLinks > 4) {
+        links.className += " over4";
         newElem("tripledot", newElem("a", links, { class: "link triple-dot-wrap", title: ("Click to see more links.") }), "link-button");
       }
       //Release Date
