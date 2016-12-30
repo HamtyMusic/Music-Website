@@ -1,3 +1,6 @@
+var detailProperties = ["genre", "duration", "tempo", "type"],
+    linksToDisplay = ["soundcloud", "youtube", "routenote", "bandcamp"];
+
 function Search(str) {
   str = str || "";
   if (str.length == 0) {
@@ -96,7 +99,7 @@ function drawSongs(Songs) {
         });
         numberOfLinks++;
       }
-      ["soundcloud", "youtube", "routenote", "bandcamp"].forEach(function(key) {
+      linksToDisplay.forEach(function(key) {
         if(Song.links.hasOwnProperty(key)) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
           var dlbtn = newElem("img", a, "link-button");
@@ -164,7 +167,7 @@ function drawSong(Song) {
   } else {
     dlLinks.innerHTML = "Nothing here...";
   }
-  ["soundcloud", "youtube", "routenote", "bandcamp"].forEach(function(key) {
+  linksToDisplay.forEach(function(key) {
     if(Song.links.hasOwnProperty(key)) {
       var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
       var dlbtn = newElem("img", a, "link-button");
@@ -198,7 +201,7 @@ function drawSong(Song) {
   var table = $("#SongDetailsTable")[0];
   table.innerHTML = "";
   if(Song.details) {
-    ["genre", "duration", "tempo", "type"].forEach(function(i) {
+    detailProperties.forEach(function(i) {
       if(Song.details.hasOwnProperty(i)) {
         var name = i.capFirstLetter();
         var value = Song.details[i];
