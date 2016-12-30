@@ -18,7 +18,8 @@ body {
   padding-bottom:1.5em;
 }
 tripledot:before {
-  content:"...";
+  content: "...";
+  line-height: 1em;
   font-size: 1.7em;
 }
 .page {
