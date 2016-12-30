@@ -90,11 +90,11 @@ var images = {
     svg: "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg",
     png: "https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png"
   },
-  download: {
+  download2: {
     svg: "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg",
     png: "https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png"
   },
-  download2: {
+  download: {
     svg: "http://static.tumblr.com/mv8e1sl/rRrogsjia/dl3.svg",
     png: "http://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
   },
