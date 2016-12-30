@@ -90,17 +90,17 @@ var images = {
     svg: "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg",
     png: "https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png"
   },
-  download2: {
+  download: {
     svg: "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg",
     png: "https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png"
   },
-  download: {
-    svg: "http://static.tumblr.com/mv8e1sl/rRrogsjia/dl3.svg",
-    png: "http://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
+  download2: {
+    svg: "https://static.tumblr.com/mv8e1sl/rRrogsjia/dl3.svg",
+    png: "https://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
   },
   routenote: {
-    svg: "http://static.tumblr.com/mv8e1sl/CAJoiyebd/rn.svg",
-    png: "http://static.tumblr.com/mv8e1sl/oTgoiyebl/rn.png"
+    svg: "https://static.tumblr.com/mv8e1sl/CAJoiyebd/rn.svg",
+    png: "https://static.tumblr.com/mv8e1sl/oTgoiyebl/rn.png"
   }
 }
 function processLink(link, https) {
