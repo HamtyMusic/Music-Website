@@ -106,7 +106,7 @@ function drawSongs(Songs) {
       });
       if (numberOfLinks > 3) {
         links.className += " over3";
-        newElem("tripledot", newElem("a", links, { class: "link", title: ("Click to see more links.") }), "link-button");
+        newElem("tripledot", newElem("a", links, { class: "link triple-dot-wrap", title: ("Click to see more links.") }), "link-button");
       }
       //Release Date
       if (Song.date) {
