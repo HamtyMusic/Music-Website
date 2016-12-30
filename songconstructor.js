@@ -85,8 +85,8 @@ function drawSongs(Songs) {
       });
       var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
 
-      var linksWrap = newElem("div", elem, "link-buttons-wrap");
-      var links = newElem("div", linksWrap, "link-buttons");
+      var links = newElem("div", newElem("div", elem, "link-buttons-wrap"), "link-buttons");
+      var numberOfLinks = 0;
       if(Song.download) {
         var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
           dlbtn = newElem("img", a, "link-button");
@@ -94,14 +94,20 @@ function drawSongs(Songs) {
         addEvent(a, "click", function() {
           downloadSong(Song);
         });
+        numberOfLinks++;
       }
       ["soundcloud", "youtube", "routenote", "bandcamp"].forEach(function(key) {
         if(Song.links.hasOwnProperty(key)) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
           var dlbtn = newElem("img", a, "link-button");
           setVectorSource(dlbtn, key);
+          numberOfLinks++;
         }
       });
+      if (numberOfLinks > 3) {
+        links.className += " over3";
+        newElem("tripledot", newElem("a", links, { class: "link", title: ("Click to see more links.") }), "link-button");
+      }
       //Release Date
       if (Song.date) {
         if (Object.prototype.toString.call(Song.date) === "[object Date]") {
