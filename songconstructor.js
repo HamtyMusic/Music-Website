@@ -1,5 +1,5 @@
-var detailProperties = ["genre", "duration", "tempo", "type"],
-    linksToDisplay = ["soundcloud", "youtube", "routenote", "bandcamp"];
+var detailProperties = [ "genre", "duration", "tempo", "type" ],
+    linksToDisplay = [[ "soundcloud", "Soundcloud" ], [ "youtube", "Youtube" ], [ "routenote", "Routenote Direct" ], [ "bandcamp", "Bandcamp" ]];
 
 function Search(str) {
   str = str || "";
@@ -100,8 +100,8 @@ function drawSongs(Songs) {
         numberOfLinks++;
       }
       linksToDisplay.forEach(function(key) {
-        if(Song.links.hasOwnProperty(key)) {
-          var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+        if(Song.links.hasOwnProperty(key[0])) {
+          var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1] });
           var dlbtn = newElem("img", a, "link-button");
           setVectorSource(dlbtn, key);
           numberOfLinks++;
@@ -168,8 +168,8 @@ function drawSong(Song) {
     dlLinks.innerHTML = "Nothing here...";
   }
   linksToDisplay.forEach(function(key) {
-    if(Song.links.hasOwnProperty(key)) {
-      var a = newElem("a", links, { class: "link", href: processLink(Song.links[key]), target: "_blank", title: ("\"" + Song.name + "\" on " + key.capFirstLetter()) });
+    if(Song.links.hasOwnProperty(key[0])) {
+      var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1] });
       var dlbtn = newElem("img", a, "link-button");
       setVectorSource(dlbtn, key);
     }
