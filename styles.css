@@ -158,6 +158,16 @@ a.shadow, a .shadow, input.shadow {
   max-width: 22em;
   animation: appear-three ease-out 1 0.5s;
 }
+.circle-button {
+  width: 1.5em;
+  height: 1.5em;
+  display: block;
+  cursor: pointer;
+  padding: 0.4em;
+}
+.button-icon {
+  
+}
 .close-wrap {
   position: absolute;
   width: 1.3em;
@@ -175,19 +185,19 @@ a.shadow, a .shadow, input.shadow {
   right: 0.1em;
   padding: 0.2em;
 }
-.close-wrap, .close::before, .close::after {
+.circle-button, .close-wrap, .close::before, .close::after {
   transition: 0.2s;
 }
-.close-wrap:hover, .close::before, .close::after {
+.circle-button:hover, .close-wrap:hover, .close::before, .close::after {
   background: #ccc;
 }
-.popup-bg:active + * > * > .close-wrap, .close-wrap:active {
+.circle-button:active, .popup-bg:active + * > * > .close-wrap, .close-wrap:active {
   background: #f00;
 }
-.close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after, .popup-bg:active + * > * > .close-wrap > .close::before, .popup-bg:active + * > * > .close-wrap > .close::after {
+.circle-button:hover > .button-icon::before, .circle-button:hover > .button-icon::after, .circle-button:active > .button-icon::before, .circle-button:active > .button-icon::after, .close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after, .popup-bg:active + * > * > .close-wrap > .close::before, .popup-bg:active + * > * > .close-wrap > .close::after {
   background: #fff;
 }
-.popup-bg:active + * > * > .close-wrap, .close-wrap:hover, .close-wrap:active {
+.popup-bg:active + * > * > .close-wrap, .close-wrap:hover, .close-wrap:active, .circle-button:hover, .circle-button:active {
   border-radius:50%;
 }
 .close {
