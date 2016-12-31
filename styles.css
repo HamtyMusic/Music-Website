@@ -19,8 +19,8 @@ body {
 }
 tripledot:before {
   content: "...";
-  line-height: 1em;
-  font-size: 1.9em;
+  line-height: 1.25em;
+  font-size: 1.6em;
   font-weight: 800;
 }
 .page {
