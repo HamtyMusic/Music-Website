@@ -44,6 +44,9 @@ a.shadow, a .shadow, input.shadow {
   background:#fff;
   padding:1em;
 }
+.pb, #SearchInput {
+  border-bottom: 3px #00000009 solid;
+}
 .lighten:hover {
   opacity: 0.9;
 }
