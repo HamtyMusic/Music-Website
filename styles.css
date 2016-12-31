@@ -185,10 +185,10 @@ a.shadow, a .shadow, input.shadow {
   right: 0.1em;
   padding: 0.2em;
 }
-.circle-button, .close-wrap, .close::before, .close::after {
+.circle-button, .button-icon::before, .button-icon::after, .close-wrap, .close::before, .close::after {
   transition: 0.2s;
 }
-.circle-button:hover, .close-wrap:hover, .close::before, .close::after {
+.circle-button:hover, .button-icon::before, .button-icon::after, .close-wrap:hover, .close::before, .close::after {
   background: #ccc;
 }
 .circle-button:active, .popup-bg:active + * > * > .close-wrap, .close-wrap:active {
