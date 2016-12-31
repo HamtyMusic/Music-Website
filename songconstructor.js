@@ -103,7 +103,7 @@ function drawSongs(Songs) {
         if(Song.links.hasOwnProperty(key[0])) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
           var dlbtn = newElem("img", a, "link-button");
-          setVectorSource(dlbtn, key);
+          setVectorSource(dlbtn, key[0]);
           numberOfLinks++;
         }
       });
@@ -171,7 +171,7 @@ function drawSong(Song) {
     if(Song.links.hasOwnProperty(key[0])) {
       var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
       var dlbtn = newElem("img", a, "link-button");
-      setVectorSource(dlbtn, key);
+      setVectorSource(dlbtn, key[0]);
     }
   });
 
