@@ -23,6 +23,11 @@ tripledot:before {
   font-size: 1.6em;
   font-weight: 800;
 }
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
 .page {
   width:100%;
   max-width:50em;
