@@ -191,11 +191,11 @@ a.shadow, a .shadow, input.shadow {
 .circle-button:hover, .button-icon::before, .button-icon::after, .close-wrap:hover, .close::before, .close::after {
   background: #ccc;
 }
-.popup-bg:active + * > * > .close-wrap, .close-wrap:active {
-  background: #f00;
-}
 .circle-button:active {
   background: #999;
+}
+.popup-bg:active + * > * > .close-wrap, .close-wrap:active {
+  background: #f00;
 }
 .circle-button:hover > .button-icon::before, .circle-button:hover > .button-icon::after, .circle-button:active > .button-icon::before, .circle-button:active > .button-icon::after, .close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after, .popup-bg:active + * > * > .close-wrap > .close::before, .popup-bg:active + * > * > .close-wrap > .close::after {
   background: #fff;
