@@ -121,10 +121,16 @@ a.shadow, a .shadow, input.shadow {
   margin: auto;
   top:0; bottom:0; left:0; right:0;
   position: absolute;
-  animation: rotate .6s infinite linear;
+  animation: rotate .6s infinite linear, spinner-color 12s infinite linear;
   border: 0.3em solid rgba(160, 174, 239, .15);
   border-top-color: rgba(160, 174, 239, .8);
   border-radius: 100%;
+}
+@keyframes spinner-color {
+  33% { border: 0.3em solid rgba(239, 160, 174, .15);
+  border-top-color: rgba(239, 160, 174, .8); }
+  66% { border: 0.3em solid rgba(174, 239, 160, .15);
+  border-top-color: rgba(174, 239, 160, .8); }
 }
 .popup-body {
   position: fixed;
