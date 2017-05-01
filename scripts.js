@@ -58,7 +58,7 @@ function newPopup() {
   var popupBody = newElem("div", false, "popup-body"),
     popupBg = newElem("div", popupBody, "popup-bg"),
     popupWrap = newElem("div", popupBody, "popup-wrap"),
-    popup = newElem("div", popupWrap, "popup pb shadow"),
+    popup = newElem("div", popupWrap, "popup pb shadow-5"),
     popupInner = newElem("div", popup, "popup-inner"),
     closeButton = newElem("div", popup, "close-wrap"),
     closeButtonIcon = newElem("div", closeButton, "close");
