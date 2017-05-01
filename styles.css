@@ -17,16 +17,23 @@ body {
   font-family: sans-serif;
   padding-bottom:1.5em;
 }
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
 tripledot:before {
   content: "...";
   line-height: 1.25em;
   font-size: 1.6em;
   font-weight: 800;
 }
-input {
-  font-family: inherit;
-  border: none;
-  outline: none;
+a {
+  text-decoration:none;
+}
+form {
+  margin:0;
+  padding:0;
 }
 .page {
   width:100%;
@@ -38,19 +45,11 @@ input {
 .inner-shadow {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1) inset;
 }
-a.shadow:hover, a:hover .shadow, input.shadow:hover, input.shadow:focus, input.shadow:not([value=""]) {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-a.shadow, a .shadow, input.shadow {
-  transition: all 0.2s;
-}
+
 .pb {
   width:100%;
   background:#fff;
   padding:1em;
-}
-.pb, #SearchInput {
-  border-bottom: 3px #00000009 solid;
 }
 .lighten:hover {
   opacity: 0.9;
