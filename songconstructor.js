@@ -77,7 +77,7 @@ function drawSongs(Songs) {
         return true;
       }
       var wrap = newElem("div", songParent, "song-wrap");
-      var elem = newElem("div", wrap, "song pb shadow dynamic");
+      var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
       if (Song.img) {
         var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
         var img = newElem("img", imgPar, { class: "song-image shadow dynamic", src: Song.img.replace(/^http:\/\//i, 'https://') });
