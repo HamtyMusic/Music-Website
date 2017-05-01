@@ -68,6 +68,9 @@ form {
   padding:1em;
   border-radius:3px;
 }
+html .circle {
+  border-radius: 100%;
+}
 .lighten:hover {
   opacity: 0.9;
 }
