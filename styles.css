@@ -82,7 +82,7 @@ form {
   margin-top: -100px;
   background: #fff;
   border-radius: 100%;
-  opacity: 0.6;
+  opacity: 0.2;
   transform: scale(0);
 }
 .wave:active:after {
@@ -94,26 +94,26 @@ form {
   100% { transform: scale(1); opacity: 0 }
 }
 
-.shadow   { box-shadow: 0  1px  3px 0   rgba(0,0,0,0.3) }
-.shadow-2 { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.3) }
-.shadow-3 { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.3) }
-.shadow-4 { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.3) }
-.shadow-5 { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.3) }
-  .dynamic.shadow:hover { box-shadow: 0  2.5px  5px 0     rgba(0,0,0,0.3) }
-.dynamic.shadow-2:hover { box-shadow: 0    6px 12px 0.5px rgba(0,0,0,0.3) }
-.dynamic.shadow-3:hover { box-shadow: 0 10.5px 21px 1.5px rgba(0,0,0,0.3) }
-.dynamic.shadow-4:hover { box-shadow: 0   16px 32px 2.5px rgba(0,0,0,0.3) }
-.dynamic.shadow-5:hover { box-shadow: 0 22.5px 45px 3.5px rgba(0,0,0,0.3) }
-  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.3) }
-.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.3) }
-.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.3) }
-.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.3) }
-.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: 0 26px 32px 4px rgba(0,0,0,0.3) }
-.inner-shadow   { box-shadow: 0  1px  3px 0   rgba(0,0,0,0.3) inset }
-.inner-shadow-2 { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.3) inset }
-.inner-shadow-3 { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.3) inset }
-.inner-shadow-4 { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.3) inset }
-.inner-shadow-5 { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.3) inset }
+.shadow   { box-shadow: 0  1px  3px 0   rgba(0,0,0,0.2) }
+.shadow-2 { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.2) }
+.shadow-3 { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.2) }
+.shadow-4 { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.2) }
+.shadow-5 { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.2) }
+  .dynamic.shadow:hover { box-shadow: 0  2.5px  5px 0     rgba(0,0,0,0.2) }
+.dynamic.shadow-2:hover { box-shadow: 0    6px 12px 0.5px rgba(0,0,0,0.2) }
+.dynamic.shadow-3:hover { box-shadow: 0 10.5px 21px 1.5px rgba(0,0,0,0.2) }
+.dynamic.shadow-4:hover { box-shadow: 0   16px 32px 2.5px rgba(0,0,0,0.2) }
+.dynamic.shadow-5:hover { box-shadow: 0 22.5px 45px 3.5px rgba(0,0,0,0.2) }
+  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.2) }
+.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.2) }
+.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.2) }
+.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.2) }
+.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: 0 26px 32px 4px rgba(0,0,0,0.2) }
+.inner-shadow   { box-shadow: 0  1px  3px 0   rgba(0,0,0,0.2) inset }
+.inner-shadow-2 { box-shadow: 0  4px  8px 0   rgba(0,0,0,0.2) inset }
+.inner-shadow-3 { box-shadow: 0  8px 14px 1px rgba(0,0,0,0.2) inset }
+.inner-shadow-4 { box-shadow: 0 13px 20px 2px rgba(0,0,0,0.2) inset }
+.inner-shadow-5 { box-shadow: 0 19px 26px 3px rgba(0,0,0,0.2) inset }
 
 .pb {
   width:100%;
