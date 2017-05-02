@@ -43,6 +43,7 @@ form {
   border: none;
   border-radius: 3px;
   display: inline-block;
+  position:relative;
   height: 2em;
   line-height: 2em;
   padding: 0 2em;
