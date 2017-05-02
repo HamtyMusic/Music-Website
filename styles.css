@@ -39,6 +39,27 @@ form {
   width:100%;
   max-width:50em;
 }
+.btn {
+  border: none;
+  border-radius: 3px;
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 2em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #fff;
+  background: #5FC3E4;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  background: #6fd3f4;
+}
+.btn:active {
+  background: #4db1d2;
+}
 .dynamic {
   transition: all 0.2s ease-in-out;
 }
