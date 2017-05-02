@@ -157,8 +157,8 @@ function drawSong(Song) {
   if(Song.download && Song.download.length != 0) {
     for (var key in Song.download) {
       if (!Song.download.hasOwnProperty(key)) { continue; }
-      var a = newElem("a", dlLinks, { class: "link", href: processLink(Song.download[key]), target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
-      var span = newElem("span", a, { class: "link-description", innerHTML: "." + key });
+      var a = newElem("a", dlLinks, { class: "btn shadow", href: processLink(Song.download[key]), target: "_blank", title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var span = newElem("span", a, { class: "btn-text", innerHTML: "." + key });
     }
   } else {
     dlLinks.innerHTML = "Nothing here...";
