@@ -43,10 +43,11 @@ form {
   border: none;
   border-radius: 3px;
   display: inline-block;
-  position:relative;
-  height: 2.5em;
-  line-height: 2.5em;
-  padding: 0 2em;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 0.9em;
   text-transform: uppercase;
   vertical-align: middle;
   text-decoration: none;
@@ -62,7 +63,11 @@ form {
 .btn:active {
   background: #4db1d2;
 }
-.btn:after {
+.wave {
+  position: relative;
+  overflow:hidden;
+}
+.wave:after {
   content: '';
   display: block;
   position: absolute;
@@ -77,7 +82,7 @@ form {
   opacity: 0.6;
   transform: scale(0);
 }
-.btn:not(:active):after {
+.wave:not(:active):after {
   animation: ripple 1s ease-out;
 }
 @keyframes ripple {
