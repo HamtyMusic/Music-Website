@@ -157,7 +157,7 @@ function drawSong(Song) {
   if(Song.download && Song.download.length != 0) {
     for (var key in Song.download) {
       if (!Song.download.hasOwnProperty(key)) { continue; }
-      var a = newElem("a", dlLinks, { class: "btn shadow", href: processLink(Song.download[key]), target: "_blank", innerHTML: "." + key, title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var a = newElem("a", dlLinks, { class: "btn shadow dynamic", href: processLink(Song.download[key]), target: "_blank", innerHTML: "." + key, title: ("Free Download ." + key + " (" + Song.name + ")") });
     }
   } else {
     dlLinks.innerHTML = "Nothing here...";
@@ -274,7 +274,7 @@ function downloadSong(Song) {
     if (Song.download.hasOwnProperty(key)) {
       var linkWrap = newElem("div", linksWrap, "link-wrap");
       linkWrap.style.width = 100 / n + "%";
-      var a = newElem("a", linkWrap, { class: "btn", href: processLink(Song.download[key]), target: "_blank", innerHTML: "." + key, title: ("Free Download ." + key + " (" + Song.name + ")") });
+      var a = newElem("a", linkWrap, { class: "btn shadow dynamic", href: processLink(Song.download[key]), target: "_blank", innerHTML: "." + key, title: ("Free Download ." + key + " (" + Song.name + ")") });
     }
   }
 }
