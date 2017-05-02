@@ -209,8 +209,8 @@ function drawSong(Song) {
           value = min + ":" + sec;
         }
         var row = newElem("div", table, "song-details-table-row");
-        newElem("div", row, { class: "song-details-table-cell name", innerHTML: name })
-        newElem("div", row, { class: "song-details-table-cell value", innerHTML: value })
+        newElem("div", row, { class: "song-details-table-cell name", innerHTML: name });
+        newElem("div", row, { class: "song-details-table-cell value", innerHTML: value });
       }
     });
     var price = Song.details.price;
@@ -260,7 +260,7 @@ function downloadSong(Song) {
   if (Song.img) {
     var img = newElem("img", popup, { class: "song-image shadow", src: processLink(Song.img, true) });
   }
-  var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" })
+  var dlTextWrap = newElem("div", popup, { class: "center popup-dl-text-wrap" });
   newElem("span", dlTextWrap, { innerHTML: "Download", title: Song.name });
   if (Song.title) {
     var title = newElem("span", dlTextWrap, { class: "song-title", innerHTML: "\"" + Song.title + "\"", title: Song.name });
