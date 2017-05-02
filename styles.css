@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .dynamic {
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-out;
 }
 html, body {
   width:100%;
@@ -68,7 +68,7 @@ form {
 }
 .wave {
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
 }
 .wave:after {
   content: '';
