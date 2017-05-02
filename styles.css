@@ -82,7 +82,7 @@ form {
   margin-top: -100px;
   background: #fff;
   border-radius: 100%;
-  opacity: 0.2;
+  opacity: 0.4;
   transform: scale(0);
   pointer-events:none;
 }
