@@ -44,8 +44,8 @@ form {
   border-radius: 3px;
   display: inline-block;
   position:relative;
-  height: 2em;
-  line-height: 2em;
+  height: 25em;
+  line-height: 25em;
   padding: 0 2em;
   text-transform: uppercase;
   vertical-align: middle;
@@ -54,6 +54,7 @@ form {
   background: #5FC3E4;
   text-align: center;
   letter-spacing: 0.5px;
+  overflow:hidden;
 }
 .btn:hover {
   background: #6fd3f4;
