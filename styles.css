@@ -67,18 +67,14 @@ form {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  margin-top: -60px;
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
   background: rgba(255,255,255,0.5);
   border-radius: 100%;
   opacity: 0.6;
   transform: scale(0);
-  visibility: hidden;
-}
-.btn:focus:after {
-  visibility: visible;
 }
 .btn:not(:active):after {
   animation: ripple 1s ease-out;
