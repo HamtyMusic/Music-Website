@@ -138,6 +138,7 @@ form {
   vertical-align: middle;
   text-decoration: none;
   color: #fff;
+  color: var(--col-text-btn-light);
   background: #5FC3E4;
   background: var(--col-primary-500);
   text-align: center;
@@ -370,6 +371,7 @@ html .circle {
 }
 .circle-button:hover > .button-icon::before, .circle-button:hover > .button-icon::after, .circle-button:active > .button-icon::before, .circle-button:active > .button-icon::after, .close-wrap:hover > .close::before, .close-wrap:hover > .close::after, .close-wrap:active > .close::before, .close-wrap:active > .close::after, .popup-bg:active + * > * > .close-wrap > .close::before, .popup-bg:active + * > * > .close-wrap > .close::after {
   background: #fff;
+  background: var(--col-text-btn-light);
 }
 .popup-bg:active + * > * > .close-wrap, .close-wrap:hover, .close-wrap:active, .circle-button:hover, .circle-button:active {
   border-radius:50%;
