@@ -153,6 +153,21 @@ form {
 .btn:active {
   background: var(--col-primary-700);
 }
+.btn-alt {
+  background: var(--col-secondary-500);
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.btn-alt:hover {
+  background: var(--col-secondary-300);
+}
+.btn-alt:active {
+  background: var(--col-secondary-700);
+}
 .wave {
   position: relative;
   overflow: hidden;
