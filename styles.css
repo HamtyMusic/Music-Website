@@ -143,10 +143,10 @@ form {
   overflow:hidden;
 }
 .btn:hover {
-  background: var(--col-primary-400);
+  background: var(--col-primary-300);
 }
 .btn:active {
-  background: var(--col-primary-600);
+  background: var(--col-primary-700);
 }
 .wave {
   position: relative;
