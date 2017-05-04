@@ -7,9 +7,29 @@
   --col-text-main: #353535;
   --col-bg-main: #f9f9f9;
   --col-bg-block: #fff;
-  --col-bg-2: #eee;
+  --col-bg-2: #f2f2f2;
   --col-search: var(--col-bg-2);
   --col-search-focus: var(--col-bg-block);
+  --col-primary-50:  #E0F7FA;
+  --col-primary-100: #B2EBF2;
+  --col-primary-200: #80DEEA;
+  --col-primary-300: #4DD0E1;
+  --col-primary-400: #26C6DA;
+  --col-primary-500: #00BCD4;
+  --col-primary-600: #00ACC1;
+  --col-primary-700: #0097A7;
+  --col-primary-800: #00838F;
+  --col-primary-900: #006064;
+  --col-secondary-50:  #E0F2F1;
+  --col-secondary-100: #B2DFDB;
+  --col-secondary-200: #80CBC4;
+  --col-secondary-300: #4DB6AC;
+  --col-secondary-400: #26A69A;
+  --col-secondary-500: #009688;
+  --col-secondary-600: #00897B;
+  --col-secondary-700: #00796B;
+  --col-secondary-800: #00695C;
+  --col-secondary-900: #004D40;
   
   --shadow-color: rgba(0,0,0,0.15);
   --shadow-elev-1:  0  1px  3px var(--shadow-color);
@@ -117,15 +137,16 @@ form {
   text-decoration: none;
   color: #fff;
   background: #5FC3E4;
+  background: var(--col-primary-500);
   text-align: center;
   letter-spacing: 0.5px;
   overflow:hidden;
 }
 .btn:hover {
-  background: #6fd3f4;
+  background: var(--col-primary-600);
 }
 .btn:active {
-  background: #4db1d2;
+  background: var(--col-primary-700);
 }
 .wave {
   position: relative;
