@@ -8,27 +8,18 @@
   --col-background-main: #f9f9f9;
   
   --shadow-color: rgba(0,0,0,0.2);
-  --shadow-1: 0  1px  3px var(--shadow-color);
-  --shadow-2: 0  4px  8px var(--shadow-color);
-  --shadow-3: 0  8px 14px var(--shadow-color);
-  --shadow-4: 0 13px 20px var(--shadow-color);
-  --shadow-5: 0 19px 26px var(--shadow-color);
-  --shadow-6: 0 26px 32px var(--shadow-color);
-  --shadow-1-hover: 0  2.5px  5px var(--shadow-color);
-  --shadow-2-hover: 0    6px 12px var(--shadow-color);
-  --shadow-3-hover: 0 10.5px 21px var(--shadow-color);
-  --shadow-4-hover: 0   16px 32px var(--shadow-color);
-  --shadow-5-hover: 0 22.5px 45px var(--shadow-color);
-  --shadow-1-active: var(--shadow-2);
-  --shadow-2-active: var(--shadow-3);
-  --shadow-3-active: var(--shadow-4);
-  --shadow-4-active: var(--shadow-5);
-  --shadow-5-active: var(--shadow-6);
-  --shadow-inset-1: var(--shadow-1) inset;
-  --shadow-inset-2: var(--shadow-2) inset;
-  --shadow-inset-3: var(--shadow-3) inset;
-  --shadow-inset-4: var(--shadow-4) inset;
-  --shadow-inset-5: var(--shadow-5) inset;
+  --shadow-elev-1:  0  1px  3px var(--shadow-color);
+  --shadow-elev-2:  0  4px  5px var(--shadow-color);
+  --shadow-elev-3:  0  7px  7px var(--shadow-color);
+  --shadow-elev-4:  0 10px  9px var(--shadow-color);
+  --shadow-elev-5:  0 13px 11px var(--shadow-color);
+  --shadow-elev-6:  0 16px 13px var(--shadow-color);
+  --shadow-elev-7:  0 19px 15px var(--shadow-color);
+  --shadow-elev-8:  0 22px 17px var(--shadow-color);
+  --shadow-elev-9:  0 25px 19px var(--shadow-color);
+  --shadow-elev-10: 0 28px 21px var(--shadow-color);
+  --shadow-elev-11: 0 31px 23px var(--shadow-color);
+  --shadow-elev-12: 0 34px 25px var(--shadow-color);
 }
 * {
   box-sizing: border-box;
@@ -83,26 +74,26 @@ form {
   padding:0;
 }
 
-.shadow   { box-shadow: var(--shadow-1) }
-.shadow-2 { box-shadow: var(--shadow-2) }
-.shadow-3 { box-shadow: var(--shadow-3) }
-.shadow-4 { box-shadow: var(--shadow-4) }
-.shadow-5 { box-shadow: var(--shadow-5) }
-  .dynamic.shadow:hover { box-shadow: var(--shadow-1-hover) }
-.dynamic.shadow-2:hover { box-shadow: var(--shadow-2-hover) }
-.dynamic.shadow-3:hover { box-shadow: var(--shadow-3-hover) }
-.dynamic.shadow-4:hover { box-shadow: var(--shadow-4-hover) }
-.dynamic.shadow-5:hover { box-shadow: var(--shadow-5-hover) }
-  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: var(--shadow-1-active) }
-.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: var(--shadow-2-active) }
-.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: var(--shadow-3-active) }
-.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: var(--shadow-4-active) }
-.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: var(--shadow-5-active) }
-.inner-shadow   { box-shadow: var(--shadow-inset-1) }
-.inner-shadow-2 { box-shadow: var(--shadow-inset-2) }
-.inner-shadow-3 { box-shadow: var(--shadow-inset-3) }
-.inner-shadow-4 { box-shadow: var(--shadow-inset-4) }
-.inner-shadow-5 { box-shadow: var(--shadow-inset-5) }
+.shadow   { box-shadow: var(--shadow-elev-1) }
+.shadow-2 { box-shadow: var(--shadow-elev-3) }
+.shadow-3 { box-shadow: var(--shadow-elev-5) }
+.shadow-4 { box-shadow: var(--shadow-elev-7) }
+.shadow-5 { box-shadow: var(--shadow-elev-9) }
+  .dynamic.shadow:hover { box-shadow: var(--shadow-elev-2) }
+.dynamic.shadow-2:hover { box-shadow: var(--shadow-elev-4) }
+.dynamic.shadow-3:hover { box-shadow: var(--shadow-elev-6) }
+.dynamic.shadow-4:hover { box-shadow: var(--shadow-elev-8) }
+.dynamic.shadow-5:hover { box-shadow: var(--shadow-elev-10) }
+  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: var(--shadow-elev-4) }
+.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: var(--shadow-elev-6) }
+.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: var(--shadow-elev-8) }
+.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: var(--shadow-elev-10) }
+.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: var(--shadow-elev-12) }
+.inner-shadow   { box-shadow: var(--shadow-elev-1) inset }
+.inner-shadow-2 { box-shadow: var(--shadow-elev-3) inset }
+.inner-shadow-3 { box-shadow: var(--shadow-elev-5) inset }
+.inner-shadow-4 { box-shadow: var(--shadow-elev-7) inset }
+.inner-shadow-5 { box-shadow: var(--shadow-elev-9) inset }
 
 .page {
   width:100%;
