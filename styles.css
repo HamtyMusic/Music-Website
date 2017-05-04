@@ -7,6 +7,8 @@
   --col-text-main: #353535;
   --col-text-btn-dark: #fff;
   --col-text-btn-light: #707070;
+  --col-icon-btn-dark: var(--col-text-btn-dark);
+  --col-icon-btn-light: var(--col-text-btn-light);
   --col-bg-main: #f9f9f9;
   --col-bg-block: #fff;
   --col-bg-2: #f2f2f2;
@@ -170,6 +172,9 @@ form {
 }
 .btn-alt:active {
   background: var(--col-secondary-700);
+}
+.btn svg, .btn-alt svg {
+  fill: var(--col-icon-btn-dark);
 }
 .wave {
   position: relative;
