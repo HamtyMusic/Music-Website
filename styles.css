@@ -184,7 +184,7 @@ form {
   margin-top: -100px;
   background: #fff;
   border-radius: 100%;
-  opacity: 0.4;
+  opacity: 0.25;
   transform: scale(0);
   pointer-events:none;
 }
