@@ -93,11 +93,11 @@ form {
 .dynamic.shadow-3:hover { box-shadow: var(--shadow-3-hover) }
 .dynamic.shadow-4:hover { box-shadow: var(--shadow-4-hover) }
 .dynamic.shadow-5:hover { box-shadow: var(--shadow-5-hover) }
-  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: --shadow-1-active }
-.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: --shadow-2-active }
-.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: --shadow-3-active }
-.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: --shadow-4-active }
-.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: --shadow-5-active }
+  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: var(--shadow-1-active) }
+.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: var(--shadow-2-active) }
+.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: var(--shadow-3-active) }
+.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: var(--shadow-4-active) }
+.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: var(--shadow-5-active) }
 .inner-shadow   { box-shadow: var(--shadow-inset-1) }
 .inner-shadow-2 { box-shadow: var(--shadow-inset-2) }
 .inner-shadow-3 { box-shadow: var(--shadow-inset-3) }
@@ -154,7 +154,7 @@ form {
   pointer-events:none;
 }
 .wave:active:after {
-  animation: ripple 0.3s ease-out;
+  animation: ripple 0.4s ease-out;
 }
 @keyframes ripple {
     0% { transform: scale(0) }
