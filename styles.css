@@ -8,34 +8,36 @@
   --col-background-main: #f9f9f9;
   
   --shadow-color: rgba(0,0,0,0.2);
-  --shadow-1: 0  1px  3px 0   var(--shadow-color);
-  --shadow-2: 0  4px  8px 0   var(--shadow-color);
-  --shadow-3: 0  8px 14px 1px var(--shadow-color);
-  --shadow-4: 0 13px 20px 2px var(--shadow-color);
-  --shadow-5: 0 19px 26px 3px var(--shadow-color);
+  --shadow-1: 0  1px  3px var(--shadow-color);
+  --shadow-2: 0  4px  8px var(--shadow-color);
+  --shadow-3: 0  8px 14px var(--shadow-color);
+  --shadow-4: 0 13px 20px var(--shadow-color);
+  --shadow-5: 0 19px 26px var(--shadow-color);
+  --shadow-6: 0 26px 32px var(--shadow-color);
+  --shadow-1-hover: 0  2.5px  5px var(--shadow-color);
+  --shadow-2-hover: 0    6px 12px var(--shadow-color);
+  --shadow-3-hover: 0 10.5px 21px var(--shadow-color);
+  --shadow-4-hover: 0   16px 32px var(--shadow-color);
+  --shadow-5-hover: 0 22.5px 45px var(--shadow-color);
+  --shadow-1-active: var(--shadow-2);
+  --shadow-2-active: var(--shadow-3);
+  --shadow-3-active: var(--shadow-4);
+  --shadow-4-active: var(--shadow-5);
+  --shadow-5-active: var(--shadow-6);
+  --shadow-inset-1: var(--shadow-1) inset;
+  --shadow-inset-2: var(--shadow-2) inset;
+  --shadow-inset-3: var(--shadow-3) inset;
+  --shadow-inset-4: var(--shadow-4) inset;
+  --shadow-inset-5: var(--shadow-5) inset;
 }
-.shadow   { box-shadow: var(--shadow-1) }
-.shadow-2 { box-shadow: var(--shadow-2) }
-.shadow-3 { box-shadow: var(--shadow-3) }
-.shadow-4 { box-shadow: var(--shadow-4) }
-.shadow-5 { box-shadow: var(--shadow-5) }
-  .dynamic.shadow:hover { box-shadow: 0  2.5px  5px 0     var(--shadow-color) }
-.dynamic.shadow-2:hover { box-shadow: 0    6px 12px 0.5px var(--shadow-color) }
-.dynamic.shadow-3:hover { box-shadow: 0 10.5px 21px 1.5px var(--shadow-color) }
-.dynamic.shadow-4:hover { box-shadow: 0   16px 32px 2.5px var(--shadow-color) }
-.dynamic.shadow-5:hover { box-shadow: 0 22.5px 45px 3.5px var(--shadow-color) }
-  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: 0  4px  8px 0   var(--shadow-color) }
-.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: 0  8px 14px 1px var(--shadow-color) }
-.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: 0 13px 20px 2px var(--shadow-color) }
-.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: 0 19px 26px 3px var(--shadow-color) }
-.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: 0 26px 32px 4px var(--shadow-color) }
-.inner-shadow   { box-shadow: 0  1px  3px 0   var(--shadow-color) inset }
-.inner-shadow-2 { box-shadow: 0  4px  8px 0   var(--shadow-color) inset }
-.inner-shadow-3 { box-shadow: 0  8px 14px 1px var(--shadow-color) inset }
-.inner-shadow-4 { box-shadow: 0 13px 20px 2px var(--shadow-color) inset }
-.inner-shadow-5 { box-shadow: 0 19px 26px 3px var(--shadow-color) inset }
 * {
   box-sizing: border-box;
+}
+:focus {
+  outline:none;
+}
+::-moz-focus-inner {
+  border: 0;
 }
 .dynamic {
   transition: all 0.2s ease-out;
@@ -46,16 +48,18 @@ html, body {
   margin:0;
   padding:0;
 }
-body {
+:root, body {
   color: #353535;
   color: var(--col-text-main);
+  font-size:20px;
+  font-size:var(--size-font-main);
+}
+body {
   background: #f9f9f9;
   background: var(--col-background-main);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size:20px;
-  font-size:var(--size-font-main);
   justify-content: center;
   font-family: sans-serif;
   padding-bottom:1.5em;
@@ -78,6 +82,28 @@ form {
   margin:0;
   padding:0;
 }
+
+.shadow   { box-shadow: var(--shadow-1) }
+.shadow-2 { box-shadow: var(--shadow-2) }
+.shadow-3 { box-shadow: var(--shadow-3) }
+.shadow-4 { box-shadow: var(--shadow-4) }
+.shadow-5 { box-shadow: var(--shadow-5) }
+  .dynamic.shadow:hover { box-shadow: var(--shadow-1-hover) }
+.dynamic.shadow-2:hover { box-shadow: var(--shadow-2-hover) }
+.dynamic.shadow-3:hover { box-shadow: var(--shadow-3-hover) }
+.dynamic.shadow-4:hover { box-shadow: var(--shadow-4-hover) }
+.dynamic.shadow-5:hover { box-shadow: var(--shadow-5-hover) }
+  .dynamic.shadow:active,   .dynamic.shadow:focus { box-shadow: --shadow-1-active }
+.dynamic.shadow-2:active, .dynamic.shadow-2:focus { box-shadow: --shadow-2-active }
+.dynamic.shadow-3:active, .dynamic.shadow-3:focus { box-shadow: --shadow-3-active }
+.dynamic.shadow-4:active, .dynamic.shadow-4:focus { box-shadow: --shadow-4-active }
+.dynamic.shadow-5:active, .dynamic.shadow-5:focus { box-shadow: --shadow-5-active }
+.inner-shadow   { box-shadow: var(--shadow-inset-1) }
+.inner-shadow-2 { box-shadow: var(--shadow-inset-2) }
+.inner-shadow-3 { box-shadow: var(--shadow-inset-3) }
+.inner-shadow-4 { box-shadow: var(--shadow-inset-4) }
+.inner-shadow-5 { box-shadow: var(--shadow-inset-5) }
+
 .page {
   width:100%;
   max-width:50em;
