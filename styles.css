@@ -34,6 +34,13 @@
   --col-secondary-700: #00796B;
   --col-secondary-800: #00695C;
   --col-secondary-900: #004D40;
+  --col-btn-primary: var(--col-primary-500);
+  --col-btn-primary-hover: var(--col-primary-300);
+  --col-btn-primary-active: var(--col-primary-700);
+  --col-btn-secondary: var(--col-secondary-500);
+  --col-btn-secondary-hover: var(--col-secondary-300);
+  --col-btn-secondary-active: var(--col-secondary-700);
+  --col-btn-utility: #ccc;
   
   --shadow-color: rgba(0,0,0,0.15);
   --shadow-elev-1:  0  1px  3px var(--shadow-color);
@@ -47,6 +54,25 @@
   --shadow-elev-9:  0 17px 11px var(--shadow-color);
   --shadow-elev-10: 0 19px 12px var(--shadow-color);
   --shadow-elev-11: 0 21px 13px var(--shadow-color);
+}
+:root.dark-theme {  
+  --col-text-main: #bbb;
+  --col-text-btn-dark: #fff;
+  --col-text-btn-light: #707070;
+  --col-icon-btn-dark: var(--col-text-btn-dark);
+  --col-icon-btn-light: var(--col-text-btn-light);
+  --col-bg-main: #242424;
+  --col-bg-block: #353535;
+  --col-bg-2: #555;
+  --col-search: var(--col-bg-2);
+  --col-search-focus: var(--col-bg-block);
+  --col-btn-primary: var(--col-primary-500);
+  --col-btn-primary-hover: var(--col-primary-300);
+  --col-btn-primary-active: var(--col-primary-700);
+  --col-btn-secondary: var(--col-secondary-500);
+  --col-btn-secondary-hover: var(--col-secondary-300);
+  --col-btn-secondary-active: var(--col-secondary-700);
+  --col-btn-utility: #ccc;
 }
 * {
   box-sizing: border-box;
@@ -367,6 +393,7 @@ html .circle {
 }
 .circle-button:hover, .button-icon::before, .button-icon::after, .close-wrap:hover, .close::before, .close::after {
   background: #ccc;
+  background: var(--col-btn-utility);
 }
 .circle-button:active {
   background: #999;
