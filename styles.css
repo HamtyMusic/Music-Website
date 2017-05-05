@@ -41,6 +41,8 @@
   --col-btn-secondary-hover: var(--col-secondary-300);
   --col-btn-secondary-active: var(--col-secondary-700);
   --col-btn-utility: #ccc;
+  --col-screen-grayout: rgba(230,230,230,0.9);
+  --col-overlay: rgba(255,255,255,0.95);
   
   --shadow-color: rgba(0,0,0,0.15);
   --shadow-elev-1:  0  1px  3px var(--shadow-color);
@@ -73,6 +75,8 @@
   --col-btn-secondary-hover: var(--col-secondary-500);
   --col-btn-secondary-active: var(--col-secondary-900);
   --col-btn-utility: #ccc;
+  --col-screen-grayout: rgba(55,55,55,0.9);
+  --col-overlay: rgba(64,64,64,0.95);
 }
 * {
   box-sizing: border-box;
@@ -343,6 +347,7 @@ html .circle {
   position:fixed;
   width:100%; height:100%; min-height:100%;
   background:rgba(230,230,230,0.9);
+  background:var(--col-screen-grayout);
   animation: fade-in 1 0.05s;
 }
 .popup-wrap {
