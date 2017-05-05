@@ -75,8 +75,8 @@
   --col-btn-secondary-hover: var(--col-secondary-500);
   --col-btn-secondary-active: var(--col-secondary-900);
   --col-btn-utility: #ccc;
-  --col-screen-grayout: rgba(55,55,55,0.9);
-  --col-overlay: rgba(64,64,64,0.95);
+  --col-screen-grayout: rgba(75,75,75,0.9);
+  --col-overlay: rgba(53,53,53,0.95);
 }
 * {
   box-sizing: border-box;
