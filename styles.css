@@ -168,7 +168,7 @@ form {
   color: #fff;
   color: var(--col-text-btn-dark);
   background: #5FC3E4;
-  background: var(--col-primary-500);
+  background: var(--col-btn-primary);
   text-align: center;
   letter-spacing: 0.5px;
   user-drag: none; 
@@ -179,13 +179,13 @@ form {
   -ms-user-select: none;
 }
 .btn:hover {
-  background: var(--col-primary-300);
+  background: var(--col-btn-primary-hover);
 }
 .btn:active {
-  background: var(--col-primary-700);
+  background: var(--col-btn-primary-active);
 }
 .btn-alt {
-  background: var(--col-secondary-500);
+  background: var(--col-secondary-primary);
   user-drag: none; 
   user-select: none;
   -moz-user-select: none;
@@ -194,10 +194,10 @@ form {
   -ms-user-select: none;
 }
 .btn-alt:hover {
-  background: var(--col-secondary-300);
+  background: var(--col-secondary-primary);
 }
 .btn-alt:active {
-  background: var(--col-secondary-700);
+  background: var(--col-secondary-primary);
 }
 .btn svg, .btn-alt svg {
   fill: var(--col-icon-btn-dark);
