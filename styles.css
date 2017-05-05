@@ -185,7 +185,7 @@ form {
   background: var(--col-btn-primary-active);
 }
 .btn-alt {
-  background: var(--col-secondary-primary);
+  background: var(--col-btn-secondary);
   user-drag: none; 
   user-select: none;
   -moz-user-select: none;
@@ -194,10 +194,10 @@ form {
   -ms-user-select: none;
 }
 .btn-alt:hover {
-  background: var(--col-secondary-primary);
+  background: var(--col-btn-secondary-hover);
 }
 .btn-alt:active {
-  background: var(--col-secondary-primary);
+  background: var(--col-btn-secondary-active);
 }
 .btn svg, .btn-alt svg {
   fill: var(--col-icon-btn-dark);
