@@ -70,9 +70,14 @@ function newPopup() {
   }
 }
 function setVectorSource(elem, id) {
-  if(elem && id && images[id]) {
+  if(elem && id && images[id] && images[id].inline) {
+    /*
     if (images[id].svg) { elem.src = images[id].svg; }
     if (images[id].png) { elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'"; }
+    */
+    var svg = images[id].inline;
+    elem.setAttribute("viewbox", svg.viewbox);
+    newElem("path", elem, { d: svg.path.d });
   } else {
     return false;
   }
