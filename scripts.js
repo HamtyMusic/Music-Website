@@ -1,3 +1,4 @@
+const svgNS = "http://www.w3.org/2000/svg";
 String.prototype.isEmpty = function() {
   return (this.length === 0 || !this.trim());
 };
@@ -9,7 +10,11 @@ function $(q, caller) {
   return caller.querySelectorAll(q);
 }
 function newElem(type, parent, arg3, id) {
-  var elem = document.createElement(type);
+  var elem;
+  if(type == "svg" || type == "path" || type == "circle") {
+    elem = document.createElementNS(svgNS, type);
+  }
+  elem = document.createElement(type);
   (parent || document.body).appendChild(elem);
   function setAttributes(obj) {
     for(var i in obj) {
