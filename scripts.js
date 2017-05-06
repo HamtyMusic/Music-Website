@@ -77,6 +77,7 @@ function setVectorSource(elem, id) {
     */
     var svgData = images[id].inline;
     elem.setAttribute("viewbox", svgData.svg.viewbox);
+    elem.innerHTML = id.capFirstLetter();
     newElem("path", elem, { d: svgData.path.d });
   } else {
     return false;
