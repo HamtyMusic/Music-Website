@@ -224,11 +224,11 @@ function drawSong(Song) {
       var ytid = Song.links.youtube.id;
       if(ytid) {
         var ytEmbedWrap = newElem("div", $("#embeds")[0], "yt-embed-wrap embed-wrap");
-        var ytEmbedWrap2 = newElem("div", ytEmbedWrap, "yt-embed-wrap2 shadow");
+        var ytEmbedWrap2 = newElem("div", ytEmbedWrap, "yt-embed-wrap2");
         if(Song.links.youtube.aspectRatio) {
           ytEmbedWrap2.style["padding-bottom"] = 100 / Song.links.youtube.aspectRatio + "%";
         }
-        var ytEmbed = newElem("iframe", ytEmbedWrap2, { class: "yt-embed embed", src: "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname), frameborder: 0, allowfullscreen: true });
+        var ytEmbed = newElem("iframe", ytEmbedWrap2, { class: "yt-embed embed shadow dynamic", src: "https://www.youtube.com/embed/" + ytid + "?autoplay=0&origin=" + (location.href || (location + "") || location.pathname), frameborder: 0, allowfullscreen: true });
         window.curYtEmbed = ytEmbedWrap2;
         window.curYtEmbedId = ytid;
       }
@@ -237,8 +237,8 @@ function drawSong(Song) {
       scid = Song.links.soundcloud.id;
       if(scid) {
         var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap");
-        var scEmbedWrap2 = newElem("div", scEmbedWrap, "sc-embed-wrap2 shadow");
-        var scEmbed = newElem("iframe", scEmbedWrap2, { class: "sc-embed embed", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", frameborder: 0 });
+        var scEmbedWrap2 = newElem("div", scEmbedWrap, "sc-embed-wrap2");
+        var scEmbed = newElem("iframe", scEmbedWrap2, { class: "sc-embed embed shadow dynamic", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", frameborder: 0 });
         window.curScEmbed = scEmbedWrap2;
         window.curScEmbedId = scid;
       }
