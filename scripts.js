@@ -81,6 +81,9 @@ function setVectorSource(elem, id) {
     if (images[id].png) { elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'"; }
     */
     var svgData = images[id].inline;
+    if(svgData.wide) {
+      elem.classList.add("wide");
+    }
     elem.setAttribute("viewbox", svgData.svg.viewbox);
     elem.innerHTML = id.capFirstLetter();
     newElem("path", elem, { d: svgData.path.d });
