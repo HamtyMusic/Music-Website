@@ -224,9 +224,11 @@ form {
   -ms-user-select: none;
 }
 .btn:hover {
+  color: var(--col-text-btn-dark);
   background: var(--col-btn-primary-hover);
 }
 .btn:active {
+  color: var(--col-text-btn-dark);
   background: var(--col-btn-primary-active);
 }
 .btn-alt {
