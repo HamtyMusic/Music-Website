@@ -1,5 +1,5 @@
 var detailProperties = [ "genre", "duration", "tempo", "type" ],
-  linksToDisplay = [[ "soundcloud", "Soundcloud" ], [ "youtube", "Youtube" ], [ "routenote", "Routenote Direct" ], [ "bandcamp", "Bandcamp" ]];
+  linksToDisplay = [[ "soundcloud", "Soundcloud" ], [ "youtube", "Youtube" ], [ "spotify", "Spotify" ], [ "itunes", "iTunes" ], [ "routenote", "Routenote Direct" ], [ "bandcamp", "Bandcamp" ]];
 
 function Search(str) {
   str = str || "";
@@ -92,7 +92,7 @@ function drawSongs(Songs) {
       var numberOfLinks = 0;
       if(Song.download) {
         var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
-          dlbtn = newElem("img", a, "link-button");
+          dlbtn = newElem("svg", a, "link-button");
         setVectorSource(dlbtn, "download");
         addEvent(a, "click", function() {
           downloadSong(Song);
@@ -102,7 +102,7 @@ function drawSongs(Songs) {
       linksToDisplay.forEach(function(key) {
         if(Song.links.hasOwnProperty(key[0])) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
-          var dlbtn = newElem("img", a, "link-button");
+          var dlbtn = newElem("svg", a, "link-button");
           setVectorSource(dlbtn, key[0]);
           numberOfLinks++;
         }
@@ -165,7 +165,7 @@ function drawSong(Song) {
   linksToDisplay.forEach(function(key) {
     if(Song.links.hasOwnProperty(key[0])) {
       var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
-      var dlbtn = newElem("img", a, "link-button");
+      var dlbtn = newElem("svg", a, "link-button");
       setVectorSource(dlbtn, key[0]);
     }
   });
