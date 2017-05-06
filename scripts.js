@@ -75,9 +75,9 @@ function setVectorSource(elem, id) {
     if (images[id].svg) { elem.src = images[id].svg; }
     if (images[id].png) { elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'"; }
     */
-    var svg = images[id].inline;
-    elem.setAttribute("viewbox", svg.viewbox);
-    newElem("path", elem, { d: svg.path.d });
+    var svgData = images[id].inline;
+    elem.setAttribute("viewbox", svgData.svg.viewbox);
+    newElem("path", elem, { d: svgData.path.d });
   } else {
     return false;
   }
