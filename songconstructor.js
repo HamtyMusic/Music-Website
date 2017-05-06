@@ -235,8 +235,9 @@ function drawSong(Song) {
     if(Song.links.soundcloud) {
       scid = Song.links.soundcloud.id;
       if(scid) {
-        var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap embed-wrap shadow");
-        var scEmbed = newElem("iframe", scEmbedWrap, { class: "sc-embed embed", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", frameborder: 0 });
+        var scEmbedWrap = newElem("div", $("#embeds")[0], "sc-embed-wrap");
+        var scEmbedWrap2 = newElem("div", scEmbedWrap, "sc-embed-wrap2 embed-wrap shadow");
+        var scEmbed = newElem("iframe", scEmbedWrap2, { class: "sc-embed embed", src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + scid + "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true", frameborder: 0 });
         window.curScEmbed = scEmbedWrap;
         window.curScEmbedId = scid;
       }
