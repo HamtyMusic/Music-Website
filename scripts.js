@@ -10,11 +10,13 @@ function $(q, caller) {
   return caller.querySelectorAll(q);
 }
 function newElem(type, parent, arg3, id) {
-  var elem;
-  if(type == "svg" || type == "path" || type == "circle") {
+  var elem,
+      isSvg = (type == "svg" || type == "path" || type == "circle");
+  if(isSvg) {
     elem = document.createElementNS(svgNS, type);
+  } else {
+    elem = document.createElement(type);
   }
-  elem = document.createElement(type);
   (parent || document.body).appendChild(elem);
   function setAttributes(obj) {
     for(var i in obj) {
