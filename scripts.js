@@ -103,7 +103,13 @@ function newElem(type, parent, arg3, id) {
     if(typeof arg3 == "string") {
       arg3 = arg3.split(" ");
     }
-    elem.classList.add.apply(null, arg3);
+    if(arg3.length == 1) {
+      elem.classList.add(arg3);
+    } else if(arg3.length > 1) {
+      for (var i = 0; i < arg3.length; i++) {
+        elem.classList.add(arg3[i]);
+      }
+    }
   }
   if (id) {
     elem.id = id;
