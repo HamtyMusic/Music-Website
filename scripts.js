@@ -21,13 +21,13 @@ function newElem(type, parent, arg3, id) {
   function setAttributes(obj) {
     for(var i in obj) {
       if (obj.hasOwnProperty(i)) {
-        if(i.toLowerCase) {
-          if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
+        if(i.toLowerCase) { 
+          if(isSvg) {
+            elem.setAttributeNS(svgNS, i, obj[i]);
+          } else if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
             elem[i] = obj[i];
           } else if(i.toLowerCase() == "class") {
             elem.className = obj[i];
-          } else if(isSvg) {
-            elem.setAttributeNS(svgNS, i, obj[i]);
           } else {
             elem.setAttribute(i, obj[i]);
           }
