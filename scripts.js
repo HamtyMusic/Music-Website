@@ -100,7 +100,11 @@ function newElem(type, parent, arg3, id) {
   if(isObject(arg3)) {
     setAttributes(arg3);
   } else if(arg3) {
-    elem.className = arg3;
+    if(typeof arg3 == "string") {
+      elem.classList.add.apply(null, arg3.split(" "));
+    } else {
+      elem.classList.add.apply(null, arg3));
+    }
   }
   if (id) {
     elem.id = id;
