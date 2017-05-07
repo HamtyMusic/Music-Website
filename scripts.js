@@ -160,8 +160,9 @@ function setVectorSource(elem, id) {
       elem.classList.add("wide");
     }
     elem.setAttributeNS(svgNS, "viewbox", images[id].inline.svg.viewbox);
-    /* elem.innerHTML += id.capFirstLetter(); */
+    elem.innerHTML += id.capFirstLetter();
     newElem("path", elem, { d: images[id].inline.path.d });
+    elem.outerHTML += "";
   } else {
     return false;
   }
