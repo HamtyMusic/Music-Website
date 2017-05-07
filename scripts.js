@@ -10,8 +10,9 @@ function $(q, caller) {
   return caller.querySelectorAll(q);
 }
 function newElem(type, parent, arg3, id) {
+  type = type.toLowerCase();
   var elem,
-      isSvg = (type.toLowerCase() == "svg" || type.toLowerCase() == "path" || type.toLowerCase() == "circle");
+      isSvg = (type == "svg" || type == "path" || type == "circle");
   if(isSvg) {
     elem = document.createElementNS(svgNS, type);
   } else {
