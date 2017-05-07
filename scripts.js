@@ -89,8 +89,8 @@ function setVectorSource(elem, id) {
     if(svgData.wide) {
       elem.classList.add("wide");
     }
-    elem.setAttribute("viewbox", svgData.svg.viewbox);
-    elem.innerHTML = id.capFirstLetter();
+    elem.setAttributeNS(svgNS, "viewbox", svgData.svg.viewbox);
+    elem.innerHTML += id.capFirstLetter();
     newElem("path", elem, { d: svgData.path.d });
   } else {
     return false;
