@@ -11,7 +11,7 @@ function $(q, caller) {
 }
 function newElem(type, parent, arg3, id) {
   var elem,
-      isSvg = (type == "svg" || type == "path" || type == "circle");
+      isSvg = (type.toLowerCase() == "svg" || type.toLowerCase() == "path" || type.toLowerCase() == "circle");
   if(isSvg) {
     elem = document.createElementNS(svgNS, type);
   } else {
