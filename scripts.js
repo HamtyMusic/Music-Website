@@ -101,10 +101,9 @@ function newElem(type, parent, arg3, id) {
     setAttributes(arg3);
   } else if(arg3) {
     if(typeof arg3 == "string") {
-      elem.classList.add.apply(null, arg3.split(" "));
-    } else {
-      elem.classList.add.apply(null, arg3));
+      arg3 = arg3.split(" ");
     }
+    elem.classList.add.apply(null, arg3);
   }
   if (id) {
     elem.id = id;
