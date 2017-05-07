@@ -26,6 +26,8 @@ function newElem(type, parent, arg3, id) {
             elem[i] = obj[i];
           } else if(i.toLowerCase() == "class") {
             elem.className = obj[i];
+          } else if(isSvg) {
+            elem.setAttributeNS(svgNS, i, obj[i]);
           } else {
             elem.setAttribute(i, obj[i]);
           }
