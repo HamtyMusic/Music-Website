@@ -128,8 +128,8 @@ var images = {
     svg: "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg",
     png: "https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png",
     inline: {
-      svg: { viewbox: "" },
-      path: { d: "" }
+      svg: { viewbox: "0 0 48 48" },
+      path: { d: "M38 18h-8V6H18v12h-8l14 14 14-14zM10 36v4h28v-4H10z" }
     }
   },
   download2: {
