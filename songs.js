@@ -15,7 +15,8 @@ var Songs = {
         aspectRatio: 21 / 9
       },
       bandcamp: "https://hamty.bandcamp.com/track/luminescence",
-      routenote: "https://routenote.com/r/Hamty/5057302302047"
+      routenote: "https://routenote.com/r/Hamty/5057302302047",
+      itunes: "https://itunes.apple.com/us/album/luminescence-single/id1191528389"
     },
     download: {
       flac: "https://www.toneden.io/hamty/post/luminescence-flac",
@@ -72,7 +73,8 @@ var Songs = {
         id: "2jD7uWM1edY"
       },
       bandcamp: "https://hamty.bandcamp.com/track/promenade",
-      routenote: "https://routenote.com/r/Hamty/5057302536046"
+      routenote: "https://routenote.com/r/Hamty/5057302536046",
+      itunes: "https://itunes.apple.com/us/album/promenade-single/id1172262246"
     },
     download: {
       flac: "http://sh.st/4dPZJ",
@@ -128,7 +130,8 @@ var Songs = {
         id: "Z7T-bCQcJVQ"
       },
       bandcamp: "https://hamty.bandcamp.com/track/sunshine",
-      routenote: "https://routenote.com/r/Hamty/5054316679721"
+      routenote: "https://routenote.com/r/Hamty/5054316679721",
+      itunes: "https://itunes.apple.com/us/album/sunshine-single/id1064571834"
     },
     download: {
       mp3: "http://sh.st/nqRuX"
@@ -155,7 +158,8 @@ var Songs = {
         id: "UiGhXFMFY94"
       },
       bandcamp: "https://hamty.bandcamp.com/track/sea-lights",
-      routenote: "https://routenote.com/r/Hamty/5054316912866"
+      routenote: "https://routenote.com/r/Hamty/5054316912866",
+      itunes: "https://itunes.apple.com/us/album/sea-lights-single/id1048686789"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1JcSyZ"]
@@ -182,7 +186,8 @@ var Songs = {
         id: "Idmo2W8zcAg"
       },
       bandcamp: "https://hamty.bandcamp.com/track/home",
-      routenote: "https://routenote.com/r/Hamty/5054316598497"
+      routenote: "https://routenote.com/r/Hamty/5054316598497",
+      itunes: "https://itunes.apple.com/us/album/home-single/id1136243036"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1Bkfyo"]
@@ -203,7 +208,8 @@ var Songs = {
         id: "Uo8Ozq5fZro"
       },
       bandcamp: "http://hamty.bandcamp.com/track/inspiration",
-      routenote: "https://routenote.com/r/Hamty/5057302785420"
+      routenote: "https://routenote.com/r/Hamty/5057302785420",
+      itunes: "https://itunes.apple.com/us/album/inspiration-single/id1178568009"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "wTZVo"]
