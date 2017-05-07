@@ -85,13 +85,13 @@ function setVectorSource(elem, id) {
     if (images[id].svg) { elem.src = images[id].svg; }
     if (images[id].png) { elem.onerror = "this.onerror = null; this.src = \'" + images[id].png + "\'"; }
     */
-    var svgData = images[id].inline;
-    if(svgData.wide) {
+    images[id].inline;
+    if(images[id].inline.wide) {
       elem.classList.add("wide");
     }
-    elem.setAttributeNS(svgNS, "viewbox", svgData.svg.viewbox);
+    elem.setAttributeNS(svgNS, "viewbox", images[id].inline.svg.viewbox);
     elem.innerHTML += id.capFirstLetter();
-    newElem("path", elem, { d: svgData.path.d });
+    newElem("path", elem, { d: images[id].inline.path.d });
   } else {
     return false;
   }
