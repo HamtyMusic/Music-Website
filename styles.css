@@ -6,7 +6,7 @@
   --size-border-radius: 2px;
   --size-divider-thickness: 1px;
   --size-divider-length: 70%;
-  --size-divider-margin-side: calc(calc(100% - var(--size-divider-length) / 2));
+  --size-divider-margin-side: calc(calc(100% - var(--size-divider-length)) / 2);
   
   --col-text-main: #212121;
   --col-text-secondary: #757575;
