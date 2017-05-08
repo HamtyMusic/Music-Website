@@ -19,8 +19,6 @@ String.prototype.capFirstLetter = function() {
 }
 var images = {
   soundcloud: {
-    svg: "https://static.tumblr.com/mv8e1sl/50Soehftt/sc.svg",
-    png: "https://static.tumblr.com/mv8e1sl/48ioehftr/sc.png",
     inline: {
       wide: true,
       svg: { viewbox: "0 0 612 333.3" },
@@ -28,8 +26,6 @@ var images = {
     }
   },
   youtube: {
-    svg: "https://static.tumblr.com/mv8e1sl/g88oehfu7/yt.svg",
-    png: "https://static.tumblr.com/mv8e1sl/QnGoehfu3/yt.png",
     inline: {
       wide: true,
       svg: { viewbox: "0 0 512 360.3" },
@@ -37,8 +33,6 @@ var images = {
     }
   },
   bandcamp: {
-    svg: "https://static.tumblr.com/mv8e1sl/hNQoehftc/bc.svg",
-    png: "https://static.tumblr.com/mv8e1sl/Bpqoehft9/bc.png",
     inline: {
       wide: true,
       svg: { viewbox: "0 0 446 270.2" },
@@ -46,20 +40,13 @@ var images = {
     }
   },
   download: {
-    svg: "https://static.tumblr.com/mv8e1sl/SYGoeqq6l/dl2.svg",
-    png: "https://static.tumblr.com/mv8e1sl/tQKoeqq6o/dl2.png",
     inline: {
+      wide: true,
       svg: { viewbox: "0 0 28 34" },
       path: { d: "M28 12h-8V0H8v12H0l14 14 14-14zM0 30v4h28v-4H0z" }
     }
   },
-  download2: {
-    svg: "https://static.tumblr.com/mv8e1sl/rRrogsjia/dl3.svg",
-    png: "https://static.tumblr.com/mv8e1sl/6aGogsjid/dl3.png"
-  },
   routenote: {
-    svg: "https://static.tumblr.com/mv8e1sl/CAJoiyebd/rn.svg",
-    png: "https://static.tumblr.com/mv8e1sl/oTgoiyebl/rn.png",
     inline: {
       svg: { viewbox: "0 0 99.3 99.3" },
       path: { d: "M46.599609 0C43.999609 0.4 41.400781 0.69921875 38.800781 1.1992188 19.400781 5.3992188 3.6992188 22 0.69921875 41.5 0.39921875 43.2 0.2 44.899609 0 46.599609L0 52.800781C0.4 55.300781 0.69921875 57.799219 1.1992188 60.199219 5.4992187 80.199219 21.499219 95.299219 41.699219 98.699219 65.999219 102.69922 89.7 88.200781 97 64.800781 105.9 36.600781 88.700781 7.1996094 59.800781 1.0996094 57.500781 0.59960937 55.200781 0.4 52.800781 0L46.599609 0zM23 19.800781L24.099609 19.800781 43.5 19.800781C53.7 19.800781 62.299609 26.900781 64.099609 36.800781 65.899609 46.800781 60.400781 56.399609 50.800781 60.099609 50.600781 60.199609 50.3 60.300391 50 60.400391 51.8 65.200391 57.800781 69.299219 62.300781 68.699219L62.300781 65.300781C66.700781 67.600781 70.799219 69.900781 75.199219 72.300781 70.899219 74.700781 66.700391 76.900781 62.400391 79.300781L62.400391 75.800781C54.800391 75.300781 49 72.100781 45 65.800781 42.7 62.300781 41.499609 57.4 42.099609 54.5 42.999609 54.4 44 54.400781 45 54.300781 52.4 53.500781 57.8 47.200391 57.5 39.900391 57.2 32.600391 51.300391 26.699609 43.900391 26.599609 37.500391 26.499609 31 26.599609 24.5 26.599609L23 26.599609 23 19.800781z" }
