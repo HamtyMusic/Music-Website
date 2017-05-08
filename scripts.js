@@ -1,5 +1,5 @@
 const svgNS = "http://www.w3.org/2000/svg";
-Object.prototype.setClass = function(classes) {
+HTMLElement.prototype.setClass = function(classes) {
   if(typeof classes == "string") {
     classes = classes.split(" ");
   }
