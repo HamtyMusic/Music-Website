@@ -1,5 +1,5 @@
 var detailProperties = [ "genre", "duration", "tempo", "type" ],
-  linksToDisplay = [[ "soundcloud", "Soundcloud" ], [ "youtube", "Youtube" ], [ "spotify", "Spotify" ], [ "itunes", "iTunes" ], [ "googleMusic", "Google Play Music" ], [ "routenote", "Routenote Direct" ], [ "bandcamp", "Bandcamp" ]];
+  linksToDisplay = [[ "soundcloud", "Soundcloud" ], [ "youtube", "Youtube" ], [ "spotify", "Spotify" ], [ "itunes", "iTunes" ], [ "googleMusic", "Google Play Music" ], [ "amazon", "Amazon" ], [ "routenote", "Routenote Direct" ], [ "bandcamp", "Bandcamp" ]];
 
 function Search(str) {
   str = str || "";
