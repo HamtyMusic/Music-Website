@@ -4,6 +4,8 @@
   --size-font-main: 20px;
   --size-page-max-width: 50rem;
   --size-border-radius: 2px;
+  --size-divider-thickness: 1px;
+  --size-divider-length: 70%;
   
   --col-text-main: #212121;
   --col-text-secondary: #757575;
@@ -11,6 +13,7 @@
   --col-text-btn-light: #707070;
   --col-icon-btn-dark: var(--col-text-btn-dark);
   --col-icon-btn-light: var(--col-text-btn-light);
+  --col-divider: hsla(0,0%,0%,0.12);
   --col-bg-main: #f9f9f9;
   --col-bg-block: #fff;
   --col-bg-2: #f2f2f2;
@@ -86,6 +89,7 @@
   --col-text-btn-light: #707070;
   --col-icon-btn-dark: var(--col-text-btn-dark);
   --col-icon-btn-light: var(--col-text-btn-light);
+  --col-divider: hsla(0,0%,100%,0.12);
   --col-bg-main: #242424;
   --col-bg-block: #353535;
   --col-bg-2: #555;
@@ -338,29 +342,32 @@ html .circle {
 .center {
   text-align:center;
 }
-.spacer-two {
-  width:70%;
+.float-block {
+  display:block;
+  float:left;
+}
+.divider, .spacer {
+  width: 70%;
+  width: var(--size-divider-length);
   border-top: 1px solid #eee;
-  margin: 4em 15%;
-  margin-bottom:2em;
+  border-top: var(--size-divider-thickness) solid var(--col-divider);
+  margin: 2em 15%;
+}
+.divider-2, .spacer-two {
+  width: 70%;
+  width: var(--size-divider-length);
+  border-top: 1px solid #eee;
+  border-top: var(--size-divider-thickness) solid var(--col-divider);
+  margin: 4em 15% 2em;
 }
 .spacer-two:before {
   display:block;
   content:". . .";
   font-size:3em;
   color:#eee;
+  color:var(--col-divider);
   width:100%;
   text-align:center;
-}
-.float-block {
-  display:block;
-  float:left;
-}
-.spacer {
-  height:1px;
-  width:70%;
-  background:#eee;
-  margin: 2em 15%;
 }
 .spinner {
   height: 3em;
