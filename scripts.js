@@ -25,7 +25,7 @@ var theme = {
   },
   load: function() {
     if((typeof localStorage) !== "undefined") {
-      localStorage.darkTheme ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
+      (localStorage.darkTheme == true) ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
     }
   }
 }
