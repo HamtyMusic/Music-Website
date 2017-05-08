@@ -17,6 +17,19 @@ String.prototype.isEmpty = function() {
 String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
+var theme = {
+  toggle: function() { 
+    if((typeof localStorage) !== "undefined") {
+      localStorage.darkTheme = document.documentElement.classList.toggle("dark-theme");
+    }
+  },
+  load: function() {
+    if((typeof localStorage) !== "undefined") {
+      localStorage.darkTheme ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
+    }
+  }
+}
+theme.load();
 var images = {
   soundcloud: {
     inline: {
