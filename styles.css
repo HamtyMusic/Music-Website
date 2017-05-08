@@ -94,7 +94,7 @@
   --col-divider: hsla(0,0%,100%,0.12);
   --col-bg-main: #242424;
   --col-bg-block: #353535;
-  --col-bg-2: #555;
+  --col-bg-2: #444;
   --col-search: var(--col-bg-2);
   --col-search-focus: var(--col-bg-block);
   --col-btn-gray: var(--col-gray-700);
