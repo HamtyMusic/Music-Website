@@ -353,7 +353,7 @@ html .circle {
   border-top: 1px solid #eee;
   border-top: var(--size-divider-thickness) solid var(--col-divider);
   margin: 2em 15%;
-  margin: var(--size-divider-margin-side) 15%;
+  margin: 2em var(--size-divider-margin-side);
 }
 .divider-2, .spacer-two {
   width: 70%;
