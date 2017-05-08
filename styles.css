@@ -1,17 +1,18 @@
 :root {
-  --transition-main: all 0.2s ease-in-out;
+  --transition-primary: all 0.2s ease-in-out;
   
-  --size-font-main: 20px;
+  --size-font-primary: 20px;
   --size-page-max-width: 50rem;
   --size-border-radius: 2px;
   --size-divider-thickness: 1px;
   --size-divider-length: 70%;
   --size-divider-margin-side: calc(calc(100% - var(--size-divider-length)) / 2);
   
-  --col-text-main: #212121;
+  --col-text-primary: #212121;
   --col-text-secondary: #757575;
   --col-text-btn-dark: #fff;
   --col-text-btn-light: #707070;
+  --col-text-search: var(--col-text-primary);
   --col-icon-btn-dark: var(--col-text-btn-dark);
   --col-icon-btn-light: var(--col-text-btn-light);
   --col-divider: hsla(0,0%,0%,0.12);
@@ -85,7 +86,7 @@
   --shadow-elev-11: 0 21px 13px var(--shadow-color);
 }
 :root.dark-theme {  
-  --col-text-main: #bbb;
+  --col-text-primary: #bbb;
   --col-text-btn-dark: #fff;
   --col-text-btn-light: #707070;
   --col-icon-btn-dark: var(--col-text-btn-dark);
@@ -126,7 +127,7 @@
 }
 .dynamic {
   transition: all 0.2s ease-out;
-  transition: var(--transition-main);
+  transition: var(--transition-primary);
 }
 html, body {
   width:100%;
@@ -135,9 +136,9 @@ html, body {
 }
 :root, body {
   color: #353535;
-  color: var(--col-text-main);
+  color: var(--col-text-primary);
   font-size:20px;
-  font-size:var(--size-font-main);
+  font-size:var(--size-font-primary);
 }
 body {
   background: #f9f9f9;
