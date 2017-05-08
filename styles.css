@@ -3,6 +3,7 @@
   
   --size-font-main: 20px;
   --size-page-max-width: 50rem;
+  --size-border-radius: 3px;
   
   --col-text-main: #212121;
   --col-text-secondary: #757575;
@@ -282,7 +283,8 @@ form {
   background:#fff;
   background:var(--col-bg-block);
   padding:1em;
-  border-radius:3px;
+  border-radius:2px;
+  border-radius:var(--size-border-radius);
 }
 html .circle {
   border-radius: 100%;
