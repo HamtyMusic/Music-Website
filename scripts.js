@@ -1,4 +1,16 @@
 const svgNS = "http://www.w3.org/2000/svg";
+Object.prototype.setClass = function(classes) {
+  if(typeof classes == "string") {
+    classes = classes.split(" ");
+  }
+  if(classes.length == 1) {
+    this.classList.add(classes);
+  } else if(classes.length > 1) {
+    for (var i = 0; i < classes.length; i++) {
+      this.classList.add(classes[i]);
+    }
+  }
+}
 String.prototype.isEmpty = function() {
   return (this.length === 0 || !this.trim());
 };
@@ -73,7 +85,7 @@ function $(q, caller) {
 function newElem(type, parent, arg3, id) {
   type = type.toLowerCase();
   var elem,
-      isSvg = (type == "svg" || type == "path" || type == "circle");
+      isSvg = (document.createElementNS && document.setAttributeNS) && (type == "svg" || type == "path" || type == "circle");
   if(isSvg) {
     elem = document.createElementNS(svgNS, type);
   } else {
@@ -84,12 +96,10 @@ function newElem(type, parent, arg3, id) {
     for(var i in obj) {
       if (obj.hasOwnProperty(i)) {
         if(i.toLowerCase) { 
-          if(isSvg) {
-            elem.setAttributeNS(svgNS, i, obj[i]);
-          } else if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
+          if(i.toLowerCase() == "innerhtml" || i.toLowerCase() == "outerhtml" || i.toLowerCase() == "id") {
             elem[i] = obj[i];
           } else if(i.toLowerCase() == "class") {
-            elem.className = obj[i];
+            elem.setClass(obj[i]);
           } else {
             elem.setAttribute(i, obj[i]);
           }
@@ -100,16 +110,7 @@ function newElem(type, parent, arg3, id) {
   if(isObject(arg3)) {
     setAttributes(arg3);
   } else if(arg3) {
-    if(typeof arg3 == "string") {
-      arg3 = arg3.split(" ");
-    }
-    if(arg3.length == 1) {
-      elem.classList.add(arg3);
-    } else if(arg3.length > 1) {
-      for (var i = 0; i < arg3.length; i++) {
-        elem.classList.add(arg3[i]);
-      }
-    }
+    elem.setClass(arg3);
   }
   if (id) {
     elem.id = id;
@@ -159,7 +160,7 @@ function setVectorSource(elem, id) {
     if(images[id].inline.wide) {
       elem.classList.add("wide");
     }
-    elem.setAttributeNS(svgNS, "viewbox", images[id].inline.svg.viewbox);
+    elem.setAttribute("viewbox", images[id].inline.svg.viewbox);
     elem.innerHTML += id.capFirstLetter();
     newElem("path", elem, { d: images[id].inline.path.d });
     elem.outerHTML += "";
