@@ -100,7 +100,7 @@ function drawSongs(Songs) {
         numberOfLinks++;
       }
       linksToDisplay.forEach(function(key) {
-        if(Song.links.hasOwnProperty(key[0])) {
+        if(Song.links.hasOwnProperty(key[0]) && Song.links[key[0]]) {
           var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
           var dlbtn = newElem("svg", a, "link-button");
           setVectorSource(dlbtn, key[0]);
@@ -163,7 +163,7 @@ function drawSong(Song) {
     dlLinks.innerHTML = "Nothing here...";
   }
   linksToDisplay.forEach(function(key) {
-    if(Song.links.hasOwnProperty(key[0])) {
+    if(Song.links.hasOwnProperty(key[0]) && Song.links[key[0]]) {
       var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
       var dlbtn = newElem("svg", a, "link-button");
       setVectorSource(dlbtn, key[0]);
