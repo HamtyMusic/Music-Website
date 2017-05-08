@@ -10,6 +10,7 @@
   
   --col-text-primary: #212121;
   --col-text-secondary: #757575;
+  --col-text-accent: #555;
   --col-text-btn-dark: #fff;
   --col-text-btn-light: #707070;
   --col-text-search: var(--col-text-primary);
@@ -87,6 +88,8 @@
 }
 :root.dark-theme {  
   --col-text-primary: #bbb;
+  --col-text-secondary: #555;
+  --col-text-accent: #888;
   --col-text-btn-dark: #fff;
   --col-text-btn-light: #707070;
   --col-icon-btn-dark: var(--col-text-btn-dark);
