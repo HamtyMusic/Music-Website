@@ -25,7 +25,11 @@ var theme = {
   },
   load: function() {
     if((typeof localStorage) !== "undefined") {
-      (localStorage.darkTheme == true) ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
+      if(localStorage.darkTheme == true) {
+        document.documentElement.classList.add("dark-theme");
+      } else {
+        document.documentElement.classList.remove("dark-theme");
+      }
     }
   }
 }
