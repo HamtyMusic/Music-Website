@@ -16,7 +16,8 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/luminescence",
       routenote: "https://routenote.com/r/Hamty/5057302302047",
-      itunes: "https://itunes.apple.com/us/album/luminescence-single/id1191528389"
+      itunes: "https://itunes.apple.com/us/album/luminescence-single/id1191528389",
+      googleMusic: "https://play.google.com/store/music/album?id=B2fygf2oi5on57rtqjtsduvo6qe&tid=song-Tkvpzh7ysxwehbto23yswudb6fy"
     },
     download: {
       flac: "https://www.toneden.io/hamty/post/luminescence-flac",
@@ -45,7 +46,8 @@ var Songs = {
         aspectRatio: 21 / 9
       },
       bandcamp: "https://hamty.bandcamp.com/track/night-owls-hamtys-remix",
-      routenote: "https://routenote.com/r/Hamty/5051813106149"
+      routenote: "https://routenote.com/r/Hamty/5051813106149",
+      googleMusic: "https://play.google.com/store/music/album?id=Bd35qvrjpsrduukklwfriuquldq&tid=song-Tkcnai6nkmu4xutn4cxt6j4mhby"
     },
     download: {
       flac: "http://viid.me/qw3mvz",
@@ -74,7 +76,8 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/promenade",
       routenote: "https://routenote.com/r/Hamty/5057302536046",
-      itunes: "https://itunes.apple.com/us/album/promenade-single/id1172262246"
+      itunes: "https://itunes.apple.com/us/album/promenade-single/id1172262246",
+      googleMusic: "https://play.google.com/store/music/album?id=Brrutihiqx35gypghstkcfl4fwe&tid=song-Tbqcxk7a6erkjgkpdr7oyno7bia"
     },
     download: {
       flac: "http://sh.st/4dPZJ",
@@ -102,7 +105,8 @@ var Songs = {
         id: "mEvwdNUg9jo"
       },
       bandcamp: "https://hamty.bandcamp.com/track/aqua-hamtys-remix",
-      routenote: "https://routenote.com/r/Hamty/5054316976394"
+      routenote: "https://routenote.com/r/Hamty/5054316976394",
+      googleMusic: "https://play.google.com/store/music/album?id=B7k7gumhd3fyaqkomjogidenrti&tid=song-T6upg53xcvzw3a2ds2rapomsopu"
     },
     download: {
       flac: "http://sh.st/HzIKA",
@@ -131,7 +135,8 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/sunshine",
       routenote: "https://routenote.com/r/Hamty/5054316679721",
-      itunes: "https://itunes.apple.com/us/album/sunshine-single/id1064571834"
+      itunes: "https://itunes.apple.com/us/album/sunshine-single/id1064571834",
+      googleMusic: "https://play.google.com/store/music/album?id=Bkp4ngu4uukha2fbysb6xfkz5x4&tid=song-Tbvcx7ifjkkks6jzckspuxl56ge"
     },
     download: {
       mp3: "http://sh.st/nqRuX"
@@ -159,7 +164,8 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/sea-lights",
       routenote: "https://routenote.com/r/Hamty/5054316912866",
-      itunes: "https://itunes.apple.com/us/album/sea-lights-single/id1048686789"
+      itunes: "https://itunes.apple.com/us/album/sea-lights-single/id1048686789",
+      googleMusic: "https://play.google.com/store/music/album?id=B2czaashqxrlvfoky65u2u7hs3q&tid=song-T57leozr2ojphotladdtkgajiom"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1JcSyZ"]
@@ -187,7 +193,8 @@ var Songs = {
       },
       bandcamp: "https://hamty.bandcamp.com/track/home",
       routenote: "https://routenote.com/r/Hamty/5054316598497",
-      itunes: "https://itunes.apple.com/us/album/home-single/id1136243036"
+      itunes: "https://itunes.apple.com/us/album/home-single/id1136243036",
+      googleMusic: "https://play.google.com/store/music/album?id=Bwjornj4la7gq7e5ab422nvgxsa&tid=song-T6ruoo3vftide5is34it3bdrhga"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "1Bkfyo"]
@@ -209,7 +216,8 @@ var Songs = {
       },
       bandcamp: "http://hamty.bandcamp.com/track/inspiration",
       routenote: "https://routenote.com/r/Hamty/5057302785420",
-      itunes: "https://itunes.apple.com/us/album/inspiration-single/id1178568009"
+      itunes: "https://itunes.apple.com/us/album/inspiration-single/id1178568009",
+      googleMusic: "https://play.google.com/store/music/album?id=Bm7myjvos72uhkzidduoj5v7qbq&tid=song-T2ddobgslrjx4vzn2f2xvevvmvm"
     },
     download: {
       mp3: ["http://", "adf", ".ly/", "wTZVo"]
