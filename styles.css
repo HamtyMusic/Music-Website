@@ -201,7 +201,8 @@ form {
 }
 .btn {
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
+  border-radius:var(--size-border-radius);
   display: inline-block;
   position: relative;
   height: 40px;
