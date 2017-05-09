@@ -41,14 +41,15 @@ function drawSongs(Songs, defSongs) {
   /* hideSongs(Songs); */
   for (var i in defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
+    var showAfter = 0;
     (function () {
       var Song = defSongs[i];
       var should = Songs.hasOwnProperty(i);
       if(!Song.elem) {
-        var wrap = newElem("div", songParent, "song-wrap");
+        var wrap = newElem("div", songParent, "song-wrap hide");
         var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
         Song.elem = wrap;
-        Song.shown = true;
+        Song.shown = false;
         if (Song.img) {
           var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
           var img = newElem("img", imgPar, { class: "song-image shadow dynamic", src: Song.img.replace(/^http:\/\//i, 'https://') });
@@ -101,7 +102,16 @@ function drawSongs(Songs, defSongs) {
         }
       }
       if(Song.shown != should && Song.elem.classList && Song.elem.classList.toggle) {
-        Song.shown = !(Song.elem.classList.toggle("hide"))
+        if(should) {
+          setTimeout(function() {
+            Song.elem.classList.remove("hide")
+          }, showAfter);
+          showAfter += 30;
+          Song.shown = true;
+        } else {
+          Song.elem.classList.add("hide");
+          Song.shown = false;
+        }
       }
     }());
   }
