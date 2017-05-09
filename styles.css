@@ -541,7 +541,7 @@ html .circle {
 @keyframes appear-three {
   0% { transform: translateX(-20em); }
 }
-@keyframe scale-up {
+@keyframes scale-up {
   0% { transform: scale(0) }
 }
 @keyframes roundify {
