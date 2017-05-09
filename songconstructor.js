@@ -46,14 +46,10 @@ function drawSongs(Songs, defSongs) {
       if(Song.elem && (Song.elem.parentElement === songParent) && Songs.hasOwnProperty(i)) { // +rendered +shown +should
         return true;
       } else if(Song.elem && (Song.elem.parentElement !== songParent) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
-        songParent.appendChild(Song.elem);
+        Song.elem.classList.remove("hide");
         return true;
       } else if(Song.elem && (Song.elem.parentElement === songParent) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
-        var songStorage = $("#SongStorage")[0];
-        if(!songStorage) {
-          songStorage = newElem("div", document.body, false, "SongStorage");
-        }
-        songStorage.appendChild(Song.elem);
+        Song.elem.classList.add("hide");
         return true;
       } else if (!Songs.hasOwnProperty(i)) { return true } // -rendered -shown -should
       // -rendered -shown +should
