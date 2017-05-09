@@ -106,7 +106,7 @@ function drawSongs(Songs, defSongs) {
           setTimeout(function() {
             Song.elem.classList.remove("hide")
           }, showAfter);
-          showAfter += 300;
+          showAfter += 3000;
           Song.shown = true;
         } else {
           Song.elem.classList.add("hide");
