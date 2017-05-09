@@ -200,6 +200,7 @@ form {
 .inner-shadow-5 { box-shadow: var(--shadow-elev-9) inset }
 
 .page-wrap {
+  width:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
