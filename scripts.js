@@ -1,34 +1,34 @@
 const svgNS = "http://www.w3.org/2000/svg";
 HTMLElement.prototype.setClass = function(classes) {
   if(typeof classes == "string") {
-    classes = classes.split(" ");
+    classes = classes.split(" ")
   }
   if(classes.length == 1) {
-    this.classList.add(classes);
+    this.classList.add(classes)
   } else if(classes.length > 1) {
     for (var i = 0; i < classes.length; i++) {
-      this.classList.add(classes[i]);
+      this.classList.add(classes[i])
     }
   }
 }
 String.prototype.isEmpty = function() {
-  return (this.length === 0 || !this.trim());
-};
+  return (this.length === 0 || !this.trim())
+}
 String.prototype.capFirstLetter = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
+  return this.charAt(0).toUpperCase() + this.slice(1)
 }
 var theme = {
   checkCompatibility: function() {
-    return ((typeof localStorage) !== "undefined") && (document.documentElement.classList && document.documentElement.classList.toggle);
+    return (((typeof localStorage) !== "undefined") && (document.documentElement.classList && document.documentElement.classList.toggle))
   },
   toggle: function() { 
     if (this.checkCompatibility()) {
-      localStorage.darkTheme = document.documentElement.classList.toggle("dark-theme");
+      localStorage.darkTheme = document.documentElement.classList.toggle("dark-theme")
     }
   },
   load: function() {
     if (this.checkCompatibility()) {
-      (localStorage.darkTheme == "true") ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
+      (localStorage.darkTheme == "true") ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme")
     }
   }
 }
