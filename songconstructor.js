@@ -32,50 +32,29 @@ function Search(str) {
   return results;
 }
 
-function hideSongs(Songs) {
-  var SongStorage = $("#SongStorage")[0];
-  if(!SongStorage) {
-    SongStorage = newElem("div", document.body, false, "SongStorage");
-  }
-  if(SongStorage) {
-    if (Songs) {} else {
-      return false;
-    }
-    var songParent = $("#SongList")[0];
-    if(songParent) {} else {
-      return false;
-    }
-    if (Songs.length == 0) {
-      return false;
-    }
-    for (var i in Songs) {
-      if (!Songs.hasOwnProperty(i)) { continue; }
-      var Song = Songs[i];
-      if(Song.elem) {
-        SongStorage.appendChild(Song.elem);
-      }
-    }
-    songParent.innerHTML = "";
-  }
-}
-
-function drawSongs(Songs) {
-  if (!Songs) {
+function drawSongs(Songs, defSongs) {
+  if (!Songs || Songs.length == 0) {
     return false;
   }
+  defSongs = defSongs || window.Songs || Songs;
   var songParent = $("#SongList")[0];
-  hideSongs(Songs);
-  if (Songs.length == 0) {
-    return false;
-  }
-  for (var i in Songs) {
-    if (!Songs.hasOwnProperty(i)) { continue; }
+  /* hideSongs(Songs); */
+  for (var i in defSongs) {
+    if (!defSongs.hasOwnProperty(i)) { continue; }
     (function () {
-      var Song = Songs[i];
-      if(Song.elem) {
+      var Song = defSongs[i];
+      if(Song.elem && (Song.elem.parentElement !== songParent) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
         songParent.appendChild(Song.elem);
         return true;
-      }
+      } else if(Song.elem && (Song.elem.parentElement === songParent) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
+        var songStorage = $("#SongStorage")[0];
+        if(!songStorage) {
+          songStorage = newElem("div", document.body, false, "SongStorage");
+        }
+        songStorage.appendChild(Song.elem);
+        return true;
+      } else if (!Songs.hasOwnProperty(i)) { return true } // -rendered -shown -should
+      // -rendered -shown +should
       var wrap = newElem("div", songParent, "song-wrap");
       var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
       if (Song.img) {
