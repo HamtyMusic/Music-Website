@@ -12,6 +12,7 @@
   
   --curve-wall: cubic-bezier(.82,1.5,0,.88);
   --curve-material: cubic-bezier(.55,0,.1,1);
+  --curve-pop: cubic-bezier(0,1,0,1);
   
   --col-text-primary: #212121;
   --col-text-secondary: #757575;
@@ -527,23 +528,21 @@ html .circle {
 }
 @keyframes fade-in {
   0% { opacity: 0; }
-  100% { opacity: 1; }
 }
 @keyframes rotate {
   0% { transform: rotate(-360deg); }
-  100% { transform: rotate(0); }
 }
 @keyframes appear-one {
   0% { transform: translateY(-0.75em); }
-  100% { transform: translateY(0); }
 }
 @keyframes appear-two {
   0% { transform: translateX(1em); }
-  100% { transform: translateX(0); }
 }
 @keyframes appear-three {
   0% { transform: translateX(-20em); }
-  100% { transform: translateX(0); }
+}
+@keyframe scale-up {
+  0% { transform: scale(0) }
 }
 @keyframes roundify {
   100% { border-radius: 50%; }
