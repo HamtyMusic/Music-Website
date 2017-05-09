@@ -43,7 +43,9 @@ function drawSongs(Songs, defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
     (function () {
       var Song = defSongs[i];
-      if(Song.elem && (Song.elem.parentElement !== songParent) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
+      if(Song.elem && (Song.elem.parentElement === songParent) && Songs.hasOwnProperty(i)) { // +rendered +shown +should
+        return true;
+      } else if(Song.elem && (Song.elem.parentElement !== songParent) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
         songParent.appendChild(Song.elem);
         return true;
       } else if(Song.elem && (Song.elem.parentElement === songParent) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
