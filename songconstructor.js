@@ -46,7 +46,7 @@ function drawSongs(Songs, defSongs) {
       var Song = defSongs[i];
       var should = Songs.hasOwnProperty(i);
       if(!Song.elem) {
-        var wrap = newElem("div", songParent, "song-wrap hide");
+        var wrap = newElem("div", songParent, "song-wrap" + ((Song.elem.classList && Song.elem.classList.toggle) ? " hide invisible" : ""));
         var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
         Song.elem = wrap;
         Song.shown = false;
@@ -102,13 +102,19 @@ function drawSongs(Songs, defSongs) {
         }
       }
       if(Song.shown != should && Song.elem.classList && Song.elem.classList.toggle) {
-        if(should) {
-          setTimeout(function() {
-            if(Song.shown) { Song.elem.classList.remove("hide") }
-          }, showAfter);
-          showAfter += 300;
+        if(should) {          
+          Song.elem.classList.remove("hide");
           Song.shown = true;
+          if(showAfter < 5) {
+            Song.elem.classList.remove("invisible")
+          } else {
+            setTimeout(function() {
+              if(Song.shown) { Song.elem.classList.remove("invisible") }
+            }, showAfter);
+          }
+          showAfter += 250;
         } else {
+          Song.elem.classList.add("invisible");
           Song.elem.classList.add("hide");
           Song.shown = false;
         }
