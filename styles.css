@@ -8,6 +8,8 @@
   --size-divider-length: 70%;
   --size-divider-margin-side: calc(calc(100% - var(--size-divider-length)) / 2);
   
+  --float-banner-bg-opacity: 1;
+  
   --col-text-primary: #212121;
   --col-text-secondary: #757575;
   --col-text-accent: #555;
@@ -85,9 +87,11 @@
   --shadow-elev-9:  0 17px 11px var(--shadow-color);
   --shadow-elev-10: 0 19px 12px var(--shadow-color);
   --shadow-elev-11: 0 21px 13px var(--shadow-color);
-  --shadow-banner: none;
+  --shadow-banner: 0 -100px 50px -50px rgba(0,0,0,0.3) inset;
 }
-:root.dark-theme {  
+:root.dark-theme {
+  --float-banner-bg-opacity: 0.8;
+  
   --col-text-primary: #bbb;
   --col-text-secondary: #555;
   --col-text-accent: #888;
