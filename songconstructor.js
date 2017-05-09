@@ -287,9 +287,10 @@ function drawPage(hash) {
   }
 }
 function updateSearchValue() {
-  var elem = document.getElementById("SearchInput");
-  elem.setAttribute('value', elem.value);
-  return elem;
+  var elem = document.getElementById("SearchInput"),
+      value = elem.value;
+  elem.setAttribute('value', value);
+  return value;
 }
 function updateSearch() {
   requestAnimationFrame(function() {
@@ -307,7 +308,7 @@ function submitSearch() {
       setTimeout(submitSearch, 100);
       return false;
     }
-    drawSongs(Search(updateSearchValue().value));
+    drawSongs(Search(updateSearchValue()));
   } catch(error) {}
   return false;
 }
