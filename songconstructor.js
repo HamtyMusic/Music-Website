@@ -280,4 +280,69 @@ function downloadSong(Song) {
     }
   }
 }
-  
+function load() {
+  addEvent(window, "hashchange", function() {
+    drawPage();
+  });
+  addEvent($("#SongImage")[0], "click", function() {
+    newElem("img", newPopup(), { class: "song-image shadow", src: $("#SongImage")[0].src })
+  });
+  drawPage();
+}
+function drawPage(hash) {
+  if (typeof hash === 'string' || hash instanceof String) {
+    hash = hash || location.hash;
+  } else {
+    hash = location.hash;
+  }
+  hash = hash.replace('#','');
+  console.log("Drawing the page using hash: " + hash);
+  if(hash == "") {
+    if(document.body.id == "list") return false;
+    document.body.id = "list";
+    drawSongs(Songs);
+    document.title = "Hamty\'s Music";
+  } else if(hash == "list" || hash ==  "_=_") {
+    if(document.body.id == "list") return false;
+    location.hash = "";
+  } else {
+    if(document.body.id == "info") return false;
+    document.body.id = "info";
+    drawSong(Songs[hash]);
+    document.title = Songs[hash].name + " \| Hamty\'s Music";
+  }
+}
+function updateSearchValue() {
+  var elem = document.getElementById("SearchInput");
+  elem.setAttribute('value', elem.value);
+  return elem;
+}
+function updateSearch() {
+  requestAnimationFrame(function() {
+    if(document.body.id == "list") {
+      submitSearch();
+    } else {
+      updateSearchValue();
+    }
+  });
+}
+function submitSearch() {
+  try {
+    if(document.body.id != "list") {
+      drawPage("list");
+      setTimeout(submitSearch, 100);
+      return false;
+    }
+    drawSongs(Search(updateSearchValue().value));
+  } catch(error) {}
+  return false;
+}
+function clearSearch() {
+  var elem = document.getElementById("SearchInput");
+  if(elem) {
+    elem.value = "";
+    elem.setAttribute('value', "");
+    drawSongs(Songs);
+  }
+}
+addEvent(document, "DOMContentLoaded", load);
