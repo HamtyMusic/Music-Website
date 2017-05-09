@@ -57,6 +57,7 @@ function drawSongs(Songs, defSongs) {
       // -rendered -shown +should
       var wrap = newElem("div", songParent, "song-wrap");
       var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
+      Song.elem = wrap;
       Song.shown = true;
       if (Song.img) {
         var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
@@ -108,7 +109,6 @@ function drawSongs(Songs, defSongs) {
           var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
         }
       }
-      Song.elem = wrap;
     }());
   }
   return true;
