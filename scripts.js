@@ -18,16 +18,16 @@ String.prototype.capFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1)
 }
 var theme = {
-  checkCompatibility: function() {
+  isSupported: function() {
     return (((typeof localStorage) !== "undefined") && (document.documentElement.classList && document.documentElement.classList.toggle))
   },
   toggle: function() { 
-    if (this.checkCompatibility()) {
+    if (this.isSupported()) {
       localStorage.darkTheme = document.documentElement.classList.toggle("dark-theme")
     }
   },
   load: function() {
-    if (this.checkCompatibility()) {
+    if (this.isSupported()) {
       (localStorage.darkTheme == "true") ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme")
     }
   }
