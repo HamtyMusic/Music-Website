@@ -112,7 +112,7 @@ function drawSongs(Songs, defSongs) {
               if(Song.shown) { Song.elem.classList.remove("invisible") }
             }, showAfter);
           }
-          showAfter += 100;
+          showAfter += 150;
         } else {
           Song.elem.classList.add("invisible");
           Song.elem.classList.add("hide");
