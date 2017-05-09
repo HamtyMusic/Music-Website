@@ -32,6 +32,9 @@ var theme = {
     }
   }
 }
+addEvent(window, "storage", function(e) {
+  if(e.key == "darkTheme") theme.load()
+})
 theme.load();
 var images = {
   soundcloud: {
