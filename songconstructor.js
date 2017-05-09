@@ -43,18 +43,21 @@ function drawSongs(Songs, defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
     (function () {
       var Song = defSongs[i];
-      if(Song.elem && (Song.elem.parentElement === songParent) && Songs.hasOwnProperty(i)) { // +rendered +shown +should
+      if((Song.elem && (Song.shown === true) && Songs.hasOwnProperty(i)) || (!Song.elem && (Song.shown !== true) && !Songs.hasOwnProperty(i))) { // +rendered +shown +should || -rendered -shown -should
         return true;
-      } else if(Song.elem && (Song.elem.parentElement !== songParent) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
-        Song.elem.classList.remove("hide");
+      } else if(Song.elem && (Song.shown !== true) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
+        if(Song.elem.classList) { Song.elem.classList.remove("hide") }
+        Song.shown = true;
         return true;
-      } else if(Song.elem && (Song.elem.parentElement === songParent) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
-        Song.elem.classList.add("hide");
+      } else if(Song.elem && (Song.shown === true) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
+        if(Song.elem.classList) { Song.elem.classList.add("hide") }
+        Song.shown = false;
         return true;
-      } else if (!Songs.hasOwnProperty(i)) { return true } // -rendered -shown -should
+      }
       // -rendered -shown +should
       var wrap = newElem("div", songParent, "song-wrap");
       var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
+      Song.shown = true;
       if (Song.img) {
         var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
         var img = newElem("img", imgPar, { class: "song-image shadow dynamic", src: Song.img.replace(/^http:\/\//i, 'https://') });
