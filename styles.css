@@ -85,6 +85,7 @@
   --shadow-elev-9:  0 17px 11px var(--shadow-color);
   --shadow-elev-10: 0 19px 12px var(--shadow-color);
   --shadow-elev-11: 0 21px 13px var(--shadow-color);
+  --shadow-banner: none;
 }
 :root.dark-theme {  
   --col-text-primary: #bbb;
@@ -118,6 +119,8 @@
   --col-link-active: var(--col-primary-600);
   --col-screen-grayout: rgba(75,75,75,0.9);
   --col-overlay: rgba(53,53,53,0.95);
+  
+  --shadow-banner: var(--shadow-elev-1);
 }
 * {
   box-sizing: border-box;
@@ -328,6 +331,7 @@ html .circle {
   padding-bottom: 45%;
   position:relative;
   display:table;
+  box-shadow: var(--shadow-banner, none);
 }
 @media only screen and (min-width: 1000px) {
   .banner-wrap {
