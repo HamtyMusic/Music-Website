@@ -104,9 +104,10 @@ function drawSongs(Songs, defSongs) {
       if(Song.shown != should && Song.elem.classList && Song.elem.classList.toggle) {
         if(should) {
           setTimeout(function() {
-            Song.elem.classList.remove("hide")
+            if(Song.shown) { Song.elem.classList.remove("hide") }
           }, showAfter);
-          showAfter += 3000;
+          console.log(showAfter);
+          showAfter += 10000;
           Song.shown = true;
         } else {
           Song.elem.classList.add("hide");
