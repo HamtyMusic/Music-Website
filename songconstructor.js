@@ -43,10 +43,8 @@ function drawSongs(Songs, defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
     (function () {
       var Song = defSongs[i];
-      var rendered = Boolean(Song.elem);
-      var shown = (Song.shown === true);
       var should = Songs.hasOwnProperty(i);
-      if(!rendered) {
+      if(!Song.elem) {
         var wrap = newElem("div", songParent, "song-wrap");
         var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
         Song.elem = wrap;
@@ -102,7 +100,7 @@ function drawSongs(Songs, defSongs) {
           }
         }
       }
-      if(shown != should && Song.elem.classList && Song.elem.classList.toggle) {
+      if(Song.shown != should && Song.elem.classList && Song.elem.classList.toggle) {
         Song.shown = !(Song.elem.classList.toggle("hide"))
       }
     }());
