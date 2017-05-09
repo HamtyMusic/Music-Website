@@ -1,5 +1,5 @@
 :root {
-  --transition-primary: all 0.2s ease-in-out;
+  --transition-primary: all 0.2s var(--curve-material);
   
   --size-font-primary: 20px;
   --size-page-max-width: 50rem;
@@ -11,6 +11,7 @@
   --float-banner-bg-opacity: 1;
   
   --curve-wall: cubic-bezier(.82,1.5,0,.88);
+  --curve-material: cubic-bezier(.55,0,.1,1);
   
   --col-text-primary: #212121;
   --col-text-secondary: #757575;
@@ -395,7 +396,7 @@ html .circle {
   margin: auto;
   top:0; bottom:0; left:0; right:0;
   position: absolute;
-  animation: rotate .6s infinite linear, spinner-color 12s infinite linear;
+  animation: rotate .6s infinite linear, spinner-color 9s infinite ease;
   border: 0.3em solid rgba(160, 174, 239, .15);
   border-top-color: rgba(160, 174, 239, .8);
   border-radius: 100%;
@@ -413,7 +414,7 @@ html .circle {
   margin:0; padding:0;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index:2000;
+  z-index:20000;
 }
 .popup-bg {
   cursor:pointer;
@@ -437,7 +438,7 @@ html .circle {
   position: relative;
   padding: 1.5em;
   max-width: 22em;
-  animation: appear-three var(--curve-wall) 1 0.5s;
+  animation: appear-three var(--curve-wall) 1s, fade-in ease 1s;
 }
 .circle-button {
   width: 1.5em;
