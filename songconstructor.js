@@ -46,7 +46,7 @@ function drawSongs(Songs, defSongs) {
       var Song = defSongs[i];
       var should = Songs.hasOwnProperty(i);
       if(!Song.elem) {
-        var wrap = newElem("div", songParent, "song-wrap" + ((Song.elem.classList && Song.elem.classList.toggle) ? " hide invisible" : ""));
+        var wrap = newElem("div", songParent, "song-wrap" + ((document.documentElement.classList && document.documentElement.classList.toggle) ? " hide invisible" : ""));
         var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
         Song.elem = wrap;
         Song.shown = false;
