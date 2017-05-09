@@ -102,7 +102,7 @@ function drawSongs(Songs, defSongs) {
           }
         }
       }
-      if(shown != should) {
+      if(shown != should && Song.elem.classList && Song.elem.classList.toggle) {
         Song.shown = !(Song.elem.classList.toggle("hide"))
       }
     }());
