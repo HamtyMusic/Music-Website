@@ -438,7 +438,7 @@ html .circle {
   position: relative;
   padding: 1.5em;
   max-width: 22em;
-  animation: appear-three var(--curve-wall) 1s, fade-in ease 1s;
+  animation: appear-three var(--curve-wall) 0.5s, fade-in ease 0.4s;
 }
 .circle-button {
   width: 1.5em;
