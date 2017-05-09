@@ -22,12 +22,12 @@ var theme = {
     return ((typeof localStorage) !== "undefined") && (document.documentElement.classList && document.documentElement.classList.toggle);
   },
   toggle: function() { 
-    if (checkCompatibility()) {
+    if (this.checkCompatibility()) {
       localStorage.darkTheme = document.documentElement.classList.toggle("dark-theme");
     }
   },
   load: function() {
-    if (checkCompatibility()) {
+    if (this.checkCompatibility()) {
       (localStorage.darkTheme == "true") ? document.documentElement.classList.add("dark-theme") : document.documentElement.classList.remove("dark-theme");
     }
   }
