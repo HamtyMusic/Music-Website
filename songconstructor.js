@@ -39,9 +39,9 @@ function drawSongs(Songs, defSongs) {
   defSongs = defSongs || window.Songs || Songs;
   var songParent = $("#SongList")[0];
   /* hideSongs(Songs); */
+  var showAfter = 0;
   for (var i in defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
-    var showAfter = 0;
     (function () {
       var Song = defSongs[i];
       var should = Songs.hasOwnProperty(i);
@@ -106,8 +106,7 @@ function drawSongs(Songs, defSongs) {
           setTimeout(function() {
             if(Song.shown) { Song.elem.classList.remove("hide") }
           }, showAfter);
-          console.log(showAfter);
-          showAfter += 10000;
+          showAfter += 300;
           Song.shown = true;
         } else {
           Song.elem.classList.add("hide");
