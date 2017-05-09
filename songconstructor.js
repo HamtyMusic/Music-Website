@@ -43,71 +43,67 @@ function drawSongs(Songs, defSongs) {
     if (!defSongs.hasOwnProperty(i)) { continue; }
     (function () {
       var Song = defSongs[i];
-      if((Song.elem && (Song.shown === true) && Songs.hasOwnProperty(i)) || (!Song.elem && (Song.shown !== true) && !Songs.hasOwnProperty(i))) { // +rendered +shown +should || -rendered -shown -should
-        return true;
-      } else if(Song.elem && (Song.shown !== true) && Songs.hasOwnProperty(i)) { // +rendered -shown +should
-        if(Song.elem.classList) { Song.elem.classList.remove("hide") }
+      var rendered = Boolean(Song.elem);
+      var shown = (Song.shown === true);
+      var should = Songs.hasOwnProperty(i);
+      if(!rendered) {
+        var wrap = newElem("div", songParent, "song-wrap");
+        var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
+        Song.elem = wrap;
         Song.shown = true;
-        return true;
-      } else if(Song.elem && (Song.shown === true) && !Songs.hasOwnProperty(i)) { // +rendered +shown -should
-        if(Song.elem.classList) { Song.elem.classList.add("hide") }
-        Song.shown = false;
-        return true;
-      }
-      // -rendered -shown +should
-      var wrap = newElem("div", songParent, "song-wrap");
-      var elem = newElem("div", wrap, "song pb shadow-2 dynamic");
-      Song.elem = wrap;
-      Song.shown = true;
-      if (Song.img) {
-        var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
-        var img = newElem("img", imgPar, { class: "song-image shadow dynamic", src: Song.img.replace(/^http:\/\//i, 'https://') });
-      }
-      var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
-      addEvent(title, "dblclick", function() {
-        selectText(title);
-      });
-      var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
-
-      var links = newElem("div", newElem("div", elem, "link-buttons-wrap"), "link-buttons");
-      var numberOfLinks = 0;
-      if(Song.download) {
-        var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
-          dlbtn = newElem("svg", a, "link-button");
-        setVectorSource(dlbtn, "download");
-        addEvent(a, "click", function() {
-          downloadSong(Song);
+        if (Song.img) {
+          var imgPar = newElem("a", elem, { class: "song-image-wrap lighten", href: "#" + i });
+          var img = newElem("img", imgPar, { class: "song-image shadow dynamic", src: Song.img.replace(/^http:\/\//i, 'https://') });
+        }
+        var title = newElem("div", elem, { class: "song-title", innerHTML: Song.title, title: Song.name });
+        addEvent(title, "dblclick", function() {
+          selectText(title);
         });
-        numberOfLinks++;
-      }
-      linksToDisplay.forEach(function(key) {
-        if(Song.links.hasOwnProperty(key[0]) && Song.links[key[0]]) {
-          var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
-          var dlbtn = newElem("svg", a, "link-button");
-          setVectorSource(dlbtn, key[0]);
+        var author = newElem("div", elem, { class: "song-author", innerHTML: Song.author, title: Song.name });
+
+        var links = newElem("div", newElem("div", elem, "link-buttons-wrap"), "link-buttons");
+        var numberOfLinks = 0;
+        if(Song.download) {
+          var a = newElem("a", links, { class: "link download-link", title: "Click for download options" }),
+            dlbtn = newElem("svg", a, "link-button");
+          setVectorSource(dlbtn, "download");
+          addEvent(a, "click", function() {
+            downloadSong(Song);
+          });
           numberOfLinks++;
         }
-      });
-      //Release Date
-      if (Song.date) {
-        if (Object.prototype.toString.call(Song.date) === "[object Date]") {
-          var date = Song.date;
-          var dates = newElem("div", elem, "DateContainer");
-          var date1 = newElem("div", dates, {
-            class: "dateText dateAbsolute",
-            innerHTML: date.toLocaleDateString([], {
-              day: "numeric",
-              month: "short",
-              year: "numeric"
-            }),
-            title: (date.toLocaleDateString([], {
-              day: "numeric",
-              month: "long",
-              year: "numeric"
-            }) + " | " + date.toLocaleTimeString([]))
-          });
-          var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
+        linksToDisplay.forEach(function(key) {
+          if(Song.links.hasOwnProperty(key[0]) && Song.links[key[0]]) {
+            var a = newElem("a", links, { class: "link", href: processLink(Song.links[key[0]]), target: "_blank", title: ("\"" + Song.name + "\" on " + key[1]) });
+            var dlbtn = newElem("svg", a, "link-button");
+            setVectorSource(dlbtn, key[0]);
+            numberOfLinks++;
+          }
+        });
+        //Release Date
+        if (Song.date) {
+          if (Object.prototype.toString.call(Song.date) === "[object Date]") {
+            var date = Song.date;
+            var dates = newElem("div", elem, "DateContainer");
+            var date1 = newElem("div", dates, {
+              class: "dateText dateAbsolute",
+              innerHTML: date.toLocaleDateString([], {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+              }),
+              title: (date.toLocaleDateString([], {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+              }) + " | " + date.toLocaleTimeString([]))
+            });
+            var date2 = newElem("div", dates, { class: "dateText dateRelative", innerHTML: timeAgo(date, 1), title: timeAgo(date) });
+          }
         }
+      }
+      if(shown != should) {
+        Song.shown = !(Song.elem.classList.toggle("hide"))
       }
     }());
   }
