@@ -288,10 +288,6 @@ function drawPage(hash) {
   } else {
     hash = location.hash
   }
-  if(location.hash !== hash) {
-    location.hash = hash;
-    return false;
-  }
   hash = hash.replace('#','');
   console.log("Drawing the page using hash: " + hash);
   if(hash === "") {
@@ -326,13 +322,12 @@ function updateSearch() {
 function submitSearch() {
   try {
     if(document.body.id != "list") {
-      drawPage("list");
+      location.hash = "";
       setTimeout(submitSearch, 100);
       return false;
-    }
-    drawSongs(Search(updateSearchValue()));
+    } else drawSongs(Search(updateSearchValue()))
   } catch(error) {}
-  return false;
+  return false
 }
 function clearSearch() {
   var elem = document.getElementById("SearchInput");
