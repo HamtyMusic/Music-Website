@@ -194,10 +194,8 @@ function removeHash() {
     loc.hash = "";
     document.body.scrollTop = scrollV; // Restore the scroll offset, should be flicker free
     document.body.scrollLeft = scrollH;
-    if ("pushState" in history) {
-      history.pushState("", document.title, loc.pathname + loc.search);
-    }
-  } else if ("replaceState" in history) {
+  }
+  if("replaceState" in history) {
     history.replaceState("", document.title, loc.pathname + loc.search);
   }
 }
