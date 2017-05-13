@@ -271,42 +271,44 @@ function downloadSong(Song) {
   }
 }
 function load() {
+  window.load = function() {
+    return false
+  }
   addEvent(window, "hashchange", function() {
-    drawPage();
+    drawPage()
   });
   addEvent($("#SongImage")[0], "click", function() {
     newElem("img", newPopup(), { class: "song-image shadow", src: $("#SongImage")[0].src })
   });
-  drawPage();
+  drawPage()
 }
 function drawPage(hash) {
   if (typeof hash === 'string' || hash instanceof String) {
-    hash = hash || location.hash;
+    hash = hash || location.hash
   } else {
-    hash = location.hash;
+    hash = location.hash
   }
   hash = hash.replace('#','');
   console.log("Drawing the page using hash: " + hash);
   if(hash == "") {
+    removeHash();
     if(document.body.id == "list") return false;
     document.body.id = "list";
     drawSongs(Songs);
-    document.title = "Hamty\'s Music";
+    document.title = "Hamty\'s Music"
   } else if(hash == "list" || hash ==  "_=_") {
-    if(document.body.id == "list") return false;
-    location.hash = "";
+    removeHash()
   } else {
-    if(document.body.id == "info") return false;
     document.body.id = "info";
     drawSong(Songs[hash]);
-    document.title = Songs[hash].name + " \| Hamty\'s Music";
+    document.title = Songs[hash].name + " \| Hamty\'s Music"
   }
 }
 function updateSearchValue() {
   var elem = document.getElementById("SearchInput"),
       value = elem.value;
   elem.setAttribute('value', value);
-  return value;
+  return value
 }
 function updateSearch() {
   requestAnimationFrame(function() {
