@@ -295,23 +295,19 @@ function drawPage(hash) {
     if(document.body.id == "list") return false;
     setTimeout(function() {
       document.body.id = "list";
-    document.title = "Hamty\'s Music";
+      document.title = "Hamty\'s Music";
+      $("#SongInfo")[0].classList.add("hide")
     }, 300);
     drawSongs(Songs);
     $("#SongList")[0].classList.remove("hide");
-    setTimeout(function() {
-      $("#SongInfo")[0].classList.add("hide")
-    }, 300)
   } else if(Songs[hash]) {
     setTimeout(function() {
       document.body.id = "info";
-    document.title = Songs[hash].name + " \| Hamty\'s Music"
-    }, 300)
-    drawSong(Songs[hash]);
-    $("#SongInfo")[0].classList.remove("hide");
-    setTimeout(function() {
+      document.title = Songs[hash].name + " \| Hamty\'s Music"
       $("#SongList")[0].classList.add("hide")
-    }, 300)
+    }, 300);
+    drawSong(Songs[hash]);
+    $("#SongInfo")[0].classList.remove("hide")
   } else {
     removeHash()
   }
