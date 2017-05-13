@@ -293,17 +293,21 @@ function drawPage(hash) {
   if(hash === "") {
     removeHash();
     if(document.body.id == "list") return false;
-    document.body.id = "list";
-    drawSongs(Songs);
+    setTimeout(function() {
+      document.body.id = "list";
     document.title = "Hamty\'s Music";
+    }, 300);
+    drawSongs(Songs);
     $("#SongList")[0].classList.remove("hide");
     setTimeout(function() {
       $("#SongInfo")[0].classList.add("hide")
     }, 300)
   } else if(Songs[hash]) {
-    document.body.id = "info";
-    drawSong(Songs[hash]);
+    setTimeout(function() {
+      document.body.id = "info";
     document.title = Songs[hash].name + " \| Hamty\'s Music"
+    }, 300)
+    drawSong(Songs[hash]);
     $("#SongInfo")[0].classList.remove("hide");
     setTimeout(function() {
       $("#SongList")[0].classList.add("hide")
