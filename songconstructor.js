@@ -288,20 +288,24 @@ function drawPage(hash) {
   } else {
     hash = location.hash
   }
+  if(location.hash !== hash) {
+    location.hash = hash;
+    return false;
+  }
   hash = hash.replace('#','');
   console.log("Drawing the page using hash: " + hash);
-  if(hash == "") {
+  if(hash === "") {
     removeHash();
     if(document.body.id == "list") return false;
     document.body.id = "list";
     drawSongs(Songs);
     document.title = "Hamty\'s Music"
-  } else if(hash == "list" || hash ==  "_=_") {
-    removeHash()
-  } else {
+  } else if(Songs[hash]) {
     document.body.id = "info";
     drawSong(Songs[hash]);
     document.title = Songs[hash].name + " \| Hamty\'s Music"
+  } else {
+    removeHash()
   }
 }
 function updateSearchValue() {
