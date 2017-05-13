@@ -187,17 +187,18 @@ function setVectorSource(elem, id) {
   }
 }
 function removeHash() { 
-  var scrollV, scrollH, act = "replace", loc = window.location;
+  var scrollV, scrollH, loc = window.location;
   if(!(loc.hash === "" || loc.hash === "_=_")) {
     scrollV = document.body.scrollTop; // Prevent scrolling by storing the page's current scroll offset
     scrollH = document.body.scrollLeft;
     loc.hash = "";
     document.body.scrollTop = scrollV; // Restore the scroll offset, should be flicker free
     document.body.scrollLeft = scrollH;
-    act = "push"
-  }
-  if ((act + "State") in history) {
-    history[(act + "State")]("", document.title, loc.pathname + loc.search);
+    if ("pushState" in history) {
+      history.pushState("", document.title, loc.pathname + loc.search);
+    }
+  } else if ("replaceState" in history) {
+    history.replaceState("", document.title, loc.pathname + loc.search);
   }
 }
 function processLink(link, https) {
