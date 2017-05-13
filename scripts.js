@@ -186,9 +186,9 @@ function setVectorSource(elem, id) {
     return false;
   }
 }
-function removeHash () { 
+function removeHash() { 
   var scrollV, scrollH, act = "replace", loc = window.location;
-  if(loc.hash !== "" || loc.hash !== "_=_") {
+  if(!(loc.hash === "" || loc.hash === "_=_")) {
     scrollV = document.body.scrollTop; // Prevent scrolling by storing the page's current scroll offset
     scrollH = document.body.scrollLeft;
     loc.hash = "";
