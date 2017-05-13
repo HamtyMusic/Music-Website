@@ -293,25 +293,13 @@ function drawPage(hash) {
   if(hash === "") {
     removeHash();
     if(document.body.id == "list") return false;
-    window.requestAnimationFrame(function() {
-      document.body.id = "list";
-      document.title = "Hamty\'s Music";
-    });
-    setTimeout(function() {
-      $("#SongInfo")[0].classList.add("hide")
-    }, 400);
+    document.body.id = "list";
+    document.title = "Hamty\'s Music";
     drawSongs(Songs);
-    $("#SongList")[0].classList.remove("hide");
   } else if(Songs[hash]) {
-    window.requestAnimationFrame(function() {
-      document.body.id = "info";
-      document.title = Songs[hash].name + " \| Hamty\'s Website"
-    });
-    setTimeout(function() {
-      $("#SongList")[0].classList.add("hide")
-    }, 400);
+    document.body.id = "info";
+    document.title = Songs[hash].name + " \| Hamty\'s Website"
     drawSong(Songs[hash]);
-    $("#SongInfo")[0].classList.remove("hide")
   } else {
     removeHash()
   }
