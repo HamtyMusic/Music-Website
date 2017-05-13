@@ -1,6 +1,6 @@
 :root {
   --transition-primary-b: 0.2s var(--curve-material);
-  --transition-primary: all 0.2s var(--curve-material);
+  --transition-primary: all var(--transition-primary-b);
   
   --size-font-primary: 20px;
   --size-page-max-width: 50rem;
