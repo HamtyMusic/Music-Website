@@ -234,13 +234,13 @@ function timeAgo(oldDate, length) {
   }
   var tempDate = new Date(oldDate.getFullYear() + deltaYr, oldDate.getMonth() + deltaMn, oldDate.getDate());
   var tempDy = (newDate.getTime() - tempDate.getTime()) / msInDay;
-  var deltaDy = parseInt(tempDy);
+  var deltaDy = Math.floor(tempDy);
   var tempHr = (tempDy - deltaDy) * 24;
-  var deltaHr = parseInt(tempHr);
+  var deltaHr = Math.floor(tempHr);
   var tempMt = (tempHr - deltaHr) * 60;
-  var deltaMt = parseInt(tempMt);
+  var deltaMt = Math.floor(tempMt);
   var tempSc = (tempMt - deltaMt) * 60;
-  var deltaSc = parseInt(tempSc);
+  var deltaSc = Math.floor(tempSc);
   var sb = [];
   if (deltaYr > 0) {
     sb.push(deltaYr + ' year' + (deltaYr > 1 ? 's' : ''));
